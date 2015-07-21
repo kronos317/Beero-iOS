@@ -7,6 +7,11 @@
 //
 
 #import "AppDelegate.h"
+#import "Global.h"
+#import <IQKeyboardManager/IQKeyboardManager.h>
+#import "Global.h"
+#import <GoogleMaps/GoogleMaps.h>
+#import "BERLocationManager.h"
 
 @interface AppDelegate ()
 
@@ -17,6 +22,22 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+    [[UINavigationBar appearance] setBarTintColor:BERUICOLOR_THEMECOLOR_MAIN];
+    [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
+    [[UIBarButtonItem appearance] setTintColor:[UIColor whiteColor]];
+    
+    [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor whiteColor]}];
+    [[UITabBar appearance] setTintColor:BERUICOLOR_THEMECOLOR_MAIN];
+    
+    IQKeyboardManager *sharedInstance = [IQKeyboardManager sharedManager];
+    sharedInstance.shouldResignOnTouchOutside = YES;
+    sharedInstance.keyboardDistanceFromTextField = 50;
+    
+    [GMSServices provideAPIKey:GOOGLEMAPS_API_KEY];
+    [[BERLocationManager sharedInstance] initializeManager];
+    
     return YES;
 }
 

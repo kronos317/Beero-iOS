@@ -10,11 +10,22 @@
 		6202641C5D79882663792FEC /* libPods-BeeroTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 61855FA27DF41AB3F4B7C118 /* libPods-BeeroTests.a */; };
 		83DF7D741B5E3B680060CA01 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 83DF7D731B5E3B680060CA01 /* main.m */; };
 		83DF7D771B5E3B680060CA01 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 83DF7D761B5E3B680060CA01 /* AppDelegate.m */; };
-		83DF7D7A1B5E3B680060CA01 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83DF7D791B5E3B680060CA01 /* ViewController.m */; };
 		83DF7D7D1B5E3B680060CA01 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83DF7D7B1B5E3B680060CA01 /* Main.storyboard */; };
 		83DF7D7F1B5E3B680060CA01 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 83DF7D7E1B5E3B680060CA01 /* Images.xcassets */; };
-		83DF7D821B5E3B680060CA01 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 83DF7D801B5E3B680060CA01 /* LaunchScreen.xib */; };
 		83DF7D8E1B5E3B690060CA01 /* BeeroTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 83DF7D8D1B5E3B690060CA01 /* BeeroTests.m */; };
+		83DF7DB01B5E49830060CA01 /* ETRUrlManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 83DF7DA81B5E49830060CA01 /* ETRUrlManager.m */; };
+		83DF7DB31B5E64D70060CA01 /* BERErrorManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 83DF7DB21B5E64D70060CA01 /* BERErrorManager.m */; };
+		83DF7DB61B5E64FB0060CA01 /* BERGenericFunctionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 83DF7DB51B5E64FB0060CA01 /* BERGenericFunctionManager.m */; };
+		83DF7DB91B5E654D0060CA01 /* BERGMPlaceAutoCompleteDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 83DF7DB81B5E654D0060CA01 /* BERGMPlaceAutoCompleteDataModel.m */; };
+		83DF7DBC1B5E65860060CA01 /* BERLocalstorageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 83DF7DBB1B5E65860060CA01 /* BERLocalstorageManager.m */; };
+		83DF7DBF1B5E65BE0060CA01 /* BERLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 83DF7DBE1B5E65BE0060CA01 /* BERLocationManager.m */; };
+		83DF7DC21B5E664F0060CA01 /* BERUrlManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 83DF7DC11B5E664F0060CA01 /* BERUrlManager.m */; };
+		83DF7DC51B5E67180060CA01 /* BERSplashLoadingVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 83DF7DC41B5E67180060CA01 /* BERSplashLoadingVC.m */; };
+		83DF7DC81B5E678D0060CA01 /* BERBrandSelectVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 83DF7DC71B5E678D0060CA01 /* BERBrandSelectVC.m */; };
+		83DF7DCC1B5E68520060CA01 /* BERBrandTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 83DF7DCB1B5E68520060CA01 /* BERBrandTVC.m */; };
+		83DF7DCF1B5E80C60060CA01 /* BERSearchVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 83DF7DCE1B5E80C60060CA01 /* BERSearchVC.m */; };
+		83DF7DD21B5E80F50060CA01 /* BERSearchResultBodyTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 83DF7DD11B5E80F50060CA01 /* BERSearchResultBodyTVC.m */; };
+		83DF7DD51B5E812F0060CA01 /* BERSearchResultFooterTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 83DF7DD41B5E812F0060CA01 /* BERSearchResultFooterTVC.m */; };
 		BC967238E725A2CC4C8A1D1F /* libPods-Beero.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EC558A77295547A9E5F2544D /* libPods-Beero.a */; };
 /* End PBXBuildFile section */
 
@@ -36,14 +47,38 @@
 		83DF7D731B5E3B680060CA01 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		83DF7D751B5E3B680060CA01 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		83DF7D761B5E3B680060CA01 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		83DF7D781B5E3B680060CA01 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		83DF7D791B5E3B680060CA01 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		83DF7D7C1B5E3B680060CA01 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		83DF7D7E1B5E3B680060CA01 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		83DF7D811B5E3B680060CA01 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		83DF7D871B5E3B690060CA01 /* BeeroTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BeeroTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		83DF7D8C1B5E3B690060CA01 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		83DF7D8D1B5E3B690060CA01 /* BeeroTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BeeroTests.m; sourceTree = "<group>"; };
+		83DF7DA71B5E49830060CA01 /* ETRUrlManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ETRUrlManager.h; path = Model/ETRUrlManager.h; sourceTree = "<group>"; };
+		83DF7DA81B5E49830060CA01 /* ETRUrlManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ETRUrlManager.m; path = Model/ETRUrlManager.m; sourceTree = "<group>"; };
+		83DF7DA91B5E49830060CA01 /* Global.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Global.h; path = Model/Global.h; sourceTree = "<group>"; };
+		83DF7DB11B5E64D70060CA01 /* BERErrorManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BERErrorManager.h; path = Model/BERErrorManager.h; sourceTree = "<group>"; };
+		83DF7DB21B5E64D70060CA01 /* BERErrorManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BERErrorManager.m; path = Model/BERErrorManager.m; sourceTree = "<group>"; };
+		83DF7DB41B5E64FB0060CA01 /* BERGenericFunctionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BERGenericFunctionManager.h; path = Model/BERGenericFunctionManager.h; sourceTree = "<group>"; };
+		83DF7DB51B5E64FB0060CA01 /* BERGenericFunctionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BERGenericFunctionManager.m; path = Model/BERGenericFunctionManager.m; sourceTree = "<group>"; };
+		83DF7DB71B5E654D0060CA01 /* BERGMPlaceAutoCompleteDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BERGMPlaceAutoCompleteDataModel.h; path = Model/BERGMPlaceAutoCompleteDataModel.h; sourceTree = "<group>"; };
+		83DF7DB81B5E654D0060CA01 /* BERGMPlaceAutoCompleteDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BERGMPlaceAutoCompleteDataModel.m; path = Model/BERGMPlaceAutoCompleteDataModel.m; sourceTree = "<group>"; };
+		83DF7DBA1B5E65860060CA01 /* BERLocalstorageManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BERLocalstorageManager.h; path = Model/BERLocalstorageManager.h; sourceTree = "<group>"; };
+		83DF7DBB1B5E65860060CA01 /* BERLocalstorageManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BERLocalstorageManager.m; path = Model/BERLocalstorageManager.m; sourceTree = "<group>"; };
+		83DF7DBD1B5E65BE0060CA01 /* BERLocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BERLocationManager.h; path = Model/BERLocationManager.h; sourceTree = "<group>"; };
+		83DF7DBE1B5E65BE0060CA01 /* BERLocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BERLocationManager.m; path = Model/BERLocationManager.m; sourceTree = "<group>"; };
+		83DF7DC01B5E664F0060CA01 /* BERUrlManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BERUrlManager.h; path = Model/BERUrlManager.h; sourceTree = "<group>"; };
+		83DF7DC11B5E664F0060CA01 /* BERUrlManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BERUrlManager.m; path = Model/BERUrlManager.m; sourceTree = "<group>"; };
+		83DF7DC31B5E67180060CA01 /* BERSplashLoadingVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BERSplashLoadingVC.h; path = Controller/BERSplashLoadingVC.h; sourceTree = "<group>"; };
+		83DF7DC41B5E67180060CA01 /* BERSplashLoadingVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BERSplashLoadingVC.m; path = Controller/BERSplashLoadingVC.m; sourceTree = "<group>"; };
+		83DF7DC61B5E678D0060CA01 /* BERBrandSelectVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BERBrandSelectVC.h; path = Controller/BERBrandSelectVC.h; sourceTree = "<group>"; };
+		83DF7DC71B5E678D0060CA01 /* BERBrandSelectVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BERBrandSelectVC.m; path = Controller/BERBrandSelectVC.m; sourceTree = "<group>"; };
+		83DF7DCA1B5E68520060CA01 /* BERBrandTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BERBrandTVC.h; path = Controller/TableViewCell/BERBrandTVC.h; sourceTree = "<group>"; };
+		83DF7DCB1B5E68520060CA01 /* BERBrandTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BERBrandTVC.m; path = Controller/TableViewCell/BERBrandTVC.m; sourceTree = "<group>"; };
+		83DF7DCD1B5E80C60060CA01 /* BERSearchVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BERSearchVC.h; path = Controller/BERSearchVC.h; sourceTree = "<group>"; };
+		83DF7DCE1B5E80C60060CA01 /* BERSearchVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BERSearchVC.m; path = Controller/BERSearchVC.m; sourceTree = "<group>"; };
+		83DF7DD01B5E80F50060CA01 /* BERSearchResultBodyTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BERSearchResultBodyTVC.h; path = Controller/TableViewCell/BERSearchResultBodyTVC.h; sourceTree = "<group>"; };
+		83DF7DD11B5E80F50060CA01 /* BERSearchResultBodyTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BERSearchResultBodyTVC.m; path = Controller/TableViewCell/BERSearchResultBodyTVC.m; sourceTree = "<group>"; };
+		83DF7DD31B5E812F0060CA01 /* BERSearchResultFooterTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BERSearchResultFooterTVC.h; path = Controller/TableViewCell/BERSearchResultFooterTVC.h; sourceTree = "<group>"; };
+		83DF7DD41B5E812F0060CA01 /* BERSearchResultFooterTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BERSearchResultFooterTVC.m; path = Controller/TableViewCell/BERSearchResultFooterTVC.m; sourceTree = "<group>"; };
 		A48C291B529133753F1D8F45 /* Pods-BeeroTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeeroTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BeeroTests/Pods-BeeroTests.release.xcconfig"; sourceTree = "<group>"; };
 		C8CFBC676BA3336CA4917730 /* Pods-Beero.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Beero.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Beero/Pods-Beero.debug.xcconfig"; sourceTree = "<group>"; };
 		EC558A77295547A9E5F2544D /* libPods-Beero.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Beero.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -104,13 +139,10 @@
 		83DF7D701B5E3B680060CA01 /* Beero */ = {
 			isa = PBXGroup;
 			children = (
-				83DF7D751B5E3B680060CA01 /* AppDelegate.h */,
-				83DF7D761B5E3B680060CA01 /* AppDelegate.m */,
-				83DF7D781B5E3B680060CA01 /* ViewController.h */,
-				83DF7D791B5E3B680060CA01 /* ViewController.m */,
-				83DF7D7B1B5E3B680060CA01 /* Main.storyboard */,
-				83DF7D7E1B5E3B680060CA01 /* Images.xcassets */,
-				83DF7D801B5E3B680060CA01 /* LaunchScreen.xib */,
+				83DF7D971B5E48EC0060CA01 /* AppDelegate */,
+				83DF7D981B5E48F90060CA01 /* Model */,
+				83DF7D991B5E48FE0060CA01 /* View */,
+				83DF7D9A1B5E49030060CA01 /* Controller */,
 				83DF7D711B5E3B680060CA01 /* Supporting Files */,
 			);
 			path = Beero;
@@ -140,6 +172,73 @@
 				83DF7D8C1B5E3B690060CA01 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		83DF7D971B5E48EC0060CA01 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				83DF7D751B5E3B680060CA01 /* AppDelegate.h */,
+				83DF7D761B5E3B680060CA01 /* AppDelegate.m */,
+			);
+			name = AppDelegate;
+			sourceTree = "<group>";
+		};
+		83DF7D981B5E48F90060CA01 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				83DF7DA91B5E49830060CA01 /* Global.h */,
+				83DF7DA71B5E49830060CA01 /* ETRUrlManager.h */,
+				83DF7DA81B5E49830060CA01 /* ETRUrlManager.m */,
+				83DF7DB11B5E64D70060CA01 /* BERErrorManager.h */,
+				83DF7DB21B5E64D70060CA01 /* BERErrorManager.m */,
+				83DF7DB41B5E64FB0060CA01 /* BERGenericFunctionManager.h */,
+				83DF7DB51B5E64FB0060CA01 /* BERGenericFunctionManager.m */,
+				83DF7DB71B5E654D0060CA01 /* BERGMPlaceAutoCompleteDataModel.h */,
+				83DF7DB81B5E654D0060CA01 /* BERGMPlaceAutoCompleteDataModel.m */,
+				83DF7DBA1B5E65860060CA01 /* BERLocalstorageManager.h */,
+				83DF7DBB1B5E65860060CA01 /* BERLocalstorageManager.m */,
+				83DF7DBD1B5E65BE0060CA01 /* BERLocationManager.h */,
+				83DF7DBE1B5E65BE0060CA01 /* BERLocationManager.m */,
+				83DF7DC01B5E664F0060CA01 /* BERUrlManager.h */,
+				83DF7DC11B5E664F0060CA01 /* BERUrlManager.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		83DF7D991B5E48FE0060CA01 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				83DF7D7B1B5E3B680060CA01 /* Main.storyboard */,
+				83DF7D7E1B5E3B680060CA01 /* Images.xcassets */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		83DF7D9A1B5E49030060CA01 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				83DF7DC91B5E68310060CA01 /* TableViewCell */,
+				83DF7DC31B5E67180060CA01 /* BERSplashLoadingVC.h */,
+				83DF7DC41B5E67180060CA01 /* BERSplashLoadingVC.m */,
+				83DF7DC61B5E678D0060CA01 /* BERBrandSelectVC.h */,
+				83DF7DC71B5E678D0060CA01 /* BERBrandSelectVC.m */,
+				83DF7DCD1B5E80C60060CA01 /* BERSearchVC.h */,
+				83DF7DCE1B5E80C60060CA01 /* BERSearchVC.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		83DF7DC91B5E68310060CA01 /* TableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				83DF7DCA1B5E68520060CA01 /* BERBrandTVC.h */,
+				83DF7DCB1B5E68520060CA01 /* BERBrandTVC.m */,
+				83DF7DD01B5E80F50060CA01 /* BERSearchResultBodyTVC.h */,
+				83DF7DD11B5E80F50060CA01 /* BERSearchResultBodyTVC.m */,
+				83DF7DD31B5E812F0060CA01 /* BERSearchResultFooterTVC.h */,
+				83DF7DD41B5E812F0060CA01 /* BERSearchResultFooterTVC.m */,
+			);
+			name = TableViewCell;
 			sourceTree = "<group>";
 		};
 		993A32DAAB21AFE9DB7FCA54 /* Frameworks */ = {
@@ -199,6 +298,7 @@
 		83DF7D661B5E3B680060CA01 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = BER;
 				LastUpgradeCheck = 0630;
 				ORGANIZATIONNAME = Beero;
 				TargetAttributes = {
@@ -236,7 +336,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				83DF7D7D1B5E3B680060CA01 /* Main.storyboard in Resources */,
-				83DF7D821B5E3B680060CA01 /* LaunchScreen.xib in Resources */,
 				83DF7D7F1B5E3B680060CA01 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -318,8 +417,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				83DF7D7A1B5E3B680060CA01 /* ViewController.m in Sources */,
+				83DF7DB01B5E49830060CA01 /* ETRUrlManager.m in Sources */,
+				83DF7DB91B5E654D0060CA01 /* BERGMPlaceAutoCompleteDataModel.m in Sources */,
+				83DF7DCF1B5E80C60060CA01 /* BERSearchVC.m in Sources */,
 				83DF7D771B5E3B680060CA01 /* AppDelegate.m in Sources */,
+				83DF7DB61B5E64FB0060CA01 /* BERGenericFunctionManager.m in Sources */,
+				83DF7DC51B5E67180060CA01 /* BERSplashLoadingVC.m in Sources */,
+				83DF7DB31B5E64D70060CA01 /* BERErrorManager.m in Sources */,
+				83DF7DC21B5E664F0060CA01 /* BERUrlManager.m in Sources */,
+				83DF7DD21B5E80F50060CA01 /* BERSearchResultBodyTVC.m in Sources */,
+				83DF7DC81B5E678D0060CA01 /* BERBrandSelectVC.m in Sources */,
+				83DF7DBC1B5E65860060CA01 /* BERLocalstorageManager.m in Sources */,
+				83DF7DCC1B5E68520060CA01 /* BERBrandTVC.m in Sources */,
+				83DF7DBF1B5E65BE0060CA01 /* BERLocationManager.m in Sources */,
+				83DF7DD51B5E812F0060CA01 /* BERSearchResultFooterTVC.m in Sources */,
 				83DF7D741B5E3B680060CA01 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -349,14 +460,6 @@
 				83DF7D7C1B5E3B680060CA01 /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		83DF7D801B5E3B680060CA01 /* LaunchScreen.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				83DF7D811B5E3B680060CA01 /* Base */,
-			);
-			name = LaunchScreen.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -447,6 +550,7 @@
 			baseConfigurationReference = C8CFBC676BA3336CA4917730 /* Pods-Beero.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = Beero/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -459,6 +563,7 @@
 			baseConfigurationReference = 442F08617EE5CBA86CBF2194 /* Pods-Beero.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = Beero/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
