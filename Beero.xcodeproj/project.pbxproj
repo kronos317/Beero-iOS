@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6202641C5D79882663792FEC /* libPods-BeeroTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 61855FA27DF41AB3F4B7C118 /* libPods-BeeroTests.a */; };
 		83DF7D741B5E3B680060CA01 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 83DF7D731B5E3B680060CA01 /* main.m */; };
 		83DF7D771B5E3B680060CA01 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 83DF7D761B5E3B680060CA01 /* AppDelegate.m */; };
 		83DF7D7A1B5E3B680060CA01 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83DF7D791B5E3B680060CA01 /* ViewController.m */; };
@@ -14,6 +15,7 @@
 		83DF7D7F1B5E3B680060CA01 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 83DF7D7E1B5E3B680060CA01 /* Images.xcassets */; };
 		83DF7D821B5E3B680060CA01 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 83DF7D801B5E3B680060CA01 /* LaunchScreen.xib */; };
 		83DF7D8E1B5E3B690060CA01 /* BeeroTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 83DF7D8D1B5E3B690060CA01 /* BeeroTests.m */; };
+		BC967238E725A2CC4C8A1D1F /* libPods-Beero.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EC558A77295547A9E5F2544D /* libPods-Beero.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,6 +29,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		442F08617EE5CBA86CBF2194 /* Pods-Beero.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Beero.release.xcconfig"; path = "Pods/Target Support Files/Pods-Beero/Pods-Beero.release.xcconfig"; sourceTree = "<group>"; };
+		61855FA27DF41AB3F4B7C118 /* libPods-BeeroTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BeeroTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		83DF7D6E1B5E3B680060CA01 /* Beero.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Beero.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		83DF7D721B5E3B680060CA01 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		83DF7D731B5E3B680060CA01 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -40,6 +44,10 @@
 		83DF7D871B5E3B690060CA01 /* BeeroTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BeeroTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		83DF7D8C1B5E3B690060CA01 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		83DF7D8D1B5E3B690060CA01 /* BeeroTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BeeroTests.m; sourceTree = "<group>"; };
+		A48C291B529133753F1D8F45 /* Pods-BeeroTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeeroTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BeeroTests/Pods-BeeroTests.release.xcconfig"; sourceTree = "<group>"; };
+		C8CFBC676BA3336CA4917730 /* Pods-Beero.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Beero.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Beero/Pods-Beero.debug.xcconfig"; sourceTree = "<group>"; };
+		EC558A77295547A9E5F2544D /* libPods-Beero.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Beero.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FE28759928E96AC5E6898D7D /* Pods-BeeroTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeeroTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BeeroTests/Pods-BeeroTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +55,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC967238E725A2CC4C8A1D1F /* libPods-Beero.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -54,18 +63,32 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6202641C5D79882663792FEC /* libPods-BeeroTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6C7CAED52AC6B141D666DB29 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C8CFBC676BA3336CA4917730 /* Pods-Beero.debug.xcconfig */,
+				442F08617EE5CBA86CBF2194 /* Pods-Beero.release.xcconfig */,
+				FE28759928E96AC5E6898D7D /* Pods-BeeroTests.debug.xcconfig */,
+				A48C291B529133753F1D8F45 /* Pods-BeeroTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		83DF7D651B5E3B680060CA01 = {
 			isa = PBXGroup;
 			children = (
 				83DF7D701B5E3B680060CA01 /* Beero */,
 				83DF7D8A1B5E3B690060CA01 /* BeeroTests */,
 				83DF7D6F1B5E3B680060CA01 /* Products */,
+				6C7CAED52AC6B141D666DB29 /* Pods */,
+				993A32DAAB21AFE9DB7FCA54 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -119,6 +142,15 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		993A32DAAB21AFE9DB7FCA54 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EC558A77295547A9E5F2544D /* libPods-Beero.a */,
+				61855FA27DF41AB3F4B7C118 /* libPods-BeeroTests.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -126,9 +158,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 83DF7D911B5E3B690060CA01 /* Build configuration list for PBXNativeTarget "Beero" */;
 			buildPhases = (
+				70A1FA438FC3378AD53EFD2B /* Check Pods Manifest.lock */,
 				83DF7D6A1B5E3B680060CA01 /* Sources */,
 				83DF7D6B1B5E3B680060CA01 /* Frameworks */,
 				83DF7D6C1B5E3B680060CA01 /* Resources */,
+				C53F230E8EEA33835405201E /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -143,9 +177,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 83DF7D941B5E3B690060CA01 /* Build configuration list for PBXNativeTarget "BeeroTests" */;
 			buildPhases = (
+				2B3932CC7E8E8FBF8995D7C5 /* Check Pods Manifest.lock */,
 				83DF7D831B5E3B690060CA01 /* Sources */,
 				83DF7D841B5E3B690060CA01 /* Frameworks */,
 				83DF7D851B5E3B690060CA01 /* Resources */,
+				0F27916FECA690C89ADD0266 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -213,6 +249,69 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0F27916FECA690C89ADD0266 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BeeroTests/Pods-BeeroTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2B3932CC7E8E8FBF8995D7C5 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		70A1FA438FC3378AD53EFD2B /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		C53F230E8EEA33835405201E /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Beero/Pods-Beero-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		83DF7D6A1B5E3B680060CA01 /* Sources */ = {
@@ -345,9 +444,11 @@
 		};
 		83DF7D921B5E3B690060CA01 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C8CFBC676BA3336CA4917730 /* Pods-Beero.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Beero/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -355,9 +456,11 @@
 		};
 		83DF7D931B5E3B690060CA01 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 442F08617EE5CBA86CBF2194 /* Pods-Beero.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Beero/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -365,6 +468,7 @@
 		};
 		83DF7D951B5E3B690060CA01 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FE28759928E96AC5E6898D7D /* Pods-BeeroTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -384,6 +488,7 @@
 		};
 		83DF7D961B5E3B690060CA01 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A48C291B529133753F1D8F45 /* Pods-BeeroTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -416,6 +521,7 @@
 				83DF7D931B5E3B690060CA01 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		83DF7D941B5E3B690060CA01 /* Build configuration list for PBXNativeTarget "BeeroTests" */ = {
 			isa = XCConfigurationList;
@@ -424,6 +530,7 @@
 				83DF7D961B5E3B690060CA01 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

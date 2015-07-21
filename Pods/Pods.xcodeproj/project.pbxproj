@@ -1,0 +1,1859 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		05AD37899708F8D266DBB666 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7C4132356AF20D1D5315E24 /* Security.framework */; };
+		096084FE10100366E8DFCB74 /* UIImageView+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = 2A74DE6665FFB8190F8AA33D /* UIImageView+AFNetworking.h */; };
+		0A1F4A2CEFD7CA0744E39AA2 /* UIView+Shake.h in Headers */ = {isa = PBXBuildFile; fileRef = BF52E70201BEB244A30EEE55 /* UIView+Shake.h */; };
+		0A82ED886618F7DB265CB675 /* AFHTTPSessionManager.h in Headers */ = {isa = PBXBuildFile; fileRef = FD632FE5D7DCF96E62E8B4E5 /* AFHTTPSessionManager.h */; };
+		0DA525C5FFC5CFAD45E0AE76 /* IQKeyboardManager.h in Headers */ = {isa = PBXBuildFile; fileRef = FC488050E0C34C93F3B37FFA /* IQKeyboardManager.h */; };
+		1356EED2BB6A12E9CDAC8259 /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 07DB0B8D8DC23E85474DBFFA /* AFURLSessionManager.m */; };
+		13D66D7F50CE7337CCA78912 /* UIWebView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 6312CFAA2E7263A86FFEE3F0 /* UIWebView+AFNetworking.m */; };
+		175A40ED8B00F7B7F45831DE /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 33BD72F9CBC4618D6985D0A0 /* AFHTTPRequestOperation.m */; };
+		18447DC6CD6E15E6579ACD3A /* AFNetworkActivityIndicatorManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D7A16D1510168D9F40AFA6A9 /* AFNetworkActivityIndicatorManager.m */; };
+		1850E2624DA91FA6B3E58CBD /* IQKeyboardManagerConstantsInternal.h in Headers */ = {isa = PBXBuildFile; fileRef = 020AF6C3B2789FA52C9A1344 /* IQKeyboardManagerConstantsInternal.h */; };
+		19589A83CA43CECF2E87D806 /* UIImageView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = FECECF345E7B610D6A55F520 /* UIImageView+AFNetworking.m */; };
+		1A6B2A684EA94A291223738A /* UIAlertView+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = EB0458E198D0DA138CB63C18 /* UIAlertView+AFNetworking.h */; };
+		1BF8ADE0DDADAA671FCE757D /* IQUIView+IQKeyboardToolbar.h in Headers */ = {isa = PBXBuildFile; fileRef = ED3199CC9090260DA4AFFDEE /* IQUIView+IQKeyboardToolbar.h */; };
+		1C31618ABCFECB970A8599D5 /* IQTitleBarButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 37CDDA4E0A91083E3E4DD1C5 /* IQTitleBarButtonItem.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		1C4C5F8362AD02E6A437CCA4 /* IQKeyboardManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CAB617C27505BF5582AF815B /* IQKeyboardManager.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		1C7BF5EC089B678A33C56D37 /* UIActivityIndicatorView+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = CB0F9873DE06164A0AF329DD /* UIActivityIndicatorView+AFNetworking.h */; };
+		1DE5A00942D66B1A057FDE5E /* IQNSArray+Sort.h in Headers */ = {isa = PBXBuildFile; fileRef = B8B83769F8696B20D207A461 /* IQNSArray+Sort.h */; };
+		1E3DC2281FE71F4E8640743C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79832AC83C8D675F553AD308 /* CoreGraphics.framework */; };
+		1F4DB257C30B5AD0F1678708 /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 07DB0B8D8DC23E85474DBFFA /* AFURLSessionManager.m */; };
+		24BB88E382E6001A79AAE966 /* UIKit+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = 63C14C6423AE6CF1E43278DA /* UIKit+AFNetworking.h */; };
+		262833CFA203CA32FD348D85 /* IQUIWindow+Hierarchy.m in Sources */ = {isa = PBXBuildFile; fileRef = CE99903A80ED12653B2C46EB /* IQUIWindow+Hierarchy.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		26B26E8E3F36630DD0EE67CD /* AFHTTPRequestOperationManager.h in Headers */ = {isa = PBXBuildFile; fileRef = A6AA03F089B003E6CEBDEB20 /* AFHTTPRequestOperationManager.h */; };
+		2716F86178C7349988BF4772 /* AFNetworkActivityIndicatorManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 9CECCD7F06C73620B08AE02A /* AFNetworkActivityIndicatorManager.h */; };
+		28E32E420899C063FDCD7A1B /* IQUIWindow+Hierarchy.h in Headers */ = {isa = PBXBuildFile; fileRef = 43F1A09ECBF5EC8831BD90C0 /* IQUIWindow+Hierarchy.h */; };
+		294BD5E4FD06C64334ACD5B6 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79832AC83C8D675F553AD308 /* CoreGraphics.framework */; };
+		2A1295E9C0B477C5E8707243 /* UIProgressView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F125FF4620F27F884296ED0 /* UIProgressView+AFNetworking.m */; };
+		2AFBAA9450AC4AC6D037C4B0 /* IQUIViewController+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 48114FF01A2756805F390629 /* IQUIViewController+Additions.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		2B4CC5998111C66000AC905D /* UIView+Shake.m in Sources */ = {isa = PBXBuildFile; fileRef = 83D3802268E8E0929407B816 /* UIView+Shake.m */; };
+		2DC9989DEF9C652557C489A2 /* UIActivityIndicatorView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 121FBB2DA2FA77EC55639C30 /* UIActivityIndicatorView+AFNetworking.m */; };
+		2DDD7F708DE06F0E273C6A8E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E03442E6F49CE500764A5317 /* Foundation.framework */; };
+		2E003378858E9CB0CE5379CF /* AFNetworkReachabilityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D52F113C3B2B630A724BC2D /* AFNetworkReachabilityManager.m */; };
+		322657814C1E1AB036E25C43 /* AFURLConnectionOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = 5734E17119CE9505AB80193F /* AFURLConnectionOperation.h */; };
+		329FAC5EFE71D8B1AE51F1B4 /* AFNetworkReachabilityManager.h in Headers */ = {isa = PBXBuildFile; fileRef = E6ACEB08E10D2E2A0DD53C78 /* AFNetworkReachabilityManager.h */; };
+		347F7F46B8490ABF8B87661F /* IQTextView.h in Headers */ = {isa = PBXBuildFile; fileRef = 30D7E0FF379776AB797C665B /* IQTextView.h */; };
+		34F63A6EDF4EE3D79E3DC69D /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 33BD72F9CBC4618D6985D0A0 /* AFHTTPRequestOperation.m */; };
+		35725D9B20ECA3433D4553C0 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79832AC83C8D675F553AD308 /* CoreGraphics.framework */; };
+		39886A96C3B0D4B70ECB3AB2 /* UIWebView+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = A065CD34E2BBDD90AA8C763B /* UIWebView+AFNetworking.h */; };
+		39C7D6CFB0A5865B6654460E /* IQKeyboardReturnKeyHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = 4D8AA175043A7D288269D7CB /* IQKeyboardReturnKeyHandler.h */; };
+		3B4582C0A6FC9979F44E8016 /* KeyboardManager.h in Headers */ = {isa = PBXBuildFile; fileRef = CF7458DB03661434EC84AE45 /* KeyboardManager.h */; };
+		3E9621EB3B9633C3899ACA0B /* IQUIView+Hierarchy.h in Headers */ = {isa = PBXBuildFile; fileRef = 7595FC195D537625995C534D /* IQUIView+Hierarchy.h */; };
+		40DFE3DC578F034F1384A108 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E03442E6F49CE500764A5317 /* Foundation.framework */; };
+		45B19F9B7A7F191EFEC27878 /* IQToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = BE19EB27647BD7E7B26AD1A9 /* IQToolbar.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		494B64D476F29DDED718AE68 /* IQKeyboardReturnKeyHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = 4D8AA175043A7D288269D7CB /* IQKeyboardReturnKeyHandler.h */; };
+		4A95B27C0B15D70E4BE647C2 /* IQUIView+IQKeyboardToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 5983DB50C30A3C9576C13004 /* IQUIView+IQKeyboardToolbar.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		4ACE2A27453FF6A23849A21E /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = FAE5DB91E533105A49715C9B /* MBProgressHUD.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		4B1AE58821251B2B469F89DB /* Pods-BeeroTests-AFNetworking-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CE85C526A67D742B91DA1E2 /* Pods-BeeroTests-AFNetworking-dummy.m */; };
+		4CCD61267EBBB0FFE4E0A1A3 /* UIButton+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = C39C379C0FB05178D2A52357 /* UIButton+AFNetworking.m */; };
+		4CF9075C73B485864F8DD359 /* IQToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = BE19EB27647BD7E7B26AD1A9 /* IQToolbar.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		4DC2BE2B8840C7B56F6BDB06 /* AFURLRequestSerialization.h in Headers */ = {isa = PBXBuildFile; fileRef = E90508D0E4A3A85A42890DEF /* AFURLRequestSerialization.h */; };
+		4EB2099E1BA15E2D6E1BF6AD /* IQSegmentedNextPrevious.m in Sources */ = {isa = PBXBuildFile; fileRef = AF9F4B6A7A51F6E93B90F192 /* IQSegmentedNextPrevious.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		51712483A9D192BBD0BF498F /* AFHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D7B86CC48E474C4A4F3D01BA /* AFHTTPSessionManager.m */; };
+		51890DC4D6DC1EDD3F825A93 /* AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = 0074B47D8983C4A5AE8CD908 /* AFNetworking.h */; };
+		52538AE2ED1CB4142984B98A /* UIWebView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 6312CFAA2E7263A86FFEE3F0 /* UIWebView+AFNetworking.m */; };
+		53016904BB9D25347A9E5059 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0022BC1E425A78070F113F1A /* MobileCoreServices.framework */; };
+		549A47C7DECA702281EFD4D0 /* IQBarButtonItem.h in Headers */ = {isa = PBXBuildFile; fileRef = B17A467C238125EE6A940E47 /* IQBarButtonItem.h */; };
+		558EDE02BD56E0746110A3B7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E03442E6F49CE500764A5317 /* Foundation.framework */; };
+		560C791FD8945C14055FF7BB /* UIAlertView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 208B47FD7439686AC6471EB4 /* UIAlertView+AFNetworking.m */; };
+		58D334173AFE74E3330E8AE7 /* Pods-Beero-AFNetworking-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = CFE52805BC10094701CECEE6 /* Pods-Beero-AFNetworking-dummy.m */; };
+		595810B1ECEAEA6C79252D6A /* IQKeyboardManagerConstants.h in Headers */ = {isa = PBXBuildFile; fileRef = CD14CACF61A7CF15454447EE /* IQKeyboardManagerConstants.h */; };
+		5B9E7454D84592C7D809A41F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E03442E6F49CE500764A5317 /* Foundation.framework */; };
+		5D8EA0072B93630F49C1CE81 /* MBProgressHUD.h in Headers */ = {isa = PBXBuildFile; fileRef = D11FB49689A1E6DB877486BB /* MBProgressHUD.h */; };
+		614FC850537C90B5C8CDF97D /* IQToolbar.h in Headers */ = {isa = PBXBuildFile; fileRef = 45B4C540EB79A21C50CACE26 /* IQToolbar.h */; };
+		661013D07193858EF8E7586C /* IQNSArray+Sort.h in Headers */ = {isa = PBXBuildFile; fileRef = B8B83769F8696B20D207A461 /* IQNSArray+Sort.h */; };
+		6725498826FBEE2DEB0B5B11 /* AFURLRequestSerialization.h in Headers */ = {isa = PBXBuildFile; fileRef = E90508D0E4A3A85A42890DEF /* AFURLRequestSerialization.h */; };
+		6991A1065C97D41A21690D48 /* UIAlertView+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = EB0458E198D0DA138CB63C18 /* UIAlertView+AFNetworking.h */; };
+		6B9B1E69B7B6E13665827674 /* IQUITextFieldView+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 11FD7D1F3B6A9C18A0ECF859 /* IQUITextFieldView+Additions.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		6CB65E2467580374A26FBE95 /* AFSecurityPolicy.h in Headers */ = {isa = PBXBuildFile; fileRef = 213DE1213668A402103A1A80 /* AFSecurityPolicy.h */; };
+		6D749B32E2EF8763055EC2EC /* AFHTTPSessionManager.h in Headers */ = {isa = PBXBuildFile; fileRef = FD632FE5D7DCF96E62E8B4E5 /* AFHTTPSessionManager.h */; };
+		6DFA8C6EC07F5E3D49BD9BB6 /* UIButton+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = 45755A4E0A7C70C3FB9ADFF2 /* UIButton+AFNetworking.h */; };
+		6E9B0A586383F42C390F7923 /* Pods-Beero-IQKeyboardManager-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B8BCA45BDDE294A6BB5BB6 /* Pods-Beero-IQKeyboardManager-dummy.m */; };
+		6EC7F48932D04B32A43A48A1 /* AFURLConnectionOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = 5734E17119CE9505AB80193F /* AFURLConnectionOperation.h */; };
+		70AEC403691B5B0EBCE3386D /* Pods-BeeroTests-UIView+Shake-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D6C49A352E10E77BF0F25F46 /* Pods-BeeroTests-UIView+Shake-dummy.m */; };
+		7153BED7AEB07D4DDCC51357 /* AFURLResponseSerialization.h in Headers */ = {isa = PBXBuildFile; fileRef = 3858E8AEDFF74120FC586B3A /* AFURLResponseSerialization.h */; };
+		7167D675A024DF2AB39B09FD /* IQBarButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 84122BDCCF5D18730ED1FFA1 /* IQBarButtonItem.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		71FC1AA8B174E8D3D9F66257 /* UIProgressView+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = 5B0E2E686CF8504519951146 /* UIProgressView+AFNetworking.h */; };
+		78742D50D6C8C381EE92AE55 /* KeyboardManager.h in Headers */ = {isa = PBXBuildFile; fileRef = CF7458DB03661434EC84AE45 /* KeyboardManager.h */; };
+		796723FAACA274941CC316B4 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BB3D46CBF2EAD3810733D41 /* SystemConfiguration.framework */; };
+		7B1557C68155FE23068726CD /* IQKeyboardReturnKeyHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 555B2C76F61CE319D4ACD24F /* IQKeyboardReturnKeyHandler.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		7B69DE89F8725B78B66FE4D9 /* AFURLRequestSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = CA40906D71881EF71AF8C604 /* AFURLRequestSerialization.m */; };
+		7B818BD9FE800308A3A30EE6 /* UIButton+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = C39C379C0FB05178D2A52357 /* UIButton+AFNetworking.m */; };
+		7BA192D2F4127557A444EB08 /* IQBarButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 84122BDCCF5D18730ED1FFA1 /* IQBarButtonItem.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		7F2B54A1A234019E78736821 /* UIAlertView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 208B47FD7439686AC6471EB4 /* UIAlertView+AFNetworking.m */; };
+		7F8253EAFF3E711E277B84BF /* Pods-Beero-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = BD703A745DD0AC5AFB699616 /* Pods-Beero-dummy.m */; };
+		7FBD53F86C59F4CDABEB7CA5 /* UIView+Shake.m in Sources */ = {isa = PBXBuildFile; fileRef = 83D3802268E8E0929407B816 /* UIView+Shake.m */; };
+		7FF7B2D95014C5111AF6D1DD /* IQUITextFieldView+Additions.h in Headers */ = {isa = PBXBuildFile; fileRef = CDCCBB8AFDF0415E32C52D9F /* IQUITextFieldView+Additions.h */; };
+		80CADA5E01FBD4DA50C5AEE1 /* UIButton+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = 45755A4E0A7C70C3FB9ADFF2 /* UIButton+AFNetworking.h */; };
+		8229C88CDF6C7ABBB992054E /* AFHTTPRequestOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = 17865B6178CF580A00C314C9 /* AFHTTPRequestOperation.h */; };
+		82524BD789018224258BDEA6 /* AFHTTPRequestOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = 17865B6178CF580A00C314C9 /* AFHTTPRequestOperation.h */; };
+		825D12979EAAB8ECD752D67C /* IQUIView+IQKeyboardToolbar.h in Headers */ = {isa = PBXBuildFile; fileRef = ED3199CC9090260DA4AFFDEE /* IQUIView+IQKeyboardToolbar.h */; };
+		831A92F59C809D3CE6D43155 /* AFNetworkActivityIndicatorManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D7A16D1510168D9F40AFA6A9 /* AFNetworkActivityIndicatorManager.m */; };
+		83805491628D54F3D59B24DA /* AFURLResponseSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 37084AA0A939A8ED061AA65C /* AFURLResponseSerialization.m */; };
+		84368FAE725057D70287F30E /* IQSegmentedNextPrevious.h in Headers */ = {isa = PBXBuildFile; fileRef = A171447E8D907D6585CEB023 /* IQSegmentedNextPrevious.h */; };
+		8867AB067F17CC5CFFC13A66 /* AFHTTPRequestOperationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F1F878F0A5F22BCA75EDEDF1 /* AFHTTPRequestOperationManager.m */; };
+		8A285FE6E1897F8950CAC74C /* UIProgressView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F125FF4620F27F884296ED0 /* UIProgressView+AFNetworking.m */; };
+		8BD894F112B8709FB000DA50 /* IQUIWindow+Hierarchy.h in Headers */ = {isa = PBXBuildFile; fileRef = 43F1A09ECBF5EC8831BD90C0 /* IQUIWindow+Hierarchy.h */; };
+		8D16C07225E953BCEAAC8F3F /* AFURLResponseSerialization.h in Headers */ = {isa = PBXBuildFile; fileRef = 3858E8AEDFF74120FC586B3A /* AFURLResponseSerialization.h */; };
+		8F09D6D03A35336D065E05DE /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BB3D46CBF2EAD3810733D41 /* SystemConfiguration.framework */; };
+		8F6208D5350B0E42456BE32B /* IQNSArray+Sort.m in Sources */ = {isa = PBXBuildFile; fileRef = CAB7BBF672AD53BBEC60F509 /* IQNSArray+Sort.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		904D29B5E40EEC2EE3C3E9FC /* AFURLConnectionOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = A0523D03E430AC3179401EA6 /* AFURLConnectionOperation.m */; };
+		90C66056470CC0EDF1CC9737 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7C4132356AF20D1D5315E24 /* Security.framework */; };
+		91A859FEBAE3D8C9FDFB5EC7 /* AFHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D7B86CC48E474C4A4F3D01BA /* AFHTTPSessionManager.m */; };
+		922257F7E10A75E10E39639D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E03442E6F49CE500764A5317 /* Foundation.framework */; };
+		92320B3818A3CAB5B85691CF /* AFURLConnectionOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = A0523D03E430AC3179401EA6 /* AFURLConnectionOperation.m */; };
+		942A968A9C7369D5E29C8253 /* AFSecurityPolicy.h in Headers */ = {isa = PBXBuildFile; fileRef = 213DE1213668A402103A1A80 /* AFSecurityPolicy.h */; };
+		95BC7ADE33A64273F1CEF15E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E03442E6F49CE500764A5317 /* Foundation.framework */; };
+		97BE0312F5ABF2C5C81DB48D /* Pods-BeeroTests-MBProgressHUD-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 371A8D46C4CE0BDE0810A7A7 /* Pods-BeeroTests-MBProgressHUD-dummy.m */; };
+		9ACBFAE08ABE816A66E57680 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E03442E6F49CE500764A5317 /* Foundation.framework */; };
+		9C82DA36AEC7F28CCF0923CA /* IQKeyboardManagerConstants.h in Headers */ = {isa = PBXBuildFile; fileRef = CD14CACF61A7CF15454447EE /* IQKeyboardManagerConstants.h */; };
+		9CBF3656FDC9BAE718DF3B35 /* AFURLSessionManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 7CBF9924106EB59910EA476B /* AFURLSessionManager.h */; };
+		9CDFC4C1477C77093A855428 /* IQSegmentedNextPrevious.h in Headers */ = {isa = PBXBuildFile; fileRef = A171447E8D907D6585CEB023 /* IQSegmentedNextPrevious.h */; };
+		9EA425BC3BE356D65C43BA80 /* IQKeyboardManagerConstantsInternal.h in Headers */ = {isa = PBXBuildFile; fileRef = 020AF6C3B2789FA52C9A1344 /* IQKeyboardManagerConstantsInternal.h */; };
+		9F553E43AD8CE51667D2047C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79832AC83C8D675F553AD308 /* CoreGraphics.framework */; };
+		9F5FB5A5352A51E75012036A /* UIRefreshControl+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A3BD7102EB848AC424C3D88 /* UIRefreshControl+AFNetworking.m */; };
+		A13B751A4ABD1721CDD1ACFE /* UIActivityIndicatorView+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = CB0F9873DE06164A0AF329DD /* UIActivityIndicatorView+AFNetworking.h */; };
+		A4D11C6FEF174BD157C82A53 /* AFSecurityPolicy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E7F6BC6F0DA52E6E8B8AFDD /* AFSecurityPolicy.m */; };
+		A655B4FD9D6D5B9B77836028 /* Pods-Beero-MBProgressHUD-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B0D4010CCF0756C902D96B /* Pods-Beero-MBProgressHUD-dummy.m */; };
+		A7C18D1F1E62E4E8A56FA5BC /* IQUIView+Hierarchy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BEF0D10063057D84E93D582 /* IQUIView+Hierarchy.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		A8B2CE7AA0BB8A2721C5F1BA /* IQTextView.h in Headers */ = {isa = PBXBuildFile; fileRef = 30D7E0FF379776AB797C665B /* IQTextView.h */; };
+		AA4E9BDF367C134E4B28EF3F /* UIProgressView+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = 5B0E2E686CF8504519951146 /* UIProgressView+AFNetworking.h */; };
+		AE1427BC0E23A189EDA1C9AC /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0022BC1E425A78070F113F1A /* MobileCoreServices.framework */; };
+		AFBAAD35FF12B9F50F9AB006 /* UIRefreshControl+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A3BD7102EB848AC424C3D88 /* UIRefreshControl+AFNetworking.m */; };
+		B0AB02DA3370FFDD6076D189 /* IQTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = DBC0227CBF50692AB6BD5413 /* IQTextView.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		B7D1A3B5BF39BAFCA7E24984 /* IQTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = DBC0227CBF50692AB6BD5413 /* IQTextView.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		B967E8862C76D57799DC157D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E03442E6F49CE500764A5317 /* Foundation.framework */; };
+		B9E07F4A15C233864E51641A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E03442E6F49CE500764A5317 /* Foundation.framework */; };
+		BA8D2F8207B7AB0686EBF423 /* IQUITextFieldView+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 11FD7D1F3B6A9C18A0ECF859 /* IQUITextFieldView+Additions.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		BC5FA65BA6C1B99B29B7087F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E03442E6F49CE500764A5317 /* Foundation.framework */; };
+		BCA0C6788F209055EAED8839 /* IQTitleBarButtonItem.h in Headers */ = {isa = PBXBuildFile; fileRef = 66EF7DA8143BAE48806624CB /* IQTitleBarButtonItem.h */; };
+		BEA4C8147D26AE60678440C3 /* Pods-Beero-UIView+Shake-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 25248073EBA24856BADC6213 /* Pods-Beero-UIView+Shake-dummy.m */; };
+		BF139452163B42525712E858 /* MBProgressHUD.h in Headers */ = {isa = PBXBuildFile; fileRef = D11FB49689A1E6DB877486BB /* MBProgressHUD.h */; };
+		C18FEC0793A482D985B9CC0B /* UIImageView+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = 2A74DE6665FFB8190F8AA33D /* UIImageView+AFNetworking.h */; };
+		C281E5DD54B164A2F2DCB6FD /* IQUIViewController+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 48114FF01A2756805F390629 /* IQUIViewController+Additions.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		C2A7FE08576ED4C85DA5CE0A /* UIRefreshControl+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = 00AE2C98791C94E950BC38ED /* UIRefreshControl+AFNetworking.h */; };
+		C4FA73B328D84B005366A671 /* AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = 0074B47D8983C4A5AE8CD908 /* AFNetworking.h */; };
+		C508EB83934386B703396DBB /* IQBarButtonItem.h in Headers */ = {isa = PBXBuildFile; fileRef = B17A467C238125EE6A940E47 /* IQBarButtonItem.h */; };
+		C54E3DD15F99F23994426A19 /* IQUIViewController+Additions.h in Headers */ = {isa = PBXBuildFile; fileRef = D39A309B286DDF34E2A5D6A4 /* IQUIViewController+Additions.h */; };
+		C5872F6CBBB0BD709F4621BF /* UIKit+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = 63C14C6423AE6CF1E43278DA /* UIKit+AFNetworking.h */; };
+		C7CEC846FE61A1DEE9CEEBD6 /* IQKeyboardReturnKeyHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 555B2C76F61CE319D4ACD24F /* IQKeyboardReturnKeyHandler.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		CA2250374B6248B47D2D4AA0 /* IQUIView+IQKeyboardToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 5983DB50C30A3C9576C13004 /* IQUIView+IQKeyboardToolbar.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		CD36AD4A3D5D3C24A31FC3B9 /* AFURLRequestSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = CA40906D71881EF71AF8C604 /* AFURLRequestSerialization.m */; };
+		CDFE8FDEE923AB510A13BDC0 /* IQToolbar.h in Headers */ = {isa = PBXBuildFile; fileRef = 45B4C540EB79A21C50CACE26 /* IQToolbar.h */; };
+		D0F964F92D4888B1F360F04C /* AFHTTPRequestOperationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F1F878F0A5F22BCA75EDEDF1 /* AFHTTPRequestOperationManager.m */; };
+		D12C476E3E2ADF6BDFF5A419 /* AFHTTPRequestOperationManager.h in Headers */ = {isa = PBXBuildFile; fileRef = A6AA03F089B003E6CEBDEB20 /* AFHTTPRequestOperationManager.h */; };
+		D15A3F3DCE6442214671FFC9 /* IQTitleBarButtonItem.h in Headers */ = {isa = PBXBuildFile; fileRef = 66EF7DA8143BAE48806624CB /* IQTitleBarButtonItem.h */; };
+		D20033A3182BF93D6E11FA57 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = FAE5DB91E533105A49715C9B /* MBProgressHUD.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		D2069ECDE721C8970A4D2930 /* IQUIView+Hierarchy.h in Headers */ = {isa = PBXBuildFile; fileRef = 7595FC195D537625995C534D /* IQUIView+Hierarchy.h */; };
+		D2EF7D33E437ADC4093CF540 /* IQKeyboardManager.h in Headers */ = {isa = PBXBuildFile; fileRef = FC488050E0C34C93F3B37FFA /* IQKeyboardManager.h */; };
+		D3425823AD932AA5BF530168 /* IQNSArray+Sort.m in Sources */ = {isa = PBXBuildFile; fileRef = CAB7BBF672AD53BBEC60F509 /* IQNSArray+Sort.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		D3500379970882CFCAC6CC9A /* AFNetworkReachabilityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D52F113C3B2B630A724BC2D /* AFNetworkReachabilityManager.m */; };
+		D441D0A552D71F21E0A23ED1 /* UIActivityIndicatorView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 121FBB2DA2FA77EC55639C30 /* UIActivityIndicatorView+AFNetworking.m */; };
+		D57AB4BF7506D906EDA632C1 /* UIImageView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = FECECF345E7B610D6A55F520 /* UIImageView+AFNetworking.m */; };
+		DB898BE3892C9CDCE386B6B1 /* UIView+Shake.h in Headers */ = {isa = PBXBuildFile; fileRef = BF52E70201BEB244A30EEE55 /* UIView+Shake.h */; };
+		DCF4E930ABC9DF5DF4850241 /* AFSecurityPolicy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E7F6BC6F0DA52E6E8B8AFDD /* AFSecurityPolicy.m */; };
+		DDAB1FC807A2CEC9EA43FFFC /* IQUITextFieldView+Additions.h in Headers */ = {isa = PBXBuildFile; fileRef = CDCCBB8AFDF0415E32C52D9F /* IQUITextFieldView+Additions.h */; };
+		E15C83E554A2320A43346945 /* IQKeyboardManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CAB617C27505BF5582AF815B /* IQKeyboardManager.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		E4FEE5040D89BA5589B046DF /* IQUIWindow+Hierarchy.m in Sources */ = {isa = PBXBuildFile; fileRef = CE99903A80ED12653B2C46EB /* IQUIWindow+Hierarchy.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		E5A47F5CE083E3E2B10AACD4 /* AFNetworkActivityIndicatorManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 9CECCD7F06C73620B08AE02A /* AFNetworkActivityIndicatorManager.h */; };
+		E6D58FA7F84F7CA64FA7DB8C /* UIWebView+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = A065CD34E2BBDD90AA8C763B /* UIWebView+AFNetworking.h */; };
+		E7F77F9D59A03D6BA7E5D3BD /* Pods-BeeroTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F8A88AD944319D810BAF4214 /* Pods-BeeroTests-dummy.m */; };
+		EE76A1749C2DCC0D536251F6 /* IQSegmentedNextPrevious.m in Sources */ = {isa = PBXBuildFile; fileRef = AF9F4B6A7A51F6E93B90F192 /* IQSegmentedNextPrevious.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		F4BBCFD8DE79D99F96C9DDBF /* AFNetworkReachabilityManager.h in Headers */ = {isa = PBXBuildFile; fileRef = E6ACEB08E10D2E2A0DD53C78 /* AFNetworkReachabilityManager.h */; };
+		F79EFBD7DEDD023CF51C9251 /* UIRefreshControl+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = 00AE2C98791C94E950BC38ED /* UIRefreshControl+AFNetworking.h */; };
+		F7A9B6182C68802592337A20 /* IQTitleBarButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 37CDDA4E0A91083E3E4DD1C5 /* IQTitleBarButtonItem.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		F8A48AC44743FF67F03323E0 /* IQUIView+Hierarchy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BEF0D10063057D84E93D582 /* IQUIView+Hierarchy.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		FB5DB3E6A887B4C2FAF73405 /* Pods-BeeroTests-IQKeyboardManager-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 535AECD3B57BB40C886286B1 /* Pods-BeeroTests-IQKeyboardManager-dummy.m */; };
+		FCF204768E668CC21A21A275 /* AFURLSessionManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 7CBF9924106EB59910EA476B /* AFURLSessionManager.h */; };
+		FDA631418AB82C8B38F8A4E6 /* IQUIViewController+Additions.h in Headers */ = {isa = PBXBuildFile; fileRef = D39A309B286DDF34E2A5D6A4 /* IQUIViewController+Additions.h */; };
+		FDE62E450DF18F93ED1DA8BC /* AFURLResponseSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 37084AA0A939A8ED061AA65C /* AFURLResponseSerialization.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1B5E6084E1618E0BB9A337E8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FB65EA21038B132D3FAEA29C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9CDC63DA8F70650FE87EB967;
+			remoteInfo = "Pods-Beero-IQKeyboardManager";
+		};
+		2880909F3A199BE0E25B2123 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FB65EA21038B132D3FAEA29C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 140B72D6B7A5D7E696E2513F;
+			remoteInfo = "Pods-Beero-UIView+Shake";
+		};
+		3F8F79918F4C84D00CE93419 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FB65EA21038B132D3FAEA29C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 70BA0361903F266765451436;
+			remoteInfo = "Pods-Beero-MBProgressHUD";
+		};
+		4E34E0A9BEBE3C389D3AADF3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FB65EA21038B132D3FAEA29C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 26152BE564528D42DD86AF5C;
+			remoteInfo = "Pods-BeeroTests-IQKeyboardManager";
+		};
+		66A41304873F19A1216326C6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FB65EA21038B132D3FAEA29C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C9AB7319F3377F41EDBB5D5F;
+			remoteInfo = "Pods-Beero-AFNetworking";
+		};
+		BAEE6E06284AD3747F9B8DB5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FB65EA21038B132D3FAEA29C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0ED127C2DCC3BD35B54CAA73;
+			remoteInfo = "Pods-BeeroTests-UIView+Shake";
+		};
+		CB5DB022FF5B54DDFEC5558A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FB65EA21038B132D3FAEA29C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 04692BF7F8AAD0A1D8A434EF;
+			remoteInfo = "Pods-BeeroTests-MBProgressHUD";
+		};
+		F8ACBAAFA7C0934EDED40621 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FB65EA21038B132D3FAEA29C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 784FB43DF59105A748A95B8A;
+			remoteInfo = "Pods-BeeroTests-AFNetworking";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0022BC1E425A78070F113F1A /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/MobileCoreServices.framework; sourceTree = DEVELOPER_DIR; };
+		0074B47D8983C4A5AE8CD908 /* AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFNetworking.h; path = AFNetworking/AFNetworking.h; sourceTree = "<group>"; };
+		00AE2C98791C94E950BC38ED /* UIRefreshControl+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIRefreshControl+AFNetworking.h"; path = "UIKit+AFNetworking/UIRefreshControl+AFNetworking.h"; sourceTree = "<group>"; };
+		020AF6C3B2789FA52C9A1344 /* IQKeyboardManagerConstantsInternal.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IQKeyboardManagerConstantsInternal.h; path = IQKeyBoardManager/Constants/IQKeyboardManagerConstantsInternal.h; sourceTree = "<group>"; };
+		04B0D4010CCF0756C902D96B /* Pods-Beero-MBProgressHUD-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Beero-MBProgressHUD-dummy.m"; sourceTree = "<group>"; };
+		07DB0B8D8DC23E85474DBFFA /* AFURLSessionManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFURLSessionManager.m; path = AFNetworking/AFURLSessionManager.m; sourceTree = "<group>"; };
+		092A751A0D4C9BAD9AA6142E /* Pods-BeeroTests-MBProgressHUD-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "Pods-BeeroTests-MBProgressHUD-prefix.pch"; path = "../Pods-BeeroTests-MBProgressHUD/Pods-BeeroTests-MBProgressHUD-prefix.pch"; sourceTree = "<group>"; };
+		0BB3D46CBF2EAD3810733D41 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/SystemConfiguration.framework; sourceTree = DEVELOPER_DIR; };
+		11FD7D1F3B6A9C18A0ECF859 /* IQUITextFieldView+Additions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "IQUITextFieldView+Additions.m"; path = "IQKeyBoardManager/Categories/IQUITextFieldView+Additions.m"; sourceTree = "<group>"; };
+		121FBB2DA2FA77EC55639C30 /* UIActivityIndicatorView+AFNetworking.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIActivityIndicatorView+AFNetworking.m"; path = "UIKit+AFNetworking/UIActivityIndicatorView+AFNetworking.m"; sourceTree = "<group>"; };
+		12478B071BD1C4F82E08DFF7 /* Pods-BeeroTests-IQKeyboardManager.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeeroTests-IQKeyboardManager.xcconfig"; path = "../Pods-BeeroTests-IQKeyboardManager/Pods-BeeroTests-IQKeyboardManager.xcconfig"; sourceTree = "<group>"; };
+		152CB97FFA9DE1B6C1ABA4F2 /* Pods-Beero-MBProgressHUD.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Beero-MBProgressHUD.xcconfig"; sourceTree = "<group>"; };
+		153890E1B5E4DE8FD2B9FDC6 /* libPods-BeeroTests-IQKeyboardManager.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BeeroTests-IQKeyboardManager.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		17865B6178CF580A00C314C9 /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFHTTPRequestOperation.h; path = AFNetworking/AFHTTPRequestOperation.h; sourceTree = "<group>"; };
+		1BA1B58E65F0C1AB7B12DC82 /* Pods-BeeroTests-AFNetworking-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeeroTests-AFNetworking-Private.xcconfig"; path = "../Pods-BeeroTests-AFNetworking/Pods-BeeroTests-AFNetworking-Private.xcconfig"; sourceTree = "<group>"; };
+		1BEF0D10063057D84E93D582 /* IQUIView+Hierarchy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "IQUIView+Hierarchy.m"; path = "IQKeyBoardManager/Categories/IQUIView+Hierarchy.m"; sourceTree = "<group>"; };
+		1D52F113C3B2B630A724BC2D /* AFNetworkReachabilityManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFNetworkReachabilityManager.m; path = AFNetworking/AFNetworkReachabilityManager.m; sourceTree = "<group>"; };
+		1E7F6BC6F0DA52E6E8B8AFDD /* AFSecurityPolicy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFSecurityPolicy.m; path = AFNetworking/AFSecurityPolicy.m; sourceTree = "<group>"; };
+		1FC032207F45BDC94D32A92B /* Pods-BeeroTests-MBProgressHUD.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeeroTests-MBProgressHUD.xcconfig"; path = "../Pods-BeeroTests-MBProgressHUD/Pods-BeeroTests-MBProgressHUD.xcconfig"; sourceTree = "<group>"; };
+		208B47FD7439686AC6471EB4 /* UIAlertView+AFNetworking.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIAlertView+AFNetworking.m"; path = "UIKit+AFNetworking/UIAlertView+AFNetworking.m"; sourceTree = "<group>"; };
+		213DE1213668A402103A1A80 /* AFSecurityPolicy.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFSecurityPolicy.h; path = AFNetworking/AFSecurityPolicy.h; sourceTree = "<group>"; };
+		214C05985840816856C8901B /* libPods-Beero.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Beero.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		233B738A02D98DBC3AE93761 /* GoogleMaps.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMaps.framework; sourceTree = "<group>"; };
+		234BDAA4939A8D06A72AFDE0 /* Pods-Beero-IQKeyboardManager-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Beero-IQKeyboardManager-Private.xcconfig"; sourceTree = "<group>"; };
+		23D223EFF7B8DB2098A41B4B /* Pods-BeeroTests-UIView+Shake.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeeroTests-UIView+Shake.xcconfig"; path = "../Pods-BeeroTests-UIView+Shake/Pods-BeeroTests-UIView+Shake.xcconfig"; sourceTree = "<group>"; };
+		25248073EBA24856BADC6213 /* Pods-Beero-UIView+Shake-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Beero-UIView+Shake-dummy.m"; sourceTree = "<group>"; };
+		2A74DE6665FFB8190F8AA33D /* UIImageView+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImageView+AFNetworking.h"; path = "UIKit+AFNetworking/UIImageView+AFNetworking.h"; sourceTree = "<group>"; };
+		2B8821BF8F64FFA1BCA9F301 /* Pods-BeeroTests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-BeeroTests-resources.sh"; sourceTree = "<group>"; };
+		30D7E0FF379776AB797C665B /* IQTextView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IQTextView.h; path = IQKeyBoardManager/IQTextView/IQTextView.h; sourceTree = "<group>"; };
+		33BD72F9CBC4618D6985D0A0 /* AFHTTPRequestOperation.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFHTTPRequestOperation.m; path = AFNetworking/AFHTTPRequestOperation.m; sourceTree = "<group>"; };
+		352BA84F6A95E1D5EDBE3534 /* Pods-BeeroTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-BeeroTests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		37084AA0A939A8ED061AA65C /* AFURLResponseSerialization.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFURLResponseSerialization.m; path = AFNetworking/AFURLResponseSerialization.m; sourceTree = "<group>"; };
+		3710E38D1A8CA9C4206143A5 /* libPods-BeeroTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BeeroTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		371A8D46C4CE0BDE0810A7A7 /* Pods-BeeroTests-MBProgressHUD-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "Pods-BeeroTests-MBProgressHUD-dummy.m"; path = "../Pods-BeeroTests-MBProgressHUD/Pods-BeeroTests-MBProgressHUD-dummy.m"; sourceTree = "<group>"; };
+		37CDDA4E0A91083E3E4DD1C5 /* IQTitleBarButtonItem.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = IQTitleBarButtonItem.m; path = IQKeyBoardManager/IQToolbar/IQTitleBarButtonItem.m; sourceTree = "<group>"; };
+		3858E8AEDFF74120FC586B3A /* AFURLResponseSerialization.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFURLResponseSerialization.h; path = AFNetworking/AFURLResponseSerialization.h; sourceTree = "<group>"; };
+		43F1698933418551BCE0E6AC /* Pods-BeeroTests-UIView+Shake-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeeroTests-UIView+Shake-Private.xcconfig"; path = "../Pods-BeeroTests-UIView+Shake/Pods-BeeroTests-UIView+Shake-Private.xcconfig"; sourceTree = "<group>"; };
+		43F1A09ECBF5EC8831BD90C0 /* IQUIWindow+Hierarchy.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "IQUIWindow+Hierarchy.h"; path = "IQKeyBoardManager/Categories/IQUIWindow+Hierarchy.h"; sourceTree = "<group>"; };
+		45755A4E0A7C70C3FB9ADFF2 /* UIButton+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIButton+AFNetworking.h"; path = "UIKit+AFNetworking/UIButton+AFNetworking.h"; sourceTree = "<group>"; };
+		45B4C540EB79A21C50CACE26 /* IQToolbar.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IQToolbar.h; path = IQKeyBoardManager/IQToolbar/IQToolbar.h; sourceTree = "<group>"; };
+		48114FF01A2756805F390629 /* IQUIViewController+Additions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "IQUIViewController+Additions.m"; path = "IQKeyBoardManager/Categories/IQUIViewController+Additions.m"; sourceTree = "<group>"; };
+		485A02933B9BFD57A4781913 /* Pods-Beero-MBProgressHUD-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Beero-MBProgressHUD-Private.xcconfig"; sourceTree = "<group>"; };
+		49B2F0D06A32ADA7541B50A0 /* libPods-BeeroTests-AFNetworking.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BeeroTests-AFNetworking.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4A2045586D518EECE1B66AF2 /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		4A3BD7102EB848AC424C3D88 /* UIRefreshControl+AFNetworking.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIRefreshControl+AFNetworking.m"; path = "UIKit+AFNetworking/UIRefreshControl+AFNetworking.m"; sourceTree = "<group>"; };
+		4C58A2092FAACBA81CCE3A0E /* Pods-BeeroTests-UIView+Shake-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "Pods-BeeroTests-UIView+Shake-prefix.pch"; path = "../Pods-BeeroTests-UIView+Shake/Pods-BeeroTests-UIView+Shake-prefix.pch"; sourceTree = "<group>"; };
+		4D8AA175043A7D288269D7CB /* IQKeyboardReturnKeyHandler.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IQKeyboardReturnKeyHandler.h; path = IQKeyBoardManager/IQKeyboardReturnKeyHandler.h; sourceTree = "<group>"; };
+		4EC38FFE8D671D21C9E45AB8 /* IQKeyboardManager.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = IQKeyboardManager.bundle; path = IQKeyBoardManager/Resources/IQKeyboardManager.bundle; sourceTree = "<group>"; };
+		535AECD3B57BB40C886286B1 /* Pods-BeeroTests-IQKeyboardManager-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "Pods-BeeroTests-IQKeyboardManager-dummy.m"; path = "../Pods-BeeroTests-IQKeyboardManager/Pods-BeeroTests-IQKeyboardManager-dummy.m"; sourceTree = "<group>"; };
+		555B2C76F61CE319D4ACD24F /* IQKeyboardReturnKeyHandler.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = IQKeyboardReturnKeyHandler.m; path = IQKeyBoardManager/IQKeyboardReturnKeyHandler.m; sourceTree = "<group>"; };
+		5734E17119CE9505AB80193F /* AFURLConnectionOperation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFURLConnectionOperation.h; path = AFNetworking/AFURLConnectionOperation.h; sourceTree = "<group>"; };
+		575D17B726E6A3F240348114 /* GoogleMaps.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = GoogleMaps.bundle; path = GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle; sourceTree = "<group>"; };
+		5983DB50C30A3C9576C13004 /* IQUIView+IQKeyboardToolbar.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "IQUIView+IQKeyboardToolbar.m"; path = "IQKeyBoardManager/IQToolbar/IQUIView+IQKeyboardToolbar.m"; sourceTree = "<group>"; };
+		5B0E2E686CF8504519951146 /* UIProgressView+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIProgressView+AFNetworking.h"; path = "UIKit+AFNetworking/UIProgressView+AFNetworking.h"; sourceTree = "<group>"; };
+		6312CFAA2E7263A86FFEE3F0 /* UIWebView+AFNetworking.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIWebView+AFNetworking.m"; path = "UIKit+AFNetworking/UIWebView+AFNetworking.m"; sourceTree = "<group>"; };
+		63804F509FF8FC045CC23B6B /* libPods-Beero-AFNetworking.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Beero-AFNetworking.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		63C14C6423AE6CF1E43278DA /* UIKit+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIKit+AFNetworking.h"; path = "UIKit+AFNetworking/UIKit+AFNetworking.h"; sourceTree = "<group>"; };
+		66EF7DA8143BAE48806624CB /* IQTitleBarButtonItem.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IQTitleBarButtonItem.h; path = IQKeyBoardManager/IQToolbar/IQTitleBarButtonItem.h; sourceTree = "<group>"; };
+		6CE26C6CC6AA3E90B1142109 /* Pods-BeeroTests-AFNetworking-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "Pods-BeeroTests-AFNetworking-prefix.pch"; path = "../Pods-BeeroTests-AFNetworking/Pods-BeeroTests-AFNetworking-prefix.pch"; sourceTree = "<group>"; };
+		6D5BCA1D230FAA4CDBCDD05C /* Pods-BeeroTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-BeeroTests.release.xcconfig"; sourceTree = "<group>"; };
+		6E4C67B4F7EFE402C5672EC7 /* Pods-Beero-AFNetworking.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Beero-AFNetworking.xcconfig"; sourceTree = "<group>"; };
+		6F1012CCCAF78DE7C0512075 /* Pods-BeeroTests-environment.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-BeeroTests-environment.h"; sourceTree = "<group>"; };
+		7367E03B442BC5FEED9D4D25 /* Pods-Beero-UIView+Shake-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Beero-UIView+Shake-Private.xcconfig"; sourceTree = "<group>"; };
+		7595FC195D537625995C534D /* IQUIView+Hierarchy.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "IQUIView+Hierarchy.h"; path = "IQKeyBoardManager/Categories/IQUIView+Hierarchy.h"; sourceTree = "<group>"; };
+		769513798D480907503FBF98 /* libPods-Beero-MBProgressHUD.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Beero-MBProgressHUD.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		79832AC83C8D675F553AD308 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
+		7B99E5DE257625CA9380A0D8 /* libPods-BeeroTests-UIView+Shake.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BeeroTests-UIView+Shake.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7CBF9924106EB59910EA476B /* AFURLSessionManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFURLSessionManager.h; path = AFNetworking/AFURLSessionManager.h; sourceTree = "<group>"; };
+		7CE85C526A67D742B91DA1E2 /* Pods-BeeroTests-AFNetworking-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "Pods-BeeroTests-AFNetworking-dummy.m"; path = "../Pods-BeeroTests-AFNetworking/Pods-BeeroTests-AFNetworking-dummy.m"; sourceTree = "<group>"; };
+		7F125FF4620F27F884296ED0 /* UIProgressView+AFNetworking.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIProgressView+AFNetworking.m"; path = "UIKit+AFNetworking/UIProgressView+AFNetworking.m"; sourceTree = "<group>"; };
+		7F4C2CB1494F0B9F5A31F8DD /* Pods-Beero-AFNetworking-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Beero-AFNetworking-prefix.pch"; sourceTree = "<group>"; };
+		826C741F06D551A0AD04BE5C /* libPods-Beero-IQKeyboardManager.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Beero-IQKeyboardManager.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		83D3802268E8E0929407B816 /* UIView+Shake.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIView+Shake.m"; path = "UIView-Shake/UIView+Shake.m"; sourceTree = "<group>"; };
+		84122BDCCF5D18730ED1FFA1 /* IQBarButtonItem.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = IQBarButtonItem.m; path = IQKeyBoardManager/IQToolbar/IQBarButtonItem.m; sourceTree = "<group>"; };
+		84B8BCA45BDDE294A6BB5BB6 /* Pods-Beero-IQKeyboardManager-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Beero-IQKeyboardManager-dummy.m"; sourceTree = "<group>"; };
+		85A9E9BA26577CD401F007F8 /* Pods-Beero-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Beero-acknowledgements.plist"; sourceTree = "<group>"; };
+		89575CAC7C4891D53A0C31F5 /* Pods-BeeroTests-IQKeyboardManager-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeeroTests-IQKeyboardManager-Private.xcconfig"; path = "../Pods-BeeroTests-IQKeyboardManager/Pods-BeeroTests-IQKeyboardManager-Private.xcconfig"; sourceTree = "<group>"; };
+		8A31F5AE3BBB8F9BF0378DC4 /* Pods-BeeroTests-IQKeyboardManager-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "Pods-BeeroTests-IQKeyboardManager-prefix.pch"; path = "../Pods-BeeroTests-IQKeyboardManager/Pods-BeeroTests-IQKeyboardManager-prefix.pch"; sourceTree = "<group>"; };
+		8F34AAE0E064168BA34C1D64 /* Pods-BeeroTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-BeeroTests-acknowledgements.plist"; sourceTree = "<group>"; };
+		9CECCD7F06C73620B08AE02A /* AFNetworkActivityIndicatorManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFNetworkActivityIndicatorManager.h; path = "UIKit+AFNetworking/AFNetworkActivityIndicatorManager.h"; sourceTree = "<group>"; };
+		A0523D03E430AC3179401EA6 /* AFURLConnectionOperation.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFURLConnectionOperation.m; path = AFNetworking/AFURLConnectionOperation.m; sourceTree = "<group>"; };
+		A065CD34E2BBDD90AA8C763B /* UIWebView+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIWebView+AFNetworking.h"; path = "UIKit+AFNetworking/UIWebView+AFNetworking.h"; sourceTree = "<group>"; };
+		A0A46FB0ED38340E49C85A31 /* Pods-Beero-environment.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Beero-environment.h"; sourceTree = "<group>"; };
+		A0EAA0CF2C230683593B2C5A /* Pods-Beero-AFNetworking-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Beero-AFNetworking-Private.xcconfig"; sourceTree = "<group>"; };
+		A171447E8D907D6585CEB023 /* IQSegmentedNextPrevious.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IQSegmentedNextPrevious.h; path = IQKeyBoardManager/IQSegmentedNextPrevious/IQSegmentedNextPrevious.h; sourceTree = "<group>"; };
+		A6AA03F089B003E6CEBDEB20 /* AFHTTPRequestOperationManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFHTTPRequestOperationManager.h; path = AFNetworking/AFHTTPRequestOperationManager.h; sourceTree = "<group>"; };
+		A7C4132356AF20D1D5315E24 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/Security.framework; sourceTree = DEVELOPER_DIR; };
+		ADE4B7E874CB80BF644834AD /* libPods-BeeroTests-MBProgressHUD.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BeeroTests-MBProgressHUD.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AF9F4B6A7A51F6E93B90F192 /* IQSegmentedNextPrevious.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = IQSegmentedNextPrevious.m; path = IQKeyBoardManager/IQSegmentedNextPrevious/IQSegmentedNextPrevious.m; sourceTree = "<group>"; };
+		B17A467C238125EE6A940E47 /* IQBarButtonItem.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IQBarButtonItem.h; path = IQKeyBoardManager/IQToolbar/IQBarButtonItem.h; sourceTree = "<group>"; };
+		B8B83769F8696B20D207A461 /* IQNSArray+Sort.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "IQNSArray+Sort.h"; path = "IQKeyBoardManager/Categories/IQNSArray+Sort.h"; sourceTree = "<group>"; };
+		BD703A745DD0AC5AFB699616 /* Pods-Beero-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Beero-dummy.m"; sourceTree = "<group>"; };
+		BE19EB27647BD7E7B26AD1A9 /* IQToolbar.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = IQToolbar.m; path = IQKeyBoardManager/IQToolbar/IQToolbar.m; sourceTree = "<group>"; };
+		BF52E70201BEB244A30EEE55 /* UIView+Shake.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIView+Shake.h"; path = "UIView-Shake/UIView+Shake.h"; sourceTree = "<group>"; };
+		C3318F31A3F42625033ED822 /* Pods-BeeroTests-AFNetworking.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeeroTests-AFNetworking.xcconfig"; path = "../Pods-BeeroTests-AFNetworking/Pods-BeeroTests-AFNetworking.xcconfig"; sourceTree = "<group>"; };
+		C39C379C0FB05178D2A52357 /* UIButton+AFNetworking.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIButton+AFNetworking.m"; path = "UIKit+AFNetworking/UIButton+AFNetworking.m"; sourceTree = "<group>"; };
+		CA40906D71881EF71AF8C604 /* AFURLRequestSerialization.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFURLRequestSerialization.m; path = AFNetworking/AFURLRequestSerialization.m; sourceTree = "<group>"; };
+		CAB617C27505BF5582AF815B /* IQKeyboardManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = IQKeyboardManager.m; path = IQKeyBoardManager/IQKeyboardManager.m; sourceTree = "<group>"; };
+		CAB7BBF672AD53BBEC60F509 /* IQNSArray+Sort.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "IQNSArray+Sort.m"; path = "IQKeyBoardManager/Categories/IQNSArray+Sort.m"; sourceTree = "<group>"; };
+		CAF4DC65FB0A9B2F68126B27 /* Pods-Beero-IQKeyboardManager-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Beero-IQKeyboardManager-prefix.pch"; sourceTree = "<group>"; };
+		CB0F9873DE06164A0AF329DD /* UIActivityIndicatorView+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIActivityIndicatorView+AFNetworking.h"; path = "UIKit+AFNetworking/UIActivityIndicatorView+AFNetworking.h"; sourceTree = "<group>"; };
+		CB6131E74BF97EA3D9FAAA19 /* Pods-Beero-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Beero-acknowledgements.markdown"; sourceTree = "<group>"; };
+		CD14CACF61A7CF15454447EE /* IQKeyboardManagerConstants.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IQKeyboardManagerConstants.h; path = IQKeyBoardManager/Constants/IQKeyboardManagerConstants.h; sourceTree = "<group>"; };
+		CDCCBB8AFDF0415E32C52D9F /* IQUITextFieldView+Additions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "IQUITextFieldView+Additions.h"; path = "IQKeyBoardManager/Categories/IQUITextFieldView+Additions.h"; sourceTree = "<group>"; };
+		CE99903A80ED12653B2C46EB /* IQUIWindow+Hierarchy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "IQUIWindow+Hierarchy.m"; path = "IQKeyBoardManager/Categories/IQUIWindow+Hierarchy.m"; sourceTree = "<group>"; };
+		CF674D68D51E6AF412AEDEA2 /* Pods-Beero-IQKeyboardManager.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Beero-IQKeyboardManager.xcconfig"; sourceTree = "<group>"; };
+		CF7458DB03661434EC84AE45 /* KeyboardManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = KeyboardManager.h; path = IQKeyBoardManager/KeyboardManager.h; sourceTree = "<group>"; };
+		CFE52805BC10094701CECEE6 /* Pods-Beero-AFNetworking-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Beero-AFNetworking-dummy.m"; sourceTree = "<group>"; };
+		D11FB49689A1E6DB877486BB /* MBProgressHUD.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		D1AB3372AC4F5D7410BF8C26 /* Pods-Beero.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Beero.debug.xcconfig"; sourceTree = "<group>"; };
+		D364721CCB5395E1B6155207 /* Pods-Beero.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Beero.release.xcconfig"; sourceTree = "<group>"; };
+		D39A309B286DDF34E2A5D6A4 /* IQUIViewController+Additions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "IQUIViewController+Additions.h"; path = "IQKeyBoardManager/Categories/IQUIViewController+Additions.h"; sourceTree = "<group>"; };
+		D542367E2DF9F5140D429625 /* Pods-BeeroTests-MBProgressHUD-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeeroTests-MBProgressHUD-Private.xcconfig"; path = "../Pods-BeeroTests-MBProgressHUD/Pods-BeeroTests-MBProgressHUD-Private.xcconfig"; sourceTree = "<group>"; };
+		D6C49A352E10E77BF0F25F46 /* Pods-BeeroTests-UIView+Shake-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "Pods-BeeroTests-UIView+Shake-dummy.m"; path = "../Pods-BeeroTests-UIView+Shake/Pods-BeeroTests-UIView+Shake-dummy.m"; sourceTree = "<group>"; };
+		D726FB9826F113C20C88FBBE /* Pods-Beero-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Beero-resources.sh"; sourceTree = "<group>"; };
+		D7A16D1510168D9F40AFA6A9 /* AFNetworkActivityIndicatorManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFNetworkActivityIndicatorManager.m; path = "UIKit+AFNetworking/AFNetworkActivityIndicatorManager.m"; sourceTree = "<group>"; };
+		D7B86CC48E474C4A4F3D01BA /* AFHTTPSessionManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFHTTPSessionManager.m; path = AFNetworking/AFHTTPSessionManager.m; sourceTree = "<group>"; };
+		DBC0227CBF50692AB6BD5413 /* IQTextView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = IQTextView.m; path = IQKeyBoardManager/IQTextView/IQTextView.m; sourceTree = "<group>"; };
+		DF74142935FFAD4C45C1DC9F /* Pods-Beero-MBProgressHUD-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Beero-MBProgressHUD-prefix.pch"; sourceTree = "<group>"; };
+		E03442E6F49CE500764A5317 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		E6ACEB08E10D2E2A0DD53C78 /* AFNetworkReachabilityManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFNetworkReachabilityManager.h; path = AFNetworking/AFNetworkReachabilityManager.h; sourceTree = "<group>"; };
+		E90508D0E4A3A85A42890DEF /* AFURLRequestSerialization.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFURLRequestSerialization.h; path = AFNetworking/AFURLRequestSerialization.h; sourceTree = "<group>"; };
+		EB0458E198D0DA138CB63C18 /* UIAlertView+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIAlertView+AFNetworking.h"; path = "UIKit+AFNetworking/UIAlertView+AFNetworking.h"; sourceTree = "<group>"; };
+		EC4A50CB811067502E48CBB2 /* Pods-BeeroTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-BeeroTests.debug.xcconfig"; sourceTree = "<group>"; };
+		ECA9CC0561AA6CCA79FCCA79 /* Pods-Beero-UIView+Shake-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Beero-UIView+Shake-prefix.pch"; sourceTree = "<group>"; };
+		ED3199CC9090260DA4AFFDEE /* IQUIView+IQKeyboardToolbar.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "IQUIView+IQKeyboardToolbar.h"; path = "IQKeyBoardManager/IQToolbar/IQUIView+IQKeyboardToolbar.h"; sourceTree = "<group>"; };
+		F1F878F0A5F22BCA75EDEDF1 /* AFHTTPRequestOperationManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFHTTPRequestOperationManager.m; path = AFNetworking/AFHTTPRequestOperationManager.m; sourceTree = "<group>"; };
+		F45469AB51874C82CF9EF9DB /* libPods-Beero-UIView+Shake.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Beero-UIView+Shake.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F8A88AD944319D810BAF4214 /* Pods-BeeroTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-BeeroTests-dummy.m"; sourceTree = "<group>"; };
+		FAE5DB91E533105A49715C9B /* MBProgressHUD.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
+		FC488050E0C34C93F3B37FFA /* IQKeyboardManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = IQKeyboardManager.h; path = IQKeyBoardManager/IQKeyboardManager.h; sourceTree = "<group>"; };
+		FC9A5B9CACC0F914BB8FEF42 /* Pods-Beero-UIView+Shake.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Beero-UIView+Shake.xcconfig"; sourceTree = "<group>"; };
+		FD632FE5D7DCF96E62E8B4E5 /* AFHTTPSessionManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFHTTPSessionManager.h; path = AFNetworking/AFHTTPSessionManager.h; sourceTree = "<group>"; };
+		FECECF345E7B610D6A55F520 /* UIImageView+AFNetworking.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImageView+AFNetworking.m"; path = "UIKit+AFNetworking/UIImageView+AFNetworking.m"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		05CE05FBEE5B6EF8D175EC2C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				294BD5E4FD06C64334ACD5B6 /* CoreGraphics.framework in Frameworks */,
+				B9E07F4A15C233864E51641A /* Foundation.framework in Frameworks */,
+				AE1427BC0E23A189EDA1C9AC /* MobileCoreServices.framework in Frameworks */,
+				05AD37899708F8D266DBB666 /* Security.framework in Frameworks */,
+				796723FAACA274941CC316B4 /* SystemConfiguration.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		14D12EFEFDB9D30CF6535026 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				558EDE02BD56E0746110A3B7 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1C97314A12B6C81F802CE854 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				35725D9B20ECA3433D4553C0 /* CoreGraphics.framework in Frameworks */,
+				95BC7ADE33A64273F1CEF15E /* Foundation.framework in Frameworks */,
+				53016904BB9D25347A9E5059 /* MobileCoreServices.framework in Frameworks */,
+				90C66056470CC0EDF1CC9737 /* Security.framework in Frameworks */,
+				8F09D6D03A35336D065E05DE /* SystemConfiguration.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1D14A1DA30DC7B6801EC7BDE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1E3DC2281FE71F4E8640743C /* CoreGraphics.framework in Frameworks */,
+				40DFE3DC578F034F1384A108 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5D12AEF8B7A24D59882C6B22 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9ACBFAE08ABE816A66E57680 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		650B1327598918AADBB48B2B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BC5FA65BA6C1B99B29B7087F /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		890B3D0AE822050D4792362F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5B9E7454D84592C7D809A41F /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8E57374FAD0424657BA5DDA5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B967E8862C76D57799DC157D /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BDB6910B60E4B7D31500F8BC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				922257F7E10A75E10E39639D /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F238471946EDBC968E81FD5E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9F553E43AD8CE51667D2047C /* CoreGraphics.framework in Frameworks */,
+				2DDD7F708DE06F0E273C6A8E /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0FFB91BF18E6D938ACC6BCF3 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				4EC38FFE8D671D21C9E45AB8 /* IQKeyboardManager.bundle */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		154BA9E269D55613004D4370 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				CF674D68D51E6AF412AEDEA2 /* Pods-Beero-IQKeyboardManager.xcconfig */,
+				234BDAA4939A8D06A72AFDE0 /* Pods-Beero-IQKeyboardManager-Private.xcconfig */,
+				84B8BCA45BDDE294A6BB5BB6 /* Pods-Beero-IQKeyboardManager-dummy.m */,
+				CAF4DC65FB0A9B2F68126B27 /* Pods-Beero-IQKeyboardManager-prefix.pch */,
+				12478B071BD1C4F82E08DFF7 /* Pods-BeeroTests-IQKeyboardManager.xcconfig */,
+				89575CAC7C4891D53A0C31F5 /* Pods-BeeroTests-IQKeyboardManager-Private.xcconfig */,
+				535AECD3B57BB40C886286B1 /* Pods-BeeroTests-IQKeyboardManager-dummy.m */,
+				8A31F5AE3BBB8F9BF0378DC4 /* Pods-BeeroTests-IQKeyboardManager-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/Pods-Beero-IQKeyboardManager";
+			sourceTree = "<group>";
+		};
+		36690A18417B677E18B88D10 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				79832AC83C8D675F553AD308 /* CoreGraphics.framework */,
+				E03442E6F49CE500764A5317 /* Foundation.framework */,
+				0022BC1E425A78070F113F1A /* MobileCoreServices.framework */,
+				A7C4132356AF20D1D5315E24 /* Security.framework */,
+				0BB3D46CBF2EAD3810733D41 /* SystemConfiguration.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		440A9E69BB0C528FC57C2C1F /* UIView+Shake */ = {
+			isa = PBXGroup;
+			children = (
+				BF52E70201BEB244A30EEE55 /* UIView+Shake.h */,
+				83D3802268E8E0929407B816 /* UIView+Shake.m */,
+				E6AFFA69BDC86D2D0606FE0A /* Support Files */,
+			);
+			path = "UIView+Shake";
+			sourceTree = "<group>";
+		};
+		457535D8C689FE76D4DC82AB /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				575D17B726E6A3F240348114 /* GoogleMaps.bundle */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		552229DBFD17D8F940FBB160 /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				9CECCD7F06C73620B08AE02A /* AFNetworkActivityIndicatorManager.h */,
+				D7A16D1510168D9F40AFA6A9 /* AFNetworkActivityIndicatorManager.m */,
+				CB0F9873DE06164A0AF329DD /* UIActivityIndicatorView+AFNetworking.h */,
+				121FBB2DA2FA77EC55639C30 /* UIActivityIndicatorView+AFNetworking.m */,
+				EB0458E198D0DA138CB63C18 /* UIAlertView+AFNetworking.h */,
+				208B47FD7439686AC6471EB4 /* UIAlertView+AFNetworking.m */,
+				45755A4E0A7C70C3FB9ADFF2 /* UIButton+AFNetworking.h */,
+				C39C379C0FB05178D2A52357 /* UIButton+AFNetworking.m */,
+				2A74DE6665FFB8190F8AA33D /* UIImageView+AFNetworking.h */,
+				FECECF345E7B610D6A55F520 /* UIImageView+AFNetworking.m */,
+				63C14C6423AE6CF1E43278DA /* UIKit+AFNetworking.h */,
+				5B0E2E686CF8504519951146 /* UIProgressView+AFNetworking.h */,
+				7F125FF4620F27F884296ED0 /* UIProgressView+AFNetworking.m */,
+				00AE2C98791C94E950BC38ED /* UIRefreshControl+AFNetworking.h */,
+				4A3BD7102EB848AC424C3D88 /* UIRefreshControl+AFNetworking.m */,
+				A065CD34E2BBDD90AA8C763B /* UIWebView+AFNetworking.h */,
+				6312CFAA2E7263A86FFEE3F0 /* UIWebView+AFNetworking.m */,
+			);
+			name = UIKit;
+			sourceTree = "<group>";
+		};
+		665A157E662FE0C7D0482CDC /* MBProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				D11FB49689A1E6DB877486BB /* MBProgressHUD.h */,
+				FAE5DB91E533105A49715C9B /* MBProgressHUD.m */,
+				ABEF976071ABF55A42284EC8 /* Support Files */,
+			);
+			path = MBProgressHUD;
+			sourceTree = "<group>";
+		};
+		6BB6A6B06896F62A4073F581 = {
+			isa = PBXGroup;
+			children = (
+				4A2045586D518EECE1B66AF2 /* Podfile */,
+				78455F4CC170189001970EC3 /* Frameworks */,
+				99E3A9EDD6ED999A0E855C97 /* Pods */,
+				BC843AB53056BA4A5973CB50 /* Products */,
+				E533FF42FA093FDDDE03D2E1 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		6C582CD8D172EBD40A52966D /* Reachability */ = {
+			isa = PBXGroup;
+			children = (
+				E6ACEB08E10D2E2A0DD53C78 /* AFNetworkReachabilityManager.h */,
+				1D52F113C3B2B630A724BC2D /* AFNetworkReachabilityManager.m */,
+			);
+			name = Reachability;
+			sourceTree = "<group>";
+		};
+		70C4B5CA435D5E9D5B844724 /* NSURLConnection */ = {
+			isa = PBXGroup;
+			children = (
+				17865B6178CF580A00C314C9 /* AFHTTPRequestOperation.h */,
+				33BD72F9CBC4618D6985D0A0 /* AFHTTPRequestOperation.m */,
+				A6AA03F089B003E6CEBDEB20 /* AFHTTPRequestOperationManager.h */,
+				F1F878F0A5F22BCA75EDEDF1 /* AFHTTPRequestOperationManager.m */,
+				5734E17119CE9505AB80193F /* AFURLConnectionOperation.h */,
+				A0523D03E430AC3179401EA6 /* AFURLConnectionOperation.m */,
+			);
+			name = NSURLConnection;
+			sourceTree = "<group>";
+		};
+		78455F4CC170189001970EC3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				36690A18417B677E18B88D10 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		85DC65B24336AA3186AFCBC8 /* Security */ = {
+			isa = PBXGroup;
+			children = (
+				213DE1213668A402103A1A80 /* AFSecurityPolicy.h */,
+				1E7F6BC6F0DA52E6E8B8AFDD /* AFSecurityPolicy.m */,
+			);
+			name = Security;
+			sourceTree = "<group>";
+		};
+		99E3A9EDD6ED999A0E855C97 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9F7E1AAE9A0D3CD8C59EB2B7 /* AFNetworking */,
+				9AAEDDBC3276FAF3C8B68C5E /* Google-Maps-iOS-SDK */,
+				D57132E25D8CD7561F187068 /* IQKeyboardManager */,
+				665A157E662FE0C7D0482CDC /* MBProgressHUD */,
+				440A9E69BB0C528FC57C2C1F /* UIView+Shake */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		9AAEDDBC3276FAF3C8B68C5E /* Google-Maps-iOS-SDK */ = {
+			isa = PBXGroup;
+			children = (
+				A9A5846B56060CEC2CE48BF3 /* Frameworks */,
+				457535D8C689FE76D4DC82AB /* Resources */,
+			);
+			path = "Google-Maps-iOS-SDK";
+			sourceTree = "<group>";
+		};
+		9F7E1AAE9A0D3CD8C59EB2B7 /* AFNetworking */ = {
+			isa = PBXGroup;
+			children = (
+				0074B47D8983C4A5AE8CD908 /* AFNetworking.h */,
+				70C4B5CA435D5E9D5B844724 /* NSURLConnection */,
+				C896E1C7E7FC310D867C51E8 /* NSURLSession */,
+				6C582CD8D172EBD40A52966D /* Reachability */,
+				85DC65B24336AA3186AFCBC8 /* Security */,
+				EA2F45006F96951D4A8E5BF7 /* Serialization */,
+				A7F42BA9AFE7459AFCBA4D45 /* Support Files */,
+				552229DBFD17D8F940FBB160 /* UIKit */,
+			);
+			path = AFNetworking;
+			sourceTree = "<group>";
+		};
+		A7F42BA9AFE7459AFCBA4D45 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				6E4C67B4F7EFE402C5672EC7 /* Pods-Beero-AFNetworking.xcconfig */,
+				A0EAA0CF2C230683593B2C5A /* Pods-Beero-AFNetworking-Private.xcconfig */,
+				CFE52805BC10094701CECEE6 /* Pods-Beero-AFNetworking-dummy.m */,
+				7F4C2CB1494F0B9F5A31F8DD /* Pods-Beero-AFNetworking-prefix.pch */,
+				C3318F31A3F42625033ED822 /* Pods-BeeroTests-AFNetworking.xcconfig */,
+				1BA1B58E65F0C1AB7B12DC82 /* Pods-BeeroTests-AFNetworking-Private.xcconfig */,
+				7CE85C526A67D742B91DA1E2 /* Pods-BeeroTests-AFNetworking-dummy.m */,
+				6CE26C6CC6AA3E90B1142109 /* Pods-BeeroTests-AFNetworking-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/Pods-Beero-AFNetworking";
+			sourceTree = "<group>";
+		};
+		A9A5846B56060CEC2CE48BF3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				233B738A02D98DBC3AE93761 /* GoogleMaps.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		ABEF976071ABF55A42284EC8 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				152CB97FFA9DE1B6C1ABA4F2 /* Pods-Beero-MBProgressHUD.xcconfig */,
+				485A02933B9BFD57A4781913 /* Pods-Beero-MBProgressHUD-Private.xcconfig */,
+				04B0D4010CCF0756C902D96B /* Pods-Beero-MBProgressHUD-dummy.m */,
+				DF74142935FFAD4C45C1DC9F /* Pods-Beero-MBProgressHUD-prefix.pch */,
+				1FC032207F45BDC94D32A92B /* Pods-BeeroTests-MBProgressHUD.xcconfig */,
+				D542367E2DF9F5140D429625 /* Pods-BeeroTests-MBProgressHUD-Private.xcconfig */,
+				371A8D46C4CE0BDE0810A7A7 /* Pods-BeeroTests-MBProgressHUD-dummy.m */,
+				092A751A0D4C9BAD9AA6142E /* Pods-BeeroTests-MBProgressHUD-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/Pods-Beero-MBProgressHUD";
+			sourceTree = "<group>";
+		};
+		BC843AB53056BA4A5973CB50 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				214C05985840816856C8901B /* libPods-Beero.a */,
+				63804F509FF8FC045CC23B6B /* libPods-Beero-AFNetworking.a */,
+				826C741F06D551A0AD04BE5C /* libPods-Beero-IQKeyboardManager.a */,
+				769513798D480907503FBF98 /* libPods-Beero-MBProgressHUD.a */,
+				F45469AB51874C82CF9EF9DB /* libPods-Beero-UIView+Shake.a */,
+				3710E38D1A8CA9C4206143A5 /* libPods-BeeroTests.a */,
+				49B2F0D06A32ADA7541B50A0 /* libPods-BeeroTests-AFNetworking.a */,
+				153890E1B5E4DE8FD2B9FDC6 /* libPods-BeeroTests-IQKeyboardManager.a */,
+				ADE4B7E874CB80BF644834AD /* libPods-BeeroTests-MBProgressHUD.a */,
+				7B99E5DE257625CA9380A0D8 /* libPods-BeeroTests-UIView+Shake.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C896E1C7E7FC310D867C51E8 /* NSURLSession */ = {
+			isa = PBXGroup;
+			children = (
+				FD632FE5D7DCF96E62E8B4E5 /* AFHTTPSessionManager.h */,
+				D7B86CC48E474C4A4F3D01BA /* AFHTTPSessionManager.m */,
+				7CBF9924106EB59910EA476B /* AFURLSessionManager.h */,
+				07DB0B8D8DC23E85474DBFFA /* AFURLSessionManager.m */,
+			);
+			name = NSURLSession;
+			sourceTree = "<group>";
+		};
+		CB307863B102FA15BE010934 /* Pods-Beero */ = {
+			isa = PBXGroup;
+			children = (
+				CB6131E74BF97EA3D9FAAA19 /* Pods-Beero-acknowledgements.markdown */,
+				85A9E9BA26577CD401F007F8 /* Pods-Beero-acknowledgements.plist */,
+				BD703A745DD0AC5AFB699616 /* Pods-Beero-dummy.m */,
+				A0A46FB0ED38340E49C85A31 /* Pods-Beero-environment.h */,
+				D726FB9826F113C20C88FBBE /* Pods-Beero-resources.sh */,
+				D1AB3372AC4F5D7410BF8C26 /* Pods-Beero.debug.xcconfig */,
+				D364721CCB5395E1B6155207 /* Pods-Beero.release.xcconfig */,
+			);
+			name = "Pods-Beero";
+			path = "Target Support Files/Pods-Beero";
+			sourceTree = "<group>";
+		};
+		D57132E25D8CD7561F187068 /* IQKeyboardManager */ = {
+			isa = PBXGroup;
+			children = (
+				B17A467C238125EE6A940E47 /* IQBarButtonItem.h */,
+				84122BDCCF5D18730ED1FFA1 /* IQBarButtonItem.m */,
+				FC488050E0C34C93F3B37FFA /* IQKeyboardManager.h */,
+				CAB617C27505BF5582AF815B /* IQKeyboardManager.m */,
+				CD14CACF61A7CF15454447EE /* IQKeyboardManagerConstants.h */,
+				020AF6C3B2789FA52C9A1344 /* IQKeyboardManagerConstantsInternal.h */,
+				4D8AA175043A7D288269D7CB /* IQKeyboardReturnKeyHandler.h */,
+				555B2C76F61CE319D4ACD24F /* IQKeyboardReturnKeyHandler.m */,
+				B8B83769F8696B20D207A461 /* IQNSArray+Sort.h */,
+				CAB7BBF672AD53BBEC60F509 /* IQNSArray+Sort.m */,
+				A171447E8D907D6585CEB023 /* IQSegmentedNextPrevious.h */,
+				AF9F4B6A7A51F6E93B90F192 /* IQSegmentedNextPrevious.m */,
+				30D7E0FF379776AB797C665B /* IQTextView.h */,
+				DBC0227CBF50692AB6BD5413 /* IQTextView.m */,
+				66EF7DA8143BAE48806624CB /* IQTitleBarButtonItem.h */,
+				37CDDA4E0A91083E3E4DD1C5 /* IQTitleBarButtonItem.m */,
+				45B4C540EB79A21C50CACE26 /* IQToolbar.h */,
+				BE19EB27647BD7E7B26AD1A9 /* IQToolbar.m */,
+				CDCCBB8AFDF0415E32C52D9F /* IQUITextFieldView+Additions.h */,
+				11FD7D1F3B6A9C18A0ECF859 /* IQUITextFieldView+Additions.m */,
+				7595FC195D537625995C534D /* IQUIView+Hierarchy.h */,
+				1BEF0D10063057D84E93D582 /* IQUIView+Hierarchy.m */,
+				ED3199CC9090260DA4AFFDEE /* IQUIView+IQKeyboardToolbar.h */,
+				5983DB50C30A3C9576C13004 /* IQUIView+IQKeyboardToolbar.m */,
+				D39A309B286DDF34E2A5D6A4 /* IQUIViewController+Additions.h */,
+				48114FF01A2756805F390629 /* IQUIViewController+Additions.m */,
+				43F1A09ECBF5EC8831BD90C0 /* IQUIWindow+Hierarchy.h */,
+				CE99903A80ED12653B2C46EB /* IQUIWindow+Hierarchy.m */,
+				CF7458DB03661434EC84AE45 /* KeyboardManager.h */,
+				0FFB91BF18E6D938ACC6BCF3 /* Resources */,
+				154BA9E269D55613004D4370 /* Support Files */,
+			);
+			path = IQKeyboardManager;
+			sourceTree = "<group>";
+		};
+		DA08D97C2AF857E0BC27DFBD /* Pods-BeeroTests */ = {
+			isa = PBXGroup;
+			children = (
+				352BA84F6A95E1D5EDBE3534 /* Pods-BeeroTests-acknowledgements.markdown */,
+				8F34AAE0E064168BA34C1D64 /* Pods-BeeroTests-acknowledgements.plist */,
+				F8A88AD944319D810BAF4214 /* Pods-BeeroTests-dummy.m */,
+				6F1012CCCAF78DE7C0512075 /* Pods-BeeroTests-environment.h */,
+				2B8821BF8F64FFA1BCA9F301 /* Pods-BeeroTests-resources.sh */,
+				EC4A50CB811067502E48CBB2 /* Pods-BeeroTests.debug.xcconfig */,
+				6D5BCA1D230FAA4CDBCDD05C /* Pods-BeeroTests.release.xcconfig */,
+			);
+			name = "Pods-BeeroTests";
+			path = "Target Support Files/Pods-BeeroTests";
+			sourceTree = "<group>";
+		};
+		E533FF42FA093FDDDE03D2E1 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				CB307863B102FA15BE010934 /* Pods-Beero */,
+				DA08D97C2AF857E0BC27DFBD /* Pods-BeeroTests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		E6AFFA69BDC86D2D0606FE0A /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				FC9A5B9CACC0F914BB8FEF42 /* Pods-Beero-UIView+Shake.xcconfig */,
+				7367E03B442BC5FEED9D4D25 /* Pods-Beero-UIView+Shake-Private.xcconfig */,
+				25248073EBA24856BADC6213 /* Pods-Beero-UIView+Shake-dummy.m */,
+				ECA9CC0561AA6CCA79FCCA79 /* Pods-Beero-UIView+Shake-prefix.pch */,
+				23D223EFF7B8DB2098A41B4B /* Pods-BeeroTests-UIView+Shake.xcconfig */,
+				43F1698933418551BCE0E6AC /* Pods-BeeroTests-UIView+Shake-Private.xcconfig */,
+				D6C49A352E10E77BF0F25F46 /* Pods-BeeroTests-UIView+Shake-dummy.m */,
+				4C58A2092FAACBA81CCE3A0E /* Pods-BeeroTests-UIView+Shake-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/Pods-Beero-UIView+Shake";
+			sourceTree = "<group>";
+		};
+		EA2F45006F96951D4A8E5BF7 /* Serialization */ = {
+			isa = PBXGroup;
+			children = (
+				E90508D0E4A3A85A42890DEF /* AFURLRequestSerialization.h */,
+				CA40906D71881EF71AF8C604 /* AFURLRequestSerialization.m */,
+				3858E8AEDFF74120FC586B3A /* AFURLResponseSerialization.h */,
+				37084AA0A939A8ED061AA65C /* AFURLResponseSerialization.m */,
+			);
+			name = Serialization;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		0610DFCAEE614766C3F5D063 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				82524BD789018224258BDEA6 /* AFHTTPRequestOperation.h in Headers */,
+				26B26E8E3F36630DD0EE67CD /* AFHTTPRequestOperationManager.h in Headers */,
+				6D749B32E2EF8763055EC2EC /* AFHTTPSessionManager.h in Headers */,
+				E5A47F5CE083E3E2B10AACD4 /* AFNetworkActivityIndicatorManager.h in Headers */,
+				F4BBCFD8DE79D99F96C9DDBF /* AFNetworkReachabilityManager.h in Headers */,
+				C4FA73B328D84B005366A671 /* AFNetworking.h in Headers */,
+				6CB65E2467580374A26FBE95 /* AFSecurityPolicy.h in Headers */,
+				322657814C1E1AB036E25C43 /* AFURLConnectionOperation.h in Headers */,
+				4DC2BE2B8840C7B56F6BDB06 /* AFURLRequestSerialization.h in Headers */,
+				8D16C07225E953BCEAAC8F3F /* AFURLResponseSerialization.h in Headers */,
+				FCF204768E668CC21A21A275 /* AFURLSessionManager.h in Headers */,
+				A13B751A4ABD1721CDD1ACFE /* UIActivityIndicatorView+AFNetworking.h in Headers */,
+				1A6B2A684EA94A291223738A /* UIAlertView+AFNetworking.h in Headers */,
+				80CADA5E01FBD4DA50C5AEE1 /* UIButton+AFNetworking.h in Headers */,
+				C18FEC0793A482D985B9CC0B /* UIImageView+AFNetworking.h in Headers */,
+				24BB88E382E6001A79AAE966 /* UIKit+AFNetworking.h in Headers */,
+				AA4E9BDF367C134E4B28EF3F /* UIProgressView+AFNetworking.h in Headers */,
+				C2A7FE08576ED4C85DA5CE0A /* UIRefreshControl+AFNetworking.h in Headers */,
+				39886A96C3B0D4B70ECB3AB2 /* UIWebView+AFNetworking.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		30913AEB52E252F75CD1FE8C /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BF139452163B42525712E858 /* MBProgressHUD.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		333B6A6D61862744F05F2F3F /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8229C88CDF6C7ABBB992054E /* AFHTTPRequestOperation.h in Headers */,
+				D12C476E3E2ADF6BDFF5A419 /* AFHTTPRequestOperationManager.h in Headers */,
+				0A82ED886618F7DB265CB675 /* AFHTTPSessionManager.h in Headers */,
+				2716F86178C7349988BF4772 /* AFNetworkActivityIndicatorManager.h in Headers */,
+				329FAC5EFE71D8B1AE51F1B4 /* AFNetworkReachabilityManager.h in Headers */,
+				51890DC4D6DC1EDD3F825A93 /* AFNetworking.h in Headers */,
+				942A968A9C7369D5E29C8253 /* AFSecurityPolicy.h in Headers */,
+				6EC7F48932D04B32A43A48A1 /* AFURLConnectionOperation.h in Headers */,
+				6725498826FBEE2DEB0B5B11 /* AFURLRequestSerialization.h in Headers */,
+				7153BED7AEB07D4DDCC51357 /* AFURLResponseSerialization.h in Headers */,
+				9CBF3656FDC9BAE718DF3B35 /* AFURLSessionManager.h in Headers */,
+				1C7BF5EC089B678A33C56D37 /* UIActivityIndicatorView+AFNetworking.h in Headers */,
+				6991A1065C97D41A21690D48 /* UIAlertView+AFNetworking.h in Headers */,
+				6DFA8C6EC07F5E3D49BD9BB6 /* UIButton+AFNetworking.h in Headers */,
+				096084FE10100366E8DFCB74 /* UIImageView+AFNetworking.h in Headers */,
+				C5872F6CBBB0BD709F4621BF /* UIKit+AFNetworking.h in Headers */,
+				71FC1AA8B174E8D3D9F66257 /* UIProgressView+AFNetworking.h in Headers */,
+				F79EFBD7DEDD023CF51C9251 /* UIRefreshControl+AFNetworking.h in Headers */,
+				E6D58FA7F84F7CA64FA7DB8C /* UIWebView+AFNetworking.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3541753F986F1A4AC0BF6C13 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5D8EA0072B93630F49C1CE81 /* MBProgressHUD.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		760E45D6FEBEE68C1A32D2AF /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0A1F4A2CEFD7CA0744E39AA2 /* UIView+Shake.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9FFE1DB10C0BE212E8A62EF6 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DB898BE3892C9CDCE386B6B1 /* UIView+Shake.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BF6DA9FF794518572DAC05E3 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				549A47C7DECA702281EFD4D0 /* IQBarButtonItem.h in Headers */,
+				D2EF7D33E437ADC4093CF540 /* IQKeyboardManager.h in Headers */,
+				595810B1ECEAEA6C79252D6A /* IQKeyboardManagerConstants.h in Headers */,
+				9EA425BC3BE356D65C43BA80 /* IQKeyboardManagerConstantsInternal.h in Headers */,
+				39C7D6CFB0A5865B6654460E /* IQKeyboardReturnKeyHandler.h in Headers */,
+				661013D07193858EF8E7586C /* IQNSArray+Sort.h in Headers */,
+				9CDFC4C1477C77093A855428 /* IQSegmentedNextPrevious.h in Headers */,
+				A8B2CE7AA0BB8A2721C5F1BA /* IQTextView.h in Headers */,
+				D15A3F3DCE6442214671FFC9 /* IQTitleBarButtonItem.h in Headers */,
+				CDFE8FDEE923AB510A13BDC0 /* IQToolbar.h in Headers */,
+				DDAB1FC807A2CEC9EA43FFFC /* IQUITextFieldView+Additions.h in Headers */,
+				3E9621EB3B9633C3899ACA0B /* IQUIView+Hierarchy.h in Headers */,
+				825D12979EAAB8ECD752D67C /* IQUIView+IQKeyboardToolbar.h in Headers */,
+				C54E3DD15F99F23994426A19 /* IQUIViewController+Additions.h in Headers */,
+				28E32E420899C063FDCD7A1B /* IQUIWindow+Hierarchy.h in Headers */,
+				3B4582C0A6FC9979F44E8016 /* KeyboardManager.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E5765C64B8DB9EE8C4F8CCE4 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C508EB83934386B703396DBB /* IQBarButtonItem.h in Headers */,
+				0DA525C5FFC5CFAD45E0AE76 /* IQKeyboardManager.h in Headers */,
+				9C82DA36AEC7F28CCF0923CA /* IQKeyboardManagerConstants.h in Headers */,
+				1850E2624DA91FA6B3E58CBD /* IQKeyboardManagerConstantsInternal.h in Headers */,
+				494B64D476F29DDED718AE68 /* IQKeyboardReturnKeyHandler.h in Headers */,
+				1DE5A00942D66B1A057FDE5E /* IQNSArray+Sort.h in Headers */,
+				84368FAE725057D70287F30E /* IQSegmentedNextPrevious.h in Headers */,
+				347F7F46B8490ABF8B87661F /* IQTextView.h in Headers */,
+				BCA0C6788F209055EAED8839 /* IQTitleBarButtonItem.h in Headers */,
+				614FC850537C90B5C8CDF97D /* IQToolbar.h in Headers */,
+				7FF7B2D95014C5111AF6D1DD /* IQUITextFieldView+Additions.h in Headers */,
+				D2069ECDE721C8970A4D2930 /* IQUIView+Hierarchy.h in Headers */,
+				1BF8ADE0DDADAA671FCE757D /* IQUIView+IQKeyboardToolbar.h in Headers */,
+				FDA631418AB82C8B38F8A4E6 /* IQUIViewController+Additions.h in Headers */,
+				8BD894F112B8709FB000DA50 /* IQUIWindow+Hierarchy.h in Headers */,
+				78742D50D6C8C381EE92AE55 /* KeyboardManager.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		04692BF7F8AAD0A1D8A434EF /* Pods-BeeroTests-MBProgressHUD */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 79F616C91811C4984EBF004D /* Build configuration list for PBXNativeTarget "Pods-BeeroTests-MBProgressHUD" */;
+			buildPhases = (
+				D69A136374FEF0F30D13BD58 /* Sources */,
+				1D14A1DA30DC7B6801EC7BDE /* Frameworks */,
+				3541753F986F1A4AC0BF6C13 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-BeeroTests-MBProgressHUD";
+			productName = "Pods-BeeroTests-MBProgressHUD";
+			productReference = ADE4B7E874CB80BF644834AD /* libPods-BeeroTests-MBProgressHUD.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		0ED127C2DCC3BD35B54CAA73 /* Pods-BeeroTests-UIView+Shake */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A581DD3B4CF1CEAC30292FF7 /* Build configuration list for PBXNativeTarget "Pods-BeeroTests-UIView+Shake" */;
+			buildPhases = (
+				00997443E49AAC186A7023E7 /* Sources */,
+				14D12EFEFDB9D30CF6535026 /* Frameworks */,
+				9FFE1DB10C0BE212E8A62EF6 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-BeeroTests-UIView+Shake";
+			productName = "Pods-BeeroTests-UIView+Shake";
+			productReference = 7B99E5DE257625CA9380A0D8 /* libPods-BeeroTests-UIView+Shake.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		140B72D6B7A5D7E696E2513F /* Pods-Beero-UIView+Shake */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A4A106C619DFE96795F86B5D /* Build configuration list for PBXNativeTarget "Pods-Beero-UIView+Shake" */;
+			buildPhases = (
+				3256135F5B24FD858D58E958 /* Sources */,
+				650B1327598918AADBB48B2B /* Frameworks */,
+				760E45D6FEBEE68C1A32D2AF /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-Beero-UIView+Shake";
+			productName = "Pods-Beero-UIView+Shake";
+			productReference = F45469AB51874C82CF9EF9DB /* libPods-Beero-UIView+Shake.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		26152BE564528D42DD86AF5C /* Pods-BeeroTests-IQKeyboardManager */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6CF831D0790CEC1A0AB2E00C /* Build configuration list for PBXNativeTarget "Pods-BeeroTests-IQKeyboardManager" */;
+			buildPhases = (
+				CDCD20D4A01B9706D1EEC64A /* Sources */,
+				890B3D0AE822050D4792362F /* Frameworks */,
+				E5765C64B8DB9EE8C4F8CCE4 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-BeeroTests-IQKeyboardManager";
+			productName = "Pods-BeeroTests-IQKeyboardManager";
+			productReference = 153890E1B5E4DE8FD2B9FDC6 /* libPods-BeeroTests-IQKeyboardManager.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		70BA0361903F266765451436 /* Pods-Beero-MBProgressHUD */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 767FCD5A95FD1A7C599621B9 /* Build configuration list for PBXNativeTarget "Pods-Beero-MBProgressHUD" */;
+			buildPhases = (
+				C6ABCC6D498A12D8C6DCA0B7 /* Sources */,
+				F238471946EDBC968E81FD5E /* Frameworks */,
+				30913AEB52E252F75CD1FE8C /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-Beero-MBProgressHUD";
+			productName = "Pods-Beero-MBProgressHUD";
+			productReference = 769513798D480907503FBF98 /* libPods-Beero-MBProgressHUD.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		784FB43DF59105A748A95B8A /* Pods-BeeroTests-AFNetworking */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0AF24C48A5D8E9C0ACE873F9 /* Build configuration list for PBXNativeTarget "Pods-BeeroTests-AFNetworking" */;
+			buildPhases = (
+				3767B48374DE673DA69D3B6C /* Sources */,
+				1C97314A12B6C81F802CE854 /* Frameworks */,
+				0610DFCAEE614766C3F5D063 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-BeeroTests-AFNetworking";
+			productName = "Pods-BeeroTests-AFNetworking";
+			productReference = 49B2F0D06A32ADA7541B50A0 /* libPods-BeeroTests-AFNetworking.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		9CDC63DA8F70650FE87EB967 /* Pods-Beero-IQKeyboardManager */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 08F0A51DEE2DAAC77FE2F73E /* Build configuration list for PBXNativeTarget "Pods-Beero-IQKeyboardManager" */;
+			buildPhases = (
+				F51AA94F6BA17446E16886C7 /* Sources */,
+				BDB6910B60E4B7D31500F8BC /* Frameworks */,
+				BF6DA9FF794518572DAC05E3 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-Beero-IQKeyboardManager";
+			productName = "Pods-Beero-IQKeyboardManager";
+			productReference = 826C741F06D551A0AD04BE5C /* libPods-Beero-IQKeyboardManager.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		BAA0B4CB9AA23C6AD71E0AEE /* Pods-BeeroTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 368A094907E07245708C77A0 /* Build configuration list for PBXNativeTarget "Pods-BeeroTests" */;
+			buildPhases = (
+				13F0B34FB32AC26B6733F475 /* Sources */,
+				5D12AEF8B7A24D59882C6B22 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B95BD621013EEF7CCBA350CA /* PBXTargetDependency */,
+				4D3857B00F38318F878681FC /* PBXTargetDependency */,
+				7A88D7E56C582F7F591BA95D /* PBXTargetDependency */,
+				DA86A9AE494B5DE510E1DD52 /* PBXTargetDependency */,
+			);
+			name = "Pods-BeeroTests";
+			productName = "Pods-BeeroTests";
+			productReference = 3710E38D1A8CA9C4206143A5 /* libPods-BeeroTests.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		C9AB7319F3377F41EDBB5D5F /* Pods-Beero-AFNetworking */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6E25EF58E17C6A84D1630F58 /* Build configuration list for PBXNativeTarget "Pods-Beero-AFNetworking" */;
+			buildPhases = (
+				8A56768163028B99444FA3AF /* Sources */,
+				05CE05FBEE5B6EF8D175EC2C /* Frameworks */,
+				333B6A6D61862744F05F2F3F /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-Beero-AFNetworking";
+			productName = "Pods-Beero-AFNetworking";
+			productReference = 63804F509FF8FC045CC23B6B /* libPods-Beero-AFNetworking.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		FFA1D68CA66B729AA4D63CFA /* Pods-Beero */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A9DD2E32BB6DD87D1EAED717 /* Build configuration list for PBXNativeTarget "Pods-Beero" */;
+			buildPhases = (
+				2387C3AC2D9DE86DB80524D3 /* Sources */,
+				8E57374FAD0424657BA5DDA5 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6F7A1658EC5810FCA26219A8 /* PBXTargetDependency */,
+				00796ED7AD2DFC5FA0183C4C /* PBXTargetDependency */,
+				317E0DD2397C3FDAE8B701B6 /* PBXTargetDependency */,
+				F90B564F3E05070B8036B773 /* PBXTargetDependency */,
+			);
+			name = "Pods-Beero";
+			productName = "Pods-Beero";
+			productReference = 214C05985840816856C8901B /* libPods-Beero.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FB65EA21038B132D3FAEA29C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0640;
+			};
+			buildConfigurationList = 6644B9C4A85CA188E41A8478 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 6BB6A6B06896F62A4073F581;
+			productRefGroup = BC843AB53056BA4A5973CB50 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FFA1D68CA66B729AA4D63CFA /* Pods-Beero */,
+				C9AB7319F3377F41EDBB5D5F /* Pods-Beero-AFNetworking */,
+				9CDC63DA8F70650FE87EB967 /* Pods-Beero-IQKeyboardManager */,
+				70BA0361903F266765451436 /* Pods-Beero-MBProgressHUD */,
+				140B72D6B7A5D7E696E2513F /* Pods-Beero-UIView+Shake */,
+				BAA0B4CB9AA23C6AD71E0AEE /* Pods-BeeroTests */,
+				784FB43DF59105A748A95B8A /* Pods-BeeroTests-AFNetworking */,
+				26152BE564528D42DD86AF5C /* Pods-BeeroTests-IQKeyboardManager */,
+				04692BF7F8AAD0A1D8A434EF /* Pods-BeeroTests-MBProgressHUD */,
+				0ED127C2DCC3BD35B54CAA73 /* Pods-BeeroTests-UIView+Shake */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		00997443E49AAC186A7023E7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				70AEC403691B5B0EBCE3386D /* Pods-BeeroTests-UIView+Shake-dummy.m in Sources */,
+				7FBD53F86C59F4CDABEB7CA5 /* UIView+Shake.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		13F0B34FB32AC26B6733F475 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E7F77F9D59A03D6BA7E5D3BD /* Pods-BeeroTests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2387C3AC2D9DE86DB80524D3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7F8253EAFF3E711E277B84BF /* Pods-Beero-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3256135F5B24FD858D58E958 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BEA4C8147D26AE60678440C3 /* Pods-Beero-UIView+Shake-dummy.m in Sources */,
+				2B4CC5998111C66000AC905D /* UIView+Shake.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3767B48374DE673DA69D3B6C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				34F63A6EDF4EE3D79E3DC69D /* AFHTTPRequestOperation.m in Sources */,
+				D0F964F92D4888B1F360F04C /* AFHTTPRequestOperationManager.m in Sources */,
+				91A859FEBAE3D8C9FDFB5EC7 /* AFHTTPSessionManager.m in Sources */,
+				18447DC6CD6E15E6579ACD3A /* AFNetworkActivityIndicatorManager.m in Sources */,
+				D3500379970882CFCAC6CC9A /* AFNetworkReachabilityManager.m in Sources */,
+				DCF4E930ABC9DF5DF4850241 /* AFSecurityPolicy.m in Sources */,
+				904D29B5E40EEC2EE3C3E9FC /* AFURLConnectionOperation.m in Sources */,
+				CD36AD4A3D5D3C24A31FC3B9 /* AFURLRequestSerialization.m in Sources */,
+				FDE62E450DF18F93ED1DA8BC /* AFURLResponseSerialization.m in Sources */,
+				1356EED2BB6A12E9CDAC8259 /* AFURLSessionManager.m in Sources */,
+				4B1AE58821251B2B469F89DB /* Pods-BeeroTests-AFNetworking-dummy.m in Sources */,
+				D441D0A552D71F21E0A23ED1 /* UIActivityIndicatorView+AFNetworking.m in Sources */,
+				7F2B54A1A234019E78736821 /* UIAlertView+AFNetworking.m in Sources */,
+				4CCD61267EBBB0FFE4E0A1A3 /* UIButton+AFNetworking.m in Sources */,
+				19589A83CA43CECF2E87D806 /* UIImageView+AFNetworking.m in Sources */,
+				8A285FE6E1897F8950CAC74C /* UIProgressView+AFNetworking.m in Sources */,
+				AFBAAD35FF12B9F50F9AB006 /* UIRefreshControl+AFNetworking.m in Sources */,
+				52538AE2ED1CB4142984B98A /* UIWebView+AFNetworking.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8A56768163028B99444FA3AF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				175A40ED8B00F7B7F45831DE /* AFHTTPRequestOperation.m in Sources */,
+				8867AB067F17CC5CFFC13A66 /* AFHTTPRequestOperationManager.m in Sources */,
+				51712483A9D192BBD0BF498F /* AFHTTPSessionManager.m in Sources */,
+				831A92F59C809D3CE6D43155 /* AFNetworkActivityIndicatorManager.m in Sources */,
+				2E003378858E9CB0CE5379CF /* AFNetworkReachabilityManager.m in Sources */,
+				A4D11C6FEF174BD157C82A53 /* AFSecurityPolicy.m in Sources */,
+				92320B3818A3CAB5B85691CF /* AFURLConnectionOperation.m in Sources */,
+				7B69DE89F8725B78B66FE4D9 /* AFURLRequestSerialization.m in Sources */,
+				83805491628D54F3D59B24DA /* AFURLResponseSerialization.m in Sources */,
+				1F4DB257C30B5AD0F1678708 /* AFURLSessionManager.m in Sources */,
+				58D334173AFE74E3330E8AE7 /* Pods-Beero-AFNetworking-dummy.m in Sources */,
+				2DC9989DEF9C652557C489A2 /* UIActivityIndicatorView+AFNetworking.m in Sources */,
+				560C791FD8945C14055FF7BB /* UIAlertView+AFNetworking.m in Sources */,
+				7B818BD9FE800308A3A30EE6 /* UIButton+AFNetworking.m in Sources */,
+				D57AB4BF7506D906EDA632C1 /* UIImageView+AFNetworking.m in Sources */,
+				2A1295E9C0B477C5E8707243 /* UIProgressView+AFNetworking.m in Sources */,
+				9F5FB5A5352A51E75012036A /* UIRefreshControl+AFNetworking.m in Sources */,
+				13D66D7F50CE7337CCA78912 /* UIWebView+AFNetworking.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C6ABCC6D498A12D8C6DCA0B7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D20033A3182BF93D6E11FA57 /* MBProgressHUD.m in Sources */,
+				A655B4FD9D6D5B9B77836028 /* Pods-Beero-MBProgressHUD-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CDCD20D4A01B9706D1EEC64A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7167D675A024DF2AB39B09FD /* IQBarButtonItem.m in Sources */,
+				E15C83E554A2320A43346945 /* IQKeyboardManager.m in Sources */,
+				7B1557C68155FE23068726CD /* IQKeyboardReturnKeyHandler.m in Sources */,
+				8F6208D5350B0E42456BE32B /* IQNSArray+Sort.m in Sources */,
+				EE76A1749C2DCC0D536251F6 /* IQSegmentedNextPrevious.m in Sources */,
+				B0AB02DA3370FFDD6076D189 /* IQTextView.m in Sources */,
+				F7A9B6182C68802592337A20 /* IQTitleBarButtonItem.m in Sources */,
+				4CF9075C73B485864F8DD359 /* IQToolbar.m in Sources */,
+				BA8D2F8207B7AB0686EBF423 /* IQUITextFieldView+Additions.m in Sources */,
+				A7C18D1F1E62E4E8A56FA5BC /* IQUIView+Hierarchy.m in Sources */,
+				4A95B27C0B15D70E4BE647C2 /* IQUIView+IQKeyboardToolbar.m in Sources */,
+				C281E5DD54B164A2F2DCB6FD /* IQUIViewController+Additions.m in Sources */,
+				E4FEE5040D89BA5589B046DF /* IQUIWindow+Hierarchy.m in Sources */,
+				FB5DB3E6A887B4C2FAF73405 /* Pods-BeeroTests-IQKeyboardManager-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D69A136374FEF0F30D13BD58 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4ACE2A27453FF6A23849A21E /* MBProgressHUD.m in Sources */,
+				97BE0312F5ABF2C5C81DB48D /* Pods-BeeroTests-MBProgressHUD-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F51AA94F6BA17446E16886C7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7BA192D2F4127557A444EB08 /* IQBarButtonItem.m in Sources */,
+				1C4C5F8362AD02E6A437CCA4 /* IQKeyboardManager.m in Sources */,
+				C7CEC846FE61A1DEE9CEEBD6 /* IQKeyboardReturnKeyHandler.m in Sources */,
+				D3425823AD932AA5BF530168 /* IQNSArray+Sort.m in Sources */,
+				4EB2099E1BA15E2D6E1BF6AD /* IQSegmentedNextPrevious.m in Sources */,
+				B7D1A3B5BF39BAFCA7E24984 /* IQTextView.m in Sources */,
+				1C31618ABCFECB970A8599D5 /* IQTitleBarButtonItem.m in Sources */,
+				45B19F9B7A7F191EFEC27878 /* IQToolbar.m in Sources */,
+				6B9B1E69B7B6E13665827674 /* IQUITextFieldView+Additions.m in Sources */,
+				F8A48AC44743FF67F03323E0 /* IQUIView+Hierarchy.m in Sources */,
+				CA2250374B6248B47D2D4AA0 /* IQUIView+IQKeyboardToolbar.m in Sources */,
+				2AFBAA9450AC4AC6D037C4B0 /* IQUIViewController+Additions.m in Sources */,
+				262833CFA203CA32FD348D85 /* IQUIWindow+Hierarchy.m in Sources */,
+				6E9B0A586383F42C390F7923 /* Pods-Beero-IQKeyboardManager-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		00796ED7AD2DFC5FA0183C4C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-Beero-IQKeyboardManager";
+			target = 9CDC63DA8F70650FE87EB967 /* Pods-Beero-IQKeyboardManager */;
+			targetProxy = 1B5E6084E1618E0BB9A337E8 /* PBXContainerItemProxy */;
+		};
+		317E0DD2397C3FDAE8B701B6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-Beero-MBProgressHUD";
+			target = 70BA0361903F266765451436 /* Pods-Beero-MBProgressHUD */;
+			targetProxy = 3F8F79918F4C84D00CE93419 /* PBXContainerItemProxy */;
+		};
+		4D3857B00F38318F878681FC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-BeeroTests-IQKeyboardManager";
+			target = 26152BE564528D42DD86AF5C /* Pods-BeeroTests-IQKeyboardManager */;
+			targetProxy = 4E34E0A9BEBE3C389D3AADF3 /* PBXContainerItemProxy */;
+		};
+		6F7A1658EC5810FCA26219A8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-Beero-AFNetworking";
+			target = C9AB7319F3377F41EDBB5D5F /* Pods-Beero-AFNetworking */;
+			targetProxy = 66A41304873F19A1216326C6 /* PBXContainerItemProxy */;
+		};
+		7A88D7E56C582F7F591BA95D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-BeeroTests-MBProgressHUD";
+			target = 04692BF7F8AAD0A1D8A434EF /* Pods-BeeroTests-MBProgressHUD */;
+			targetProxy = CB5DB022FF5B54DDFEC5558A /* PBXContainerItemProxy */;
+		};
+		B95BD621013EEF7CCBA350CA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-BeeroTests-AFNetworking";
+			target = 784FB43DF59105A748A95B8A /* Pods-BeeroTests-AFNetworking */;
+			targetProxy = F8ACBAAFA7C0934EDED40621 /* PBXContainerItemProxy */;
+		};
+		DA86A9AE494B5DE510E1DD52 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-BeeroTests-UIView+Shake";
+			target = 0ED127C2DCC3BD35B54CAA73 /* Pods-BeeroTests-UIView+Shake */;
+			targetProxy = BAEE6E06284AD3747F9B8DB5 /* PBXContainerItemProxy */;
+		};
+		F90B564F3E05070B8036B773 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-Beero-UIView+Shake";
+			target = 140B72D6B7A5D7E696E2513F /* Pods-Beero-UIView+Shake */;
+			targetProxy = 2880909F3A199BE0E25B2123 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		082B3EFE3ED2D2527E14B5BD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EC4A50CB811067502E48CBB2 /* Pods-BeeroTests.debug.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		18668B1010BB8F796BCA2C37 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7367E03B442BC5FEED9D4D25 /* Pods-Beero-UIView+Shake-Private.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-Beero-UIView+Shake/Pods-Beero-UIView+Shake-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		1DD303354647E66A5059CFAD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 43F1698933418551BCE0E6AC /* Pods-BeeroTests-UIView+Shake-Private.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-BeeroTests-UIView+Shake/Pods-BeeroTests-UIView+Shake-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		24EC1A9AF368BDD6BF1E645A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D364721CCB5395E1B6155207 /* Pods-Beero.release.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		2A19880E3D3124D439A0F8B3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 234BDAA4939A8D06A72AFDE0 /* Pods-Beero-IQKeyboardManager-Private.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-Beero-IQKeyboardManager/Pods-Beero-IQKeyboardManager-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		346747B9D6F8AD69EB73144F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1BA1B58E65F0C1AB7B12DC82 /* Pods-BeeroTests-AFNetworking-Private.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-BeeroTests-AFNetworking/Pods-BeeroTests-AFNetworking-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		6DFA5D76451E5EDDB2D06C5E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 89575CAC7C4891D53A0C31F5 /* Pods-BeeroTests-IQKeyboardManager-Private.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-BeeroTests-IQKeyboardManager/Pods-BeeroTests-IQKeyboardManager-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		7321420BF0863B7E19A1C094 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 43F1698933418551BCE0E6AC /* Pods-BeeroTests-UIView+Shake-Private.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-BeeroTests-UIView+Shake/Pods-BeeroTests-UIView+Shake-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		752BF8D65B2CFBBD12CBB195 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = "RELEASE=1";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		7AA028E84AE6FB4C50F2A8D1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1BA1B58E65F0C1AB7B12DC82 /* Pods-BeeroTests-AFNetworking-Private.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-BeeroTests-AFNetworking/Pods-BeeroTests-AFNetworking-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		856712DA3EA314AC5E3D2B9F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D542367E2DF9F5140D429625 /* Pods-BeeroTests-MBProgressHUD-Private.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-BeeroTests-MBProgressHUD/Pods-BeeroTests-MBProgressHUD-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		9018F147C84E172DDA341A75 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D542367E2DF9F5140D429625 /* Pods-BeeroTests-MBProgressHUD-Private.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-BeeroTests-MBProgressHUD/Pods-BeeroTests-MBProgressHUD-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		A91149AA53AA8621302E2152 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D1AB3372AC4F5D7410BF8C26 /* Pods-Beero.debug.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		AF55AFCD1C940A30B4823C30 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		B2DA8F14A0C4FD6BD6C7BF7F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7367E03B442BC5FEED9D4D25 /* Pods-Beero-UIView+Shake-Private.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-Beero-UIView+Shake/Pods-Beero-UIView+Shake-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		BCEB3B1587E41E63F0662B14 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6D5BCA1D230FAA4CDBCDD05C /* Pods-BeeroTests.release.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		BE31AD87B80435F9793F18C1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A0EAA0CF2C230683593B2C5A /* Pods-Beero-AFNetworking-Private.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-Beero-AFNetworking/Pods-Beero-AFNetworking-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		C2BBFEE4298FF0A52CD65C8F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 234BDAA4939A8D06A72AFDE0 /* Pods-Beero-IQKeyboardManager-Private.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-Beero-IQKeyboardManager/Pods-Beero-IQKeyboardManager-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		D66EAFF8628AD05F1579DF9B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 485A02933B9BFD57A4781913 /* Pods-Beero-MBProgressHUD-Private.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-Beero-MBProgressHUD/Pods-Beero-MBProgressHUD-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		D71050C9DC11EC5BFA8E42E4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A0EAA0CF2C230683593B2C5A /* Pods-Beero-AFNetworking-Private.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-Beero-AFNetworking/Pods-Beero-AFNetworking-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		EF0AC5C9C1E3C2845D2E06B0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 89575CAC7C4891D53A0C31F5 /* Pods-BeeroTests-IQKeyboardManager-Private.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-BeeroTests-IQKeyboardManager/Pods-BeeroTests-IQKeyboardManager-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		F8AA9523C79E4107886F35D6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 485A02933B9BFD57A4781913 /* Pods-Beero-MBProgressHUD-Private.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-Beero-MBProgressHUD/Pods-Beero-MBProgressHUD-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		08F0A51DEE2DAAC77FE2F73E /* Build configuration list for PBXNativeTarget "Pods-Beero-IQKeyboardManager" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C2BBFEE4298FF0A52CD65C8F /* Debug */,
+				2A19880E3D3124D439A0F8B3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0AF24C48A5D8E9C0ACE873F9 /* Build configuration list for PBXNativeTarget "Pods-BeeroTests-AFNetworking" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7AA028E84AE6FB4C50F2A8D1 /* Debug */,
+				346747B9D6F8AD69EB73144F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		368A094907E07245708C77A0 /* Build configuration list for PBXNativeTarget "Pods-BeeroTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				082B3EFE3ED2D2527E14B5BD /* Debug */,
+				BCEB3B1587E41E63F0662B14 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6644B9C4A85CA188E41A8478 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AF55AFCD1C940A30B4823C30 /* Debug */,
+				752BF8D65B2CFBBD12CBB195 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6CF831D0790CEC1A0AB2E00C /* Build configuration list for PBXNativeTarget "Pods-BeeroTests-IQKeyboardManager" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EF0AC5C9C1E3C2845D2E06B0 /* Debug */,
+				6DFA5D76451E5EDDB2D06C5E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6E25EF58E17C6A84D1630F58 /* Build configuration list for PBXNativeTarget "Pods-Beero-AFNetworking" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BE31AD87B80435F9793F18C1 /* Debug */,
+				D71050C9DC11EC5BFA8E42E4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		767FCD5A95FD1A7C599621B9 /* Build configuration list for PBXNativeTarget "Pods-Beero-MBProgressHUD" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F8AA9523C79E4107886F35D6 /* Debug */,
+				D66EAFF8628AD05F1579DF9B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		79F616C91811C4984EBF004D /* Build configuration list for PBXNativeTarget "Pods-BeeroTests-MBProgressHUD" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9018F147C84E172DDA341A75 /* Debug */,
+				856712DA3EA314AC5E3D2B9F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A4A106C619DFE96795F86B5D /* Build configuration list for PBXNativeTarget "Pods-Beero-UIView+Shake" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B2DA8F14A0C4FD6BD6C7BF7F /* Debug */,
+				18668B1010BB8F796BCA2C37 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A581DD3B4CF1CEAC30292FF7 /* Build configuration list for PBXNativeTarget "Pods-BeeroTests-UIView+Shake" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1DD303354647E66A5059CFAD /* Debug */,
+				7321420BF0863B7E19A1C094 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A9DD2E32BB6DD87D1EAED717 /* Build configuration list for PBXNativeTarget "Pods-Beero" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A91149AA53AA8621302E2152 /* Debug */,
+				24EC1A9AF368BDD6BF1E645A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FB65EA21038B132D3FAEA29C /* Project object */;
+}

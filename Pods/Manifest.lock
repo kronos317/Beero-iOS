@@ -1,0 +1,42 @@
+PODS:
+  - AFNetworking (2.5.4):
+    - AFNetworking/NSURLConnection (= 2.5.4)
+    - AFNetworking/NSURLSession (= 2.5.4)
+    - AFNetworking/Reachability (= 2.5.4)
+    - AFNetworking/Security (= 2.5.4)
+    - AFNetworking/Serialization (= 2.5.4)
+    - AFNetworking/UIKit (= 2.5.4)
+  - AFNetworking/NSURLConnection (2.5.4):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/NSURLSession (2.5.4):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (2.5.4)
+  - AFNetworking/Security (2.5.4)
+  - AFNetworking/Serialization (2.5.4)
+  - AFNetworking/UIKit (2.5.4):
+    - AFNetworking/NSURLConnection
+    - AFNetworking/NSURLSession
+  - Google-Maps-iOS-SDK (1.9.2)
+  - IQKeyboardManager (3.2.4)
+  - MBProgressHUD (0.9.1)
+  - UIView+Shake (1.0.1)
+
+DEPENDENCIES:
+  - AFNetworking
+  - Google-Maps-iOS-SDK
+  - IQKeyboardManager
+  - MBProgressHUD
+  - UIView+Shake
+
+SPEC CHECKSUMS:
+  AFNetworking: 05edc0ac4c4c8cf57bcf4b84be5b0744b6d8e71e
+  Google-Maps-iOS-SDK: 7f89cc1edb3ca239a410e5bc83cd1e060db3a289
+  IQKeyboardManager: 555b1231fefafb21b19278d7cca72986a27b748b
+  MBProgressHUD: c47f2c166c126cf2ce36498d80f33e754d4e93ad
+  UIView+Shake: 59223e4edd82e7a824ea4b14d817da6c310b62eb
+
+COCOAPODS: 0.37.2
