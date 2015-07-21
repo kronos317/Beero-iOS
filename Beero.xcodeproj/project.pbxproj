@@ -25,6 +25,7 @@
 		83DF7DCF1B5E80C60060CA01 /* BERSearchVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 83DF7DCE1B5E80C60060CA01 /* BERSearchVC.m */; };
 		83DF7DD21B5E80F50060CA01 /* BERSearchResultBodyTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 83DF7DD11B5E80F50060CA01 /* BERSearchResultBodyTVC.m */; };
 		83DF7DD51B5E812F0060CA01 /* BERSearchResultFooterTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 83DF7DD41B5E812F0060CA01 /* BERSearchResultFooterTVC.m */; };
+		83DF7DD81B5EAE5D0060CA01 /* BERDealDetailsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 83DF7DD71B5EAE5D0060CA01 /* BERDealDetailsVC.m */; };
 		BC967238E725A2CC4C8A1D1F /* libPods-Beero.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EC558A77295547A9E5F2544D /* libPods-Beero.a */; };
 /* End PBXBuildFile section */
 
@@ -76,6 +77,8 @@
 		83DF7DD11B5E80F50060CA01 /* BERSearchResultBodyTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BERSearchResultBodyTVC.m; path = Controller/TableViewCell/BERSearchResultBodyTVC.m; sourceTree = "<group>"; };
 		83DF7DD31B5E812F0060CA01 /* BERSearchResultFooterTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BERSearchResultFooterTVC.h; path = Controller/TableViewCell/BERSearchResultFooterTVC.h; sourceTree = "<group>"; };
 		83DF7DD41B5E812F0060CA01 /* BERSearchResultFooterTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BERSearchResultFooterTVC.m; path = Controller/TableViewCell/BERSearchResultFooterTVC.m; sourceTree = "<group>"; };
+		83DF7DD61B5EAE5D0060CA01 /* BERDealDetailsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BERDealDetailsVC.h; path = Controller/BERDealDetailsVC.h; sourceTree = "<group>"; };
+		83DF7DD71B5EAE5D0060CA01 /* BERDealDetailsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BERDealDetailsVC.m; path = Controller/BERDealDetailsVC.m; sourceTree = "<group>"; };
 		A48C291B529133753F1D8F45 /* Pods-BeeroTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeeroTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BeeroTests/Pods-BeeroTests.release.xcconfig"; sourceTree = "<group>"; };
 		C8CFBC676BA3336CA4917730 /* Pods-Beero.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Beero.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Beero/Pods-Beero.debug.xcconfig"; sourceTree = "<group>"; };
 		EC558A77295547A9E5F2544D /* libPods-Beero.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Beero.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -219,6 +222,8 @@
 				83DF7DC71B5E678D0060CA01 /* BERBrandSelectVC.m */,
 				83DF7DCD1B5E80C60060CA01 /* BERSearchVC.h */,
 				83DF7DCE1B5E80C60060CA01 /* BERSearchVC.m */,
+				83DF7DD61B5EAE5D0060CA01 /* BERDealDetailsVC.h */,
+				83DF7DD71B5EAE5D0060CA01 /* BERDealDetailsVC.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -412,6 +417,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				83DF7DD81B5EAE5D0060CA01 /* BERDealDetailsVC.m in Sources */,
 				83DF7DB91B5E654D0060CA01 /* BERGMPlaceAutoCompleteDataModel.m in Sources */,
 				83DF7DCF1B5E80C60060CA01 /* BERSearchVC.m in Sources */,
 				83DF7D771B5E3B680060CA01 /* AppDelegate.m in Sources */,

@@ -210,6 +210,10 @@ typedef enum _ENUM_SEARCHOPTION_SHOW{
     });
 }
 
+- (void) gotoDealDetailsAtIndex: (int) index{
+    [self performSegueWithIdentifier:@"SEGUE_FROM_SEARCH_TO_DEAL_DETAILS" sender:nil];
+}
+
 #pragma mark -UITableView Event Listeners
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
@@ -247,6 +251,10 @@ typedef enum _ENUM_SEARCHOPTION_SHOW{
     if (editingStyle == UITableViewCellEditingStyleDelete){
         NSLog(@"Remove");
     }
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    [self gotoDealDetailsAtIndex:(int) indexPath.row];
 }
 
 #pragma mark -Button Event Listeners
