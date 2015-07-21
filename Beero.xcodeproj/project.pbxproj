@@ -13,7 +13,6 @@
 		83DF7D7D1B5E3B680060CA01 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83DF7D7B1B5E3B680060CA01 /* Main.storyboard */; };
 		83DF7D7F1B5E3B680060CA01 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 83DF7D7E1B5E3B680060CA01 /* Images.xcassets */; };
 		83DF7D8E1B5E3B690060CA01 /* BeeroTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 83DF7D8D1B5E3B690060CA01 /* BeeroTests.m */; };
-		83DF7DB01B5E49830060CA01 /* ETRUrlManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 83DF7DA81B5E49830060CA01 /* ETRUrlManager.m */; };
 		83DF7DB31B5E64D70060CA01 /* BERErrorManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 83DF7DB21B5E64D70060CA01 /* BERErrorManager.m */; };
 		83DF7DB61B5E64FB0060CA01 /* BERGenericFunctionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 83DF7DB51B5E64FB0060CA01 /* BERGenericFunctionManager.m */; };
 		83DF7DB91B5E654D0060CA01 /* BERGMPlaceAutoCompleteDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 83DF7DB81B5E654D0060CA01 /* BERGMPlaceAutoCompleteDataModel.m */; };
@@ -52,8 +51,6 @@
 		83DF7D871B5E3B690060CA01 /* BeeroTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BeeroTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		83DF7D8C1B5E3B690060CA01 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		83DF7D8D1B5E3B690060CA01 /* BeeroTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BeeroTests.m; sourceTree = "<group>"; };
-		83DF7DA71B5E49830060CA01 /* ETRUrlManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ETRUrlManager.h; path = Model/ETRUrlManager.h; sourceTree = "<group>"; };
-		83DF7DA81B5E49830060CA01 /* ETRUrlManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ETRUrlManager.m; path = Model/ETRUrlManager.m; sourceTree = "<group>"; };
 		83DF7DA91B5E49830060CA01 /* Global.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Global.h; path = Model/Global.h; sourceTree = "<group>"; };
 		83DF7DB11B5E64D70060CA01 /* BERErrorManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BERErrorManager.h; path = Model/BERErrorManager.h; sourceTree = "<group>"; };
 		83DF7DB21B5E64D70060CA01 /* BERErrorManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BERErrorManager.m; path = Model/BERErrorManager.m; sourceTree = "<group>"; };
@@ -187,8 +184,6 @@
 			isa = PBXGroup;
 			children = (
 				83DF7DA91B5E49830060CA01 /* Global.h */,
-				83DF7DA71B5E49830060CA01 /* ETRUrlManager.h */,
-				83DF7DA81B5E49830060CA01 /* ETRUrlManager.m */,
 				83DF7DB11B5E64D70060CA01 /* BERErrorManager.h */,
 				83DF7DB21B5E64D70060CA01 /* BERErrorManager.m */,
 				83DF7DB41B5E64FB0060CA01 /* BERGenericFunctionManager.h */,
@@ -417,7 +412,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				83DF7DB01B5E49830060CA01 /* ETRUrlManager.m in Sources */,
 				83DF7DB91B5E654D0060CA01 /* BERGMPlaceAutoCompleteDataModel.m in Sources */,
 				83DF7DCF1B5E80C60060CA01 /* BERSearchVC.m in Sources */,
 				83DF7D771B5E3B680060CA01 /* AppDelegate.m in Sources */,

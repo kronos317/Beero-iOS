@@ -296,6 +296,9 @@
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="onBtnHeaderMyBeersClick:" destination="ceo-44-igs" eventType="touchUpInside" id="gPZ-8I-g7q"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fee-sa-yQ4" userLabel="Button - ALL BEERS">
                                                 <rect key="frame" x="160" y="0.0" width="160" height="44"/>
@@ -304,6 +307,9 @@
                                                     <color key="titleColor" red="0.60784313729999995" green="0.70588235290000001" blue="0.76862745099999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="onBtnHeaderAllBeersClick:" destination="ceo-44-igs" eventType="touchUpInside" id="A0d-eH-92h"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -353,21 +359,27 @@
                                                 <state key="normal">
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="onBtnBottomSizeClick:" destination="ceo-44-igs" eventType="touchUpInside" id="I9B-bd-p46"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JH2-Zo-E3Q" userLabel="Button - Type">
                                                 <rect key="frame" x="154" y="0.0" width="141" height="50"/>
                                                 <state key="normal">
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="onBtnBottomTypeClick:" destination="ceo-44-igs" eventType="touchUpInside" id="qfL-98-MyM"/>
+                                                </connections>
                                             </button>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow-down-orange" translatesAutoresizingMaskIntoConstraints="NO" id="3mK-do-cT7" userLabel="Image - Size Arrow Down">
+                                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow-down-orange" translatesAutoresizingMaskIntoConstraints="NO" id="3mK-do-cT7" userLabel="Image - Size Arrow Down">
                                                 <rect key="frame" x="52" y="0.0" width="17" height="7"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="17" id="1Qt-5Y-t2D"/>
                                                     <constraint firstAttribute="height" constant="7" id="BMs-p9-Xxs"/>
                                                 </constraints>
                                             </imageView>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow-down-orange" translatesAutoresizingMaskIntoConstraints="NO" id="RTS-Ym-yhd" userLabel="Image - Type Arrow Down">
+                                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow-down-orange" translatesAutoresizingMaskIntoConstraints="NO" id="RTS-Ym-yhd" userLabel="Image - Type Arrow Down">
                                                 <rect key="frame" x="216" y="0.0" width="17" height="7"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="17" id="WaO-FR-Qtr"/>
@@ -451,7 +463,7 @@
                                             </mask>
                                         </variation>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Us-Oe-zpu" userLabel="View - Main - Result">
+                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Us-Oe-zpu" userLabel="View - Main - Result">
                                         <rect key="frame" x="0.0" y="44" width="320" height="454"/>
                                         <subviews>
                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="80" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Hdp-Iz-It0">
@@ -548,6 +560,7 @@
                                                                 <constraint firstAttribute="bottom" secondItem="reE-vp-cHh" secondAttribute="bottom" id="wPK-Pi-iHu"/>
                                                             </constraints>
                                                         </tableViewCellContentView>
+                                                        <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                         <connections>
                                                             <outlet property="m_imgBadgeExclusive" destination="b6t-AL-aRl" id="KpJ-ph-iOl"/>
                                                             <outlet property="m_imgBrand" destination="bG7-sK-iiH" id="MH9-35-GUA"/>
@@ -689,8 +702,11 @@
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="onBtnOptionSizeClick:" destination="ceo-44-igs" eventType="touchUpInside" id="Fjq-HG-CDd"/>
+                                                        </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Y8-P9-Egq" userLabel="Button - SIX PACKS">
+                                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Y8-P9-Egq" userLabel="Button - SIX PACKS">
                                                         <rect key="frame" x="0.0" y="45" width="320" height="40"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="40" id="PtV-U0-3RF"/>
@@ -701,6 +717,9 @@
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="onBtnOptionSizeClick:" destination="ceo-44-igs" eventType="touchUpInside" id="5O2-Pk-5mf"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" red="0.96862745100000003" green="0.57647058819999997" blue="0.1176470588" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -720,7 +739,7 @@
                                                     </mask>
                                                 </variation>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mFw-Yv-dmu" userLabel="View - Size Container">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mFw-Yv-dmu" userLabel="View - Type Container">
                                                 <rect key="frame" x="0.0" y="368" width="320" height="130"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s5y-qh-3IZ" userLabel="Button - Bottles">
@@ -734,8 +753,11 @@
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="onBtnOptionTypeClick:" destination="ceo-44-igs" eventType="touchUpInside" id="pEW-mG-5ON"/>
+                                                        </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fwa-oZ-Q3J" userLabel="Button - Cans">
+                                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fwa-oZ-Q3J" userLabel="Button - Cans">
                                                         <rect key="frame" x="0.0" y="45" width="320" height="40"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="40" id="BFf-HL-VDv"/>
@@ -746,8 +768,11 @@
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="onBtnOptionTypeClick:" destination="ceo-44-igs" eventType="touchUpInside" id="oeT-BD-sSk"/>
+                                                        </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RdU-Vl-QbC" userLabel="Button - Cans And Bottles">
+                                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RdU-Vl-QbC" userLabel="Button - Cans And Bottles">
                                                         <rect key="frame" x="0.0" y="85" width="320" height="40"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="40" id="glz-k2-4QW"/>
@@ -758,6 +783,9 @@
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="onBtnOptionTypeClick:" destination="ceo-44-igs" eventType="touchUpInside" id="0gi-9u-FX1"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" red="0.96862745100000003" green="0.57647058819999997" blue="0.1176470588" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -826,7 +854,19 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="m_btnHeaderAllBeers" destination="fee-sa-yQ4" id="5ID-dh-Ic4"/>
+                        <outlet property="m_btnHeaderMyBeers" destination="FHh-LR-ggH" id="Dbb-YG-kdK"/>
+                        <outlet property="m_imgBottomSizeArrow" destination="3mK-do-cT7" id="1QY-7Q-qFf"/>
+                        <outlet property="m_imgBottomTypeArrow" destination="RTS-Ym-yhd" id="uA1-xB-tdT"/>
+                        <outlet property="m_imgSearchBeer" destination="b5r-R3-wo7" id="7yG-Di-4aG"/>
+                        <outlet property="m_lblBottomSize" destination="2De-04-jH6" id="51K-Rc-gVU"/>
+                        <outlet property="m_lblBottomType" destination="bfq-mm-R1h" id="qTe-Dj-Rk6"/>
                         <outlet property="m_tableview" destination="Hdp-Iz-It0" id="PFh-Gq-hkm"/>
+                        <outlet property="m_viewMainSearch" destination="apg-n0-JB4" id="auG-Gk-nGB"/>
+                        <outlet property="m_viewMainSearchResult" destination="6Us-Oe-zpu" id="hjB-wl-lwK"/>
+                        <outlet property="m_viewSearchOptionSizeContainer" destination="66I-Gf-gLT" id="baw-QY-gI7"/>
+                        <outlet property="m_viewSearchOptionTypeContainer" destination="mFw-Yv-dmu" id="KuQ-af-nMq"/>
+                        <outlet property="m_viewSearchOptionWrapper" destination="vP5-fU-uiX" id="rxf-2C-3J8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bBI-0b-Ulc" userLabel="First Responder" sceneMemberID="firstResponder"/>
