@@ -12,6 +12,7 @@
 #import "Global.h"
 #import <GoogleMaps/GoogleMaps.h>
 #import "BERLocationManager.h"
+#import "BERDataManager.h"
 
 @interface AppDelegate ()
 
@@ -36,7 +37,9 @@
     sharedInstance.keyboardDistanceFromTextField = 50;
     
     [GMSServices provideAPIKey:GOOGLEMAPS_API_KEY];
+    
     [[BERLocationManager sharedInstance] initializeManager];
+    [[BERDataManager sharedInstance] initializeManager];
     
     return YES;
 }

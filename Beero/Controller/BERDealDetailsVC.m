@@ -26,15 +26,9 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:nil];
 }
-*/
 
 #pragma mark -Button Event Listeners
 
@@ -42,5 +36,12 @@
     [self.navigationController popViewControllerAnimated:YES];
 }
 
+- (IBAction)onBtnStoreDetailsClick:(id)sender {
+    [self performSegueWithIdentifier:@"SEGUE_FROM_DEAL_DETAILS_TO_STORE_DETAILS" sender:nil];
+}
+
+- (IBAction)onBtnNearbyDealsClick:(id)sender {
+    [self performSegueWithIdentifier:@"SEGUE_FROM_DEAL_DETAILS_TO_NEARBY" sender:nil];
+}
 
 @end

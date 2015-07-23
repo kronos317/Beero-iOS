@@ -48,6 +48,8 @@
 
 // Local Notification
 
+#define BERLOCALNOTIFICATION_LOCATION_UPDATED                   @"BERLOCALNOTIFICATION_LOCATION_UPDATED"
+
 // Localstorage Key
 
 #define LOCALSTORAGE_PREFIX                 @"BER_LOCALSTORAGE_"

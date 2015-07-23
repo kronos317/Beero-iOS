@@ -27,5 +27,6 @@
 - (void) requestGoogleMapsApiPlaceAutoCompleteWithInput: (NSString *) input token: (NSString *) token callback: (void (^)(NSString *token, NSArray *results)) callback;
 - (void) requestGoogleMapsApiPlaceDetailsWithReference: (NSString *) reference callback: (void (^)(CLLocation *location)) callback;
 
+- (BOOL) isSupportedArea;
 
 @end

@@ -13,11 +13,12 @@
 #import <AFNetworking.h>
 #import "Global.h"
 #import "BERGMPlaceAutoCompleteDataModel.h"
+#import "BERDataManager.h"
 
 @implementation BERLocationManager
 
-#define LOCATIONMANAGER_DEFAULT_LOCATION_LATITUDE           -33.8650
-#define LOCATIONMANAGER_DEFAULT_LOCATION_LONGITUDE          151.2094
+#define LOCATIONMANAGER_DEFAULT_LOCATION_LATITUDE           -33.765017
+#define LOCATIONMANAGER_DEFAULT_LOCATION_LONGITUDE          151.209396
 
 + (instancetype) sharedInstance{
     static dispatch_once_t once;
@@ -108,6 +109,8 @@
     // if (locationAge < 0.01) return;
     
     self.m_location = newLocation;
+    [[NSNotificationCenter defaultCenter] postNotificationName:BERLOCALNOTIFICATION_LOCATION_UPDATED object:nil];
+    
     [self requestAddressWithLocation:nil callback:nil];
 }
 
@@ -306,6 +309,27 @@
             NSLog(@"\nCurrent Location Not Detected\n");
         }
     }];
+}
+
+- (BOOL) isSupportedArea{
+    float lat = self.m_location.coordinate.latitude;
+    float lng = self.m_location.coordinate.longitude;
+    NSArray *arr = [BERDataManager sharedInstance].m_arrSupportedArea;
+    
+#warning Just For Test
+    lat = LOCATIONMANAGER_DEFAULT_LOCATION_LATITUDE;
+    lng = LOCATIONMANAGER_DEFAULT_LOCATION_LONGITUDE;
+    
+    for (int i = 0; i < (int) [arr count]; i++){
+        NSDictionary *dict = [arr objectAtIndex:i];
+        float top_lat = [[dict objectForKey:@"_TOP_LAT"] floatValue];
+        float left_lng = [[dict objectForKey:@"_LEFT_LNG"] floatValue];
+        float bottom_lat = [[dict objectForKey:@"_BOTTOM_LAT"] floatValue];
+        float right_lng = [[dict objectForKey:@"_RIGHT_LNG"] floatValue];
+        
+        if ((lat <= top_lat) && (lat >= bottom_lat) && (lng >= left_lng) && (lng <= right_lng)) return YES;
+    }
+    return NO;
 }
 
 @end

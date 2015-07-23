@@ -7,6 +7,8 @@
 //
 
 #import "BERSplashLoadingVC.h"
+#import "Global.h"
+#import "BERLocationManager.h"
 
 @interface BERSplashLoadingVC ()
 
@@ -18,7 +20,10 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    [self performSelector:@selector(gotoBrands) withObject:nil afterDelay:3.0f];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(onLocalNotificationReceived:)
+                                                 name:nil
+                                               object:nil];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -26,6 +31,10 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void) dealloc{
+    NSLog(@"<<<<<< BERSplashLoadingVC Dealloc >>>>>>>>");
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
 
 /*
 #pragma mark - Navigation
@@ -45,6 +54,22 @@
 
 - (void) gotoBrands{
     [self performSegueWithIdentifier:@"SEGUE_FROM_SPLASHLOADING_TO_SELECTBRAND" sender:nil];
+}
+
+#pragma mark -Notification Observer
+
+- (void) onLocalNotificationReceived:(NSNotification *) notification
+{
+    if ([[notification name] isEqualToString:BERLOCALNOTIFICATION_LOCATION_UPDATED]){
+        [[NSNotificationCenter defaultCenter] removeObserver:self];
+        
+        if ([[BERLocationManager sharedInstance] isSupportedArea] == YES){
+            [self gotoBrands];
+        }
+        else {
+            [self gotoNotSupported];
+        }        
+    }
 }
 
 @end
