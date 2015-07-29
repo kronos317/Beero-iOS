@@ -9,6 +9,7 @@
 #import "BERSearchVC.h"
 #import "BERSearchResultBodyTVC.h"
 #import "BERSearchResultFooterTVC.h"
+#import "Global.h"
 
 typedef enum _ENUM_BEER_SIZE{
     BERENUM_BEER_SIZE_CASES = 0,
@@ -45,6 +46,10 @@ typedef enum _ENUM_SEARCHOPTION_SHOW{
 @property (weak, nonatomic) IBOutlet UIImageView *m_imgBottomTypeArrow;
 
 @property (weak, nonatomic) IBOutlet UIImageView *m_imgSearchBeer;
+
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *m_constraintSizeContainerBottomSpace;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *m_constraintTypeContainerBottomSpace;
+
 
 @property BERENUM_SEARCHOPTION_SHOW m_enumSearchOptionShow;
 @property BERENUM_BEER_SIZE m_enumBeerSize;
@@ -89,6 +94,13 @@ typedef enum _ENUM_SEARCHOPTION_SHOW{
     // Dispose of any resources that can be recreated.
 }
 
+- (void) viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    
+    self.m_viewSearchOptionSizeContainer.backgroundColor = BERUICOLOR_ORANGE;
+    self.m_viewSearchOptionTypeContainer.backgroundColor = BERUICOLOR_ORANGE;
+}
+
 #pragma mark -Biz Logic
 
 - (void) refreshFields{
@@ -101,8 +113,8 @@ typedef enum _ENUM_SEARCHOPTION_SHOW{
     self.m_imgBottomSizeArrow.hidden = YES;
     self.m_imgBottomTypeArrow.hidden = YES;
     self.m_viewSearchOptionWrapper.hidden = YES;
-    self.m_viewSearchOptionSizeContainer.hidden = YES;
-    self.m_viewSearchOptionTypeContainer.hidden = YES;
+//    self.m_viewSearchOptionSizeContainer.hidden = YES;
+//    self.m_viewSearchOptionTypeContainer.hidden = YES;
     
     self.m_imgBottomSizeArrow.alpha = 1;
     self.m_imgBottomTypeArrow.alpha = 1;
@@ -112,12 +124,12 @@ typedef enum _ENUM_SEARCHOPTION_SHOW{
     }
     else if (self.m_enumSearchOptionShow == BERENUM_SEARCHOPTION_SHOW_SIZE){
         self.m_viewSearchOptionWrapper.hidden = NO;
-        self.m_viewSearchOptionSizeContainer.hidden = NO;
+//        self.m_viewSearchOptionSizeContainer.hidden = NO;
         self.m_imgBottomSizeArrow.hidden = NO;
     }
     else if (self.m_enumSearchOptionShow == BERENUM_SEARCHOPTION_SHOW_TYPE){
         self.m_viewSearchOptionWrapper.hidden = NO;
-        self.m_viewSearchOptionTypeContainer.hidden = NO;
+//        self.m_viewSearchOptionTypeContainer.hidden = NO;
         self.m_imgBottomTypeArrow.hidden = NO;
     }
 }
@@ -129,41 +141,108 @@ typedef enum _ENUM_SEARCHOPTION_SHOW{
 - (void) animateSearchOptionToShow: (BERENUM_SEARCHOPTION_SHOW) enumOption{
     if (self.m_enumSearchOptionShow == enumOption) return;
     
-    float fFrom = 0, fTo = 1;
-    UIImageView *img = self.m_imgBottomSizeArrow;
+    float fSizeContainerHeight = self.m_viewSearchOptionSizeContainer.frame.size.height;
+    float fTypeContainerHeight = self.m_viewSearchOptionTypeContainer.frame.size.height;
+    
+    self.m_viewSearchOptionWrapper.hidden = NO;
+    
+    self.m_constraintSizeContainerBottomSpace.constant = -fSizeContainerHeight;
+    self.m_constraintTypeContainerBottomSpace.constant = -fTypeContainerHeight;
+    [self.m_viewSearchOptionWrapper layoutIfNeeded];
+    
+    if (self.m_enumSearchOptionShow != BERENUM_SEARCHOPTION_SHOW_NONE && enumOption != BERENUM_SEARCHOPTION_SHOW_NONE){
+        // Change from [Size] to [Type] or vise versa without close the wrapper and no animation
+        if (enumOption == BERENUM_SEARCHOPTION_SHOW_SIZE){
+            // [Type] to [Size]
+            self.m_imgBottomSizeArrow.hidden = NO;
+            self.m_imgBottomTypeArrow.hidden = YES;
+            self.m_constraintSizeContainerBottomSpace.constant = 0;
+            [self.m_viewSearchOptionWrapper layoutIfNeeded];
+        }
+        else if (enumOption == BERENUM_SEARCHOPTION_SHOW_TYPE){
+            // [Size] to [Type]
+            self.m_imgBottomSizeArrow.hidden = YES;
+            self.m_imgBottomTypeArrow.hidden = NO;
+            self.m_constraintTypeContainerBottomSpace.constant = 0;
+            [self.m_viewSearchOptionWrapper layoutIfNeeded];
+        }
+        self.m_enumSearchOptionShow = enumOption;
+        return;
+    }
+    
+    // Animation starts... Arrow to fade in/out, Panel to Slide up
     
     if (enumOption == BERENUM_SEARCHOPTION_SHOW_NONE){
-        fFrom = 1;
-        fTo = 0;
+        // Hide
+        
+        if (self.m_enumSearchOptionShow == BERENUM_SEARCHOPTION_SHOW_SIZE){
+            // [Size] to Hide
+            self.m_imgBottomSizeArrow.hidden = NO;
+            self.m_imgBottomSizeArrow.alpha = 1;
+            self.m_constraintSizeContainerBottomSpace.constant = 0;
+            [self.m_viewSearchOptionWrapper layoutIfNeeded];
+            
+            self.m_constraintSizeContainerBottomSpace.constant = -fSizeContainerHeight;
+            [UIView animateWithDuration:0.25f animations:^{
+                self.m_imgBottomSizeArrow.alpha = 0;
+                [self.m_viewSearchOptionWrapper layoutIfNeeded];
+            } completion:^(BOOL finished) {
+                self.m_enumSearchOptionShow = enumOption;
+                [self refreshFields];
+            }];
+        }
+
         if (self.m_enumSearchOptionShow == BERENUM_SEARCHOPTION_SHOW_TYPE){
-            img = self.m_imgBottomTypeArrow;
+            // [Type] to Hide
+            self.m_imgBottomTypeArrow.hidden = NO;
+            self.m_imgBottomTypeArrow.alpha = 1;
+            self.m_constraintTypeContainerBottomSpace.constant = 0;
+            [self.m_viewSearchOptionWrapper layoutIfNeeded];
+            
+            self.m_constraintTypeContainerBottomSpace.constant = -fTypeContainerHeight;
+            [UIView animateWithDuration:0.25f animations:^{
+                self.m_imgBottomTypeArrow.alpha = 0;
+                [self.m_viewSearchOptionWrapper layoutIfNeeded];
+            } completion:^(BOOL finished) {
+                self.m_enumSearchOptionShow = enumOption;
+                [self refreshFields];
+            }];
         }
     }
     else if (enumOption == BERENUM_SEARCHOPTION_SHOW_SIZE){
-        self.m_viewSearchOptionSizeContainer.hidden = NO;
-        self.m_viewSearchOptionTypeContainer.hidden = YES;
+        // [Size] to show
+
+        self.m_imgBottomSizeArrow.hidden = NO;
+        self.m_imgBottomSizeArrow.alpha = 0;
+        self.m_constraintSizeContainerBottomSpace.constant = -fSizeContainerHeight;
+        [self.m_viewSearchOptionWrapper layoutIfNeeded];
+        
+        self.m_constraintSizeContainerBottomSpace.constant = 0;
+        [UIView animateWithDuration:0.25f animations:^{
+            self.m_imgBottomSizeArrow.alpha = 1;
+            [self.m_viewSearchOptionWrapper layoutIfNeeded];
+        } completion:^(BOOL finished) {
+            self.m_enumSearchOptionShow = enumOption;
+            [self refreshFields];
+        }];
     }
     else if (enumOption == BERENUM_SEARCHOPTION_SHOW_TYPE){
-        self.m_viewSearchOptionSizeContainer.hidden = YES;
-        self.m_viewSearchOptionTypeContainer.hidden = NO;
-        img = self.m_imgBottomTypeArrow;
+        // [Type] to show
+        
+        self.m_imgBottomTypeArrow.hidden = NO;
+        self.m_imgBottomTypeArrow.alpha = 0;
+        self.m_constraintTypeContainerBottomSpace.constant = -fTypeContainerHeight;
+        [self.m_viewSearchOptionWrapper layoutIfNeeded];
+        
+        self.m_constraintTypeContainerBottomSpace.constant = 0;
+        [UIView animateWithDuration:0.25f animations:^{
+            self.m_imgBottomTypeArrow.alpha = 1;
+            [self.m_viewSearchOptionWrapper layoutIfNeeded];
+        } completion:^(BOOL finished) {
+            self.m_enumSearchOptionShow = enumOption;
+            [self refreshFields];
+        }];
     }
-    
-    [self.m_viewSearchOptionWrapper.layer removeAllAnimations];
-    
-    self.m_viewSearchOptionWrapper.hidden = NO;
-    img.hidden = NO;
-    self.m_viewSearchOptionWrapper.alpha = fFrom;
-    img.alpha = fFrom;
-    
-    self.m_enumSearchOptionShow = enumOption;
-    
-    [UIView animateWithDuration:0.5f animations:^{
-        self.m_viewSearchOptionWrapper.alpha = fTo;
-        img.alpha = fTo;
-    } completion:^(BOOL finished) {
-        [self refreshFields];
-    }];
 }
 
 - (void) spinBeerWithOptions: (UIViewAnimationOptions) options {
@@ -224,7 +303,7 @@ typedef enum _ENUM_SEARCHOPTION_SHOW{
     static NSString *szCellIdentifier = @"TVC_SEARCH_RESULT_BODY";
     BERSearchResultBodyTVC *cell = [tableView dequeueReusableCellWithIdentifier:szCellIdentifier];
     [self configureCell:cell AtIndex:(int) indexPath.row];
-    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+//    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;
 }
 
@@ -255,6 +334,25 @@ typedef enum _ENUM_SEARCHOPTION_SHOW{
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [self gotoDealDetailsAtIndex:(int) indexPath.row];
+    [tableView deselectRowAtIndexPath:[tableView indexPathForSelectedRow] animated:YES];
+}
+
+-(void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    // Remove seperator inset
+    if ([cell respondsToSelector:@selector(setSeparatorInset:)]) {
+        [cell setSeparatorInset:UIEdgeInsetsZero];
+    }
+    
+    // Prevent the cell from inheriting the Table View's margin settings
+    if ([cell respondsToSelector:@selector(setPreservesSuperviewLayoutMargins:)]) {
+        [cell setPreservesSuperviewLayoutMargins:NO];
+    }
+    
+    // Explictly set your cell's layout margins
+    if ([cell respondsToSelector:@selector(setLayoutMargins:)]) {
+        [cell setLayoutMargins:UIEdgeInsetsZero];
+    }
 }
 
 #pragma mark -Button Event Listeners
@@ -276,12 +374,16 @@ typedef enum _ENUM_SEARCHOPTION_SHOW{
 - (IBAction)onBtnOptionSizeClick:(id)sender {
     UIButton *button = sender;
     int size = (int) button.tag;
-    
+
     if (self.m_enumBeerSize != size){
         [self doSearch];
     }
 
     self.m_enumBeerSize = size;
+
+    NSString *szSize = [[self.m_arrSearchOptionSize objectAtIndex:self.m_enumBeerSize] objectForKey:@"_TITLE"];
+    self.m_lblBottomSize.text = szSize;
+    
     [self animateSearchOptionToShow:BERENUM_SEARCHOPTION_SHOW_NONE];
 }
 
@@ -294,6 +396,10 @@ typedef enum _ENUM_SEARCHOPTION_SHOW{
     }
 
     self.m_enumBeerType = type;
+    
+    NSString *szType = [[self.m_arrSearchOptionType objectAtIndex:self.m_enumBeerType] objectForKey:@"_TITLE"];
+    self.m_lblBottomType.text = szType;
+
     [self animateSearchOptionToShow:BERENUM_SEARCHOPTION_SHOW_NONE];
 }
 

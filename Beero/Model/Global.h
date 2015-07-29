@@ -9,6 +9,8 @@
 #ifndef GreenRide_Global_h
 #define GreenRide_Global_h
 
+#define BER_BASEURL                                             @"http://beero.com.au/api/v1"
+
 // Provider
 
 #define GOOGLEMAPS_API_PLACE_KEY                                @"AIzaSyAvrIo6cGEl-wLfr4d75HMdij5VjikgnxA"
@@ -41,6 +43,7 @@
 #define BERUICOLOR_THEMECOLOR_INVALID                           [UIColor colorWithRed:(195 / 255.0) green:(40 / 255.0) blue:(0 / 255.0) alpha:1]
 #define BERUICOLOR_TEXTFIELD_BORDER                             [UIColor colorWithRed:(217 / 255.0) green:(223 / 255.0) blue:(223 / 255.0) alpha:1]
 #define BERUICOLOR_TEXTFIELD_BORDER_INVALID                     [UIColor colorWithRed:(195 / 255.0) green:(40 / 255.0) blue:(0 / 255.0) alpha:1]
+#define BERUICOLOR_ORANGE                                       [UIColor colorWithRed:(247 / 255.0) green:(146 / 255.0) blue:(30 / 255.0) alpha:1]
 
 // Error Code
 
@@ -49,6 +52,8 @@
 // Local Notification
 
 #define BERLOCALNOTIFICATION_LOCATION_UPDATED                   @"BERLOCALNOTIFICATION_LOCATION_UPDATED"
+#define BERLOCALNOTIFICATION_BRAND_GETALL_COMPLETED             @"BERLOCALNOTIFICATION_BRAND_GETALL_COMPLETED"
+#define BERLOCALNOTIFICATION_BRAND_GETALL_FAILED                @"BERLOCALNOTIFICATION_BRAND_GETALL_FAILED"
 
 // Localstorage Key
 

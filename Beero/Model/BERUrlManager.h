@@ -16,4 +16,8 @@
 + (NSString *) getEndpointForGooglemapsPlaceAutoComplete;
 + (NSString *) getEndpointForGooglemapsPlaceDetails;
 
+#pragma mark -Endpoint for Brand
+
++ (NSString *) getAllBrands;
+
 @end

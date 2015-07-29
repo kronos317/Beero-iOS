@@ -9,8 +9,12 @@
 #import "BERSplashLoadingVC.h"
 #import "Global.h"
 #import "BERLocationManager.h"
+#import "BERBrandManager.h"
 
 @interface BERSplashLoadingVC ()
+
+@property BOOL m_isLocationConfirmed;
+@property BOOL m_isBrandLoaded;
 
 @end
 
@@ -20,10 +24,16 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(onLocalNotificationReceived:)
                                                  name:nil
                                                object:nil];
+    
+    self.m_isLocationConfirmed = NO;
+    self.m_isBrandLoaded = NO;
+    
+    [self doRequestBrand];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -48,6 +58,10 @@
 
 #pragma mark -Biz Logic
 
+- (void) doRequestBrand{
+    [[BERBrandManager sharedInstance] requestBrands];
+}
+
 - (void) gotoNotSupported{
     [self performSegueWithIdentifier:@"SEGUE_FROM_SPLASHLOADING_TO_NOTSUPPORTED" sender:nil];
 }
@@ -56,19 +70,35 @@
     [self performSegueWithIdentifier:@"SEGUE_FROM_SPLASHLOADING_TO_SELECTBRAND" sender:nil];
 }
 
+- (void) checkMandatoryRequests{
+    if (self.m_isBrandLoaded == YES && self.m_isLocationConfirmed == YES){
+        [[NSNotificationCenter defaultCenter] removeObserver:self];
+        [self gotoBrands];
+    }
+}
+
 #pragma mark -Notification Observer
 
 - (void) onLocalNotificationReceived:(NSNotification *) notification
 {
-    if ([[notification name] isEqualToString:BERLOCALNOTIFICATION_LOCATION_UPDATED]){
-        [[NSNotificationCenter defaultCenter] removeObserver:self];
-        
+    if ([[notification name] isEqualToString:BERLOCALNOTIFICATION_LOCATION_UPDATED] && self.m_isLocationConfirmed == NO){
+//        [[NSNotificationCenter defaultCenter] removeObserver:self];
+        self.m_isLocationConfirmed = YES;
         if ([[BERLocationManager sharedInstance] isSupportedArea] == YES){
-            [self gotoBrands];
+            [self checkMandatoryRequests];
         }
         else {
+            [[NSNotificationCenter defaultCenter] removeObserver:self];
             [self gotoNotSupported];
-        }        
+        }
+    }
+    else if ([[notification name] isEqualToString:BERLOCALNOTIFICATION_BRAND_GETALL_COMPLETED] && self.m_isBrandLoaded == NO){
+        self.m_isBrandLoaded = YES;
+        [self checkMandatoryRequests];
+    }
+    else if ([[notification name] isEqualToString:BERLOCALNOTIFICATION_BRAND_GETALL_FAILED] && self.m_isBrandLoaded == NO){
+        self.m_isBrandLoaded = YES;
+        [self checkMandatoryRequests];
     }
 }
 

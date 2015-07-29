@@ -10,8 +10,9 @@
 
 @interface BERBrandTVC : UITableViewCell
 
-@property (weak, nonatomic) IBOutlet UIButton *m_btnCheck;
+@property (weak, nonatomic) IBOutlet UIImageView *m_imgCheck;
 @property (weak, nonatomic) IBOutlet UIImageView *m_imgBrand;
 @property (weak, nonatomic) IBOutlet UILabel *m_lblTitle;
+@property (weak, nonatomic) IBOutlet UIButton *m_btnWrapper;
 
 @end

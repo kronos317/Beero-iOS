@@ -7,6 +7,7 @@
 //
 
 #import "BERUrlManager.h"
+#import "Global.h"
 
 @implementation BERUrlManager
 
@@ -22,6 +23,12 @@
 
 + (NSString *) getEndpointForGooglemapsPlaceDetails{
     return @"https://maps.googleapis.com/maps/api/place/details/json";
+}
+
+#pragma mark -Endpoint for Brand
+
++ (NSString *) getAllBrands{
+    return [NSString stringWithFormat:@"%@/brands", BER_BASEURL];
 }
 
 @end

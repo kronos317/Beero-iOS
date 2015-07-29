@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		6202641C5D79882663792FEC /* libPods-BeeroTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 61855FA27DF41AB3F4B7C118 /* libPods-BeeroTests.a */; };
+		830987071B68B8A900F56230 /* BERBrandManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 830987061B68B8A900F56230 /* BERBrandManager.m */; };
+		8309870A1B68BDA900F56230 /* BERBrandDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 830987091B68BDA900F56230 /* BERBrandDataModel.m */; };
 		83DF7D741B5E3B680060CA01 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 83DF7D731B5E3B680060CA01 /* main.m */; };
 		83DF7D771B5E3B680060CA01 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 83DF7D761B5E3B680060CA01 /* AppDelegate.m */; };
 		83DF7D7D1B5E3B680060CA01 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83DF7D7B1B5E3B680060CA01 /* Main.storyboard */; };
@@ -46,6 +48,10 @@
 /* Begin PBXFileReference section */
 		442F08617EE5CBA86CBF2194 /* Pods-Beero.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Beero.release.xcconfig"; path = "Pods/Target Support Files/Pods-Beero/Pods-Beero.release.xcconfig"; sourceTree = "<group>"; };
 		61855FA27DF41AB3F4B7C118 /* libPods-BeeroTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BeeroTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		830987051B68B8A900F56230 /* BERBrandManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BERBrandManager.h; path = Model/Brand/BERBrandManager.h; sourceTree = "<group>"; };
+		830987061B68B8A900F56230 /* BERBrandManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BERBrandManager.m; path = Model/Brand/BERBrandManager.m; sourceTree = "<group>"; };
+		830987081B68BDA900F56230 /* BERBrandDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BERBrandDataModel.h; path = Model/Brand/BERBrandDataModel.h; sourceTree = "<group>"; };
+		830987091B68BDA900F56230 /* BERBrandDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BERBrandDataModel.m; path = Model/Brand/BERBrandDataModel.m; sourceTree = "<group>"; };
 		83DF7D6E1B5E3B680060CA01 /* Beero.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Beero.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		83DF7D721B5E3B680060CA01 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		83DF7D731B5E3B680060CA01 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -127,6 +133,17 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		830987041B68B89400F56230 /* Brand */ = {
+			isa = PBXGroup;
+			children = (
+				830987081B68BDA900F56230 /* BERBrandDataModel.h */,
+				830987091B68BDA900F56230 /* BERBrandDataModel.m */,
+				830987051B68B8A900F56230 /* BERBrandManager.h */,
+				830987061B68B8A900F56230 /* BERBrandManager.m */,
+			);
+			name = Brand;
+			sourceTree = "<group>";
+		};
 		83DF7D651B5E3B680060CA01 = {
 			isa = PBXGroup;
 			children = (
@@ -198,6 +215,7 @@
 		83DF7D981B5E48F90060CA01 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				830987041B68B89400F56230 /* Brand */,
 				83DF7DA91B5E49830060CA01 /* Global.h */,
 				83DF7DB11B5E64D70060CA01 /* BERErrorManager.h */,
 				83DF7DB21B5E64D70060CA01 /* BERErrorManager.m */,
@@ -330,6 +348,7 @@
 				TargetAttributes = {
 					83DF7D6D1B5E3B680060CA01 = {
 						CreatedOnToolsVersion = 6.3;
+						DevelopmentTeam = JFH2EVWP3B;
 					};
 					83DF7D861B5E3B690060CA01 = {
 						CreatedOnToolsVersion = 6.3;
@@ -449,6 +468,7 @@
 				83DF7DCF1B5E80C60060CA01 /* BERSearchVC.m in Sources */,
 				83DF7D771B5E3B680060CA01 /* AppDelegate.m in Sources */,
 				83DF7DB61B5E64FB0060CA01 /* BERGenericFunctionManager.m in Sources */,
+				8309870A1B68BDA900F56230 /* BERBrandDataModel.m in Sources */,
 				83FBCAC81B6054E700A3A311 /* BERStoreDetailsVC.m in Sources */,
 				83DF7DC51B5E67180060CA01 /* BERSplashLoadingVC.m in Sources */,
 				83DF7DB31B5E64D70060CA01 /* BERErrorManager.m in Sources */,
@@ -458,6 +478,7 @@
 				83FBCACE1B6079C500A3A311 /* BERDataManager.m in Sources */,
 				83DF7DC81B5E678D0060CA01 /* BERBrandSelectVC.m in Sources */,
 				83DF7DBC1B5E65860060CA01 /* BERLocalstorageManager.m in Sources */,
+				830987071B68B8A900F56230 /* BERBrandManager.m in Sources */,
 				83DF7DCC1B5E68520060CA01 /* BERBrandTVC.m in Sources */,
 				83DF7DBF1B5E65BE0060CA01 /* BERLocationManager.m in Sources */,
 				83DF7DD51B5E812F0060CA01 /* BERSearchResultFooterTVC.m in Sources */,
@@ -512,7 +533,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: AoGe He (JFH2EVWP3B)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: AoGe He (JFH2EVWP3B)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -534,6 +556,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "550a6976-2ce5-46fa-b844-951064322af9";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -555,7 +578,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: AoGe He (JFH2EVWP3B)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: AoGe He (JFH2EVWP3B)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -570,6 +594,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				PROVISIONING_PROFILE = "550a6976-2ce5-46fa-b844-951064322af9";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -581,10 +606,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: AoGe He (JFH2EVWP3B)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: AoGe He (JFH2EVWP3B)";
 				INFOPLIST_FILE = Beero/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "550a6976-2ce5-46fa-b844-951064322af9";
 			};
 			name = Debug;
 		};
@@ -594,10 +622,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: AoGe He (JFH2EVWP3B)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: AoGe He (JFH2EVWP3B)";
 				INFOPLIST_FILE = Beero/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "550a6976-2ce5-46fa-b844-951064322af9";
 			};
 			name = Release;
 		};
