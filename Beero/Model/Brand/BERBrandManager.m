@@ -54,7 +54,7 @@
 #pragma mark -AFNetworking
 
 - (void) requestBrands{
-    NSString *szUrl = [BERUrlManager getAllBrands];
+    NSString *szUrl = [BERUrlManager getEndpointForAllBrands];
     AFHTTPRequestOperationManager *requestManager = [AFHTTPRequestOperationManager manager];
 //    requestManager.requestSerializer = [AFJSONRequestSerializer serializer];
     requestManager.responseSerializer = [AFJSONResponseSerializer serializer];

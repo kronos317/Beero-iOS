@@ -12,6 +12,10 @@
 
 @interface BERGenericFunctionManager : NSObject
 
+#pragma mark -App
+
++ (NSString *) getUUID;
+
 #pragma mark -String Manipulation
 
 + (NSString *) refineNSString: (NSString *)sz;
@@ -22,6 +26,7 @@
 + (NSString *) getBeautifiedDate: (NSDate *) dt;
 + (NSString *) getBeautifiedTime: (NSDate *) dt;
 + (NSString *) getBeautifiedRemainingTime: (NSDate *) dt;
++ (NSString *) getHashFromString: (NSString *) sz;
 
 #pragma mark -UI
 

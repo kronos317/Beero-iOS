@@ -17,8 +17,8 @@
 
 @implementation BERLocationManager
 
-#define LOCATIONMANAGER_DEFAULT_LOCATION_LATITUDE           -33.765017
-#define LOCATIONMANAGER_DEFAULT_LOCATION_LONGITUDE          151.209396
+#define LOCATIONMANAGER_DEFAULT_LOCATION_LATITUDE           -33.731628
+#define LOCATIONMANAGER_DEFAULT_LOCATION_LONGITUDE          151.216935
 
 + (instancetype) sharedInstance{
     static dispatch_once_t once;
@@ -109,6 +109,9 @@
     // if (locationAge < 0.01) return;
     
     self.m_location = newLocation;
+#warning Just For Test
+    self.m_location = [[CLLocation alloc] initWithLatitude:LOCATIONMANAGER_DEFAULT_LOCATION_LATITUDE longitude:LOCATIONMANAGER_DEFAULT_LOCATION_LONGITUDE];
+    
     [[NSNotificationCenter defaultCenter] postNotificationName:BERLOCALNOTIFICATION_LOCATION_UPDATED object:nil];
     
     [self requestAddressWithLocation:nil callback:nil];
@@ -315,10 +318,6 @@
     float lat = self.m_location.coordinate.latitude;
     float lng = self.m_location.coordinate.longitude;
     NSArray *arr = [BERDataManager sharedInstance].m_arrSupportedArea;
-    
-#warning Just For Test
-    lat = LOCATIONMANAGER_DEFAULT_LOCATION_LATITUDE;
-    lng = LOCATIONMANAGER_DEFAULT_LOCATION_LONGITUDE;
     
     for (int i = 0; i < (int) [arr count]; i++){
         NSDictionary *dict = [arr objectAtIndex:i];

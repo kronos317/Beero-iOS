@@ -27,8 +27,14 @@
 
 #pragma mark -Endpoint for Brand
 
-+ (NSString *) getAllBrands{
++ (NSString *) getEndpointForAllBrands{
     return [NSString stringWithFormat:@"%@/brands", BER_BASEURL];
+}
+
+#pragma mark -Endpoint for Search Deal
+
++ (NSString *) getEndpointForSearchDeal{
+    return [NSString stringWithFormat:@"%@/search", BER_BASEURL];
 }
 
 @end

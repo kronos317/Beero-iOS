@@ -10,17 +10,7 @@
 #import "BERSearchResultBodyTVC.h"
 #import "BERSearchResultFooterTVC.h"
 #import "Global.h"
-
-typedef enum _ENUM_BEER_SIZE{
-    BERENUM_BEER_SIZE_CASES = 0,
-    BERENUM_BEER_SIZE_SIXPACK = 1,
-}BERENUM_BEER_SIZE;
-
-typedef enum _ENUM_BEER_TYPE{
-    BERENUM_BEER_TYPE_BOTTLE = 0,
-    BERENUM_BEER_TYPE_CAN = 1,
-    BERENUM_BEER_TYPE_CANBOTTLE = 2,
-}BERENUM_BEER_TYPE;
+#import "BERSearchManager.h"
 
 typedef enum _ENUM_SEARCHOPTION_SHOW{
     BERENUM_SEARCHOPTION_SHOW_NONE,
@@ -52,8 +42,8 @@ typedef enum _ENUM_SEARCHOPTION_SHOW{
 
 
 @property BERENUM_SEARCHOPTION_SHOW m_enumSearchOptionShow;
-@property BERENUM_BEER_SIZE m_enumBeerSize;
-@property BERENUM_BEER_TYPE m_enumBeerType;
+@property BERENUM_SEARCH_PACKAGESIZE m_enumBeerSize;
+@property BERENUM_SEARCH_CONTAINERTYPE m_enumBeerType;
 
 @property (strong, nonatomic) NSArray *m_arrSearchOptionSize;
 @property (strong, nonatomic) NSArray *m_arrSearchOptionType;
@@ -75,8 +65,8 @@ typedef enum _ENUM_SEARCHOPTION_SHOW{
     [self.m_viewSearchOptionWrapper addGestureRecognizer:grSearchOptionWrapperTap];
     
     self.m_enumSearchOptionShow = BERENUM_SEARCHOPTION_SHOW_NONE;
-    self.m_enumBeerSize = BERENUM_BEER_SIZE_CASES;
-    self.m_enumBeerType = BERENUM_BEER_TYPE_CANBOTTLE;
+    self.m_enumBeerSize = BERENUM_SEARCH_PACKAGESIZE_CASES;
+    self.m_enumBeerType = BERENUM_SEARCH_CONTAINERTYPE_ANY;
     
     self.m_arrSearchOptionSize = @[@{@"_TITLE": @"CASES"},
                                    @{@"_TITLE": @"SIX PACKS"},
@@ -85,8 +75,12 @@ typedef enum _ENUM_SEARCHOPTION_SHOW{
                                    @{@"_TITLE": @"CANS"},
                                    @{@"_TITLE": @"BOTTLES/CANS"},
                                    ];
-    
+   
     self.m_isSearchCompleted = NO;
+    
+    [[BERSearchManager sharedInstance] requestSearchDealWithCallback:^(int status) {
+        NSLog(@"Done");
+    }];
 }
 
 - (void)didReceiveMemoryWarning {

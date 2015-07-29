@@ -47,7 +47,8 @@
 
 // Error Code
 
-#define ERROR_NONE                                              1000
+#define ERROR_NONE                                              0
+#define ERROR_SEARCH_DEAL_FAILED                                1000
 
 // Local Notification
 

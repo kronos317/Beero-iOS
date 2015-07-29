@@ -18,6 +18,7 @@
 
 #pragma mark -Endpoint for Brand
 
-+ (NSString *) getAllBrands;
++ (NSString *) getEndpointForAllBrands;
++ (NSString *) getEndpointForSearchDeal;
 
 @end
