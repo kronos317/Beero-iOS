@@ -20,7 +20,8 @@
 @property (strong, nonatomic) NSMutableDictionary *m_dictOpenHours;
 
 - (id) init;
-- (void) setWithDictionary: (NSDictionary *) dict WithId: (int) Id;
+- (void) setWithDictionary: (NSDictionary *) dict;
 - (BERSTRUCT_STORE_OPENHOURS) getOpenHourWithWeekday: (BERENUM_WEEKDAY) weekday;
+- (BERSTRUCT_STORE_OPENHOURS) getOpenHourToday;
 
 @end

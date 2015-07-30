@@ -10,6 +10,32 @@
 
 @interface BERStoreDetailsVC ()
 
+@property (weak, nonatomic) IBOutlet UILabel *m_lblStoreName;
+@property (weak, nonatomic) IBOutlet UILabel *m_lblMemberSince;
+@property (weak, nonatomic) IBOutlet UILabel *m_lblPhoneNumber;
+
+@property (weak, nonatomic) IBOutlet UIImageView *m_imgOpen;
+@property (weak, nonatomic) IBOutlet UILabel *m_lblOpenTill;
+@property (weak, nonatomic) IBOutlet UILabel *m_lblClosesIn;
+
+@property (weak, nonatomic) IBOutlet UIView *m_viewMapView;
+@property (weak, nonatomic) IBOutlet UILabel *m_lblAddress;
+
+@property (weak, nonatomic) IBOutlet UIImageView *m_imgStore;
+@property (weak, nonatomic) IBOutlet UIView *m_viewManagerWrapper;
+@property (weak, nonatomic) IBOutlet UIImageView *m_imgManager;
+@property (weak, nonatomic) IBOutlet UILabel *m_lblManagerMessage;
+
+@property (weak, nonatomic) IBOutlet UIImageView *m_imgCatalog;
+
+@property (weak, nonatomic) IBOutlet UILabel *m_lblOpeningHourMonday;
+@property (weak, nonatomic) IBOutlet UILabel *m_lblOpeningHourTuesday;
+@property (weak, nonatomic) IBOutlet UILabel *m_lblOpeningHourWednesday;
+@property (weak, nonatomic) IBOutlet UILabel *m_lblOpeningHourThursday;
+@property (weak, nonatomic) IBOutlet UILabel *m_lblOpeningHourFriday;
+@property (weak, nonatomic) IBOutlet UILabel *m_lblOpeningHourSaturday;
+@property (weak, nonatomic) IBOutlet UILabel *m_lblOpeningHourSunday;
+
 @end
 
 @implementation BERStoreDetailsVC
@@ -38,6 +64,9 @@
 
 - (IBAction)onBtnBackClick:(id)sender {
     [self.navigationController popViewControllerAnimated:YES];
+}
+
+- (IBAction)onBtnViewCatalogClick:(id)sender {
 }
 
 @end

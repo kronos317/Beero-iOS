@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "Global.h"
+#import "BERStoreDataModel.h"
 
 @interface BERSearchWinningDealDataModel : NSObject
 
@@ -19,6 +20,7 @@
 @property int m_nDrivingDistance;
 @property int m_nDrivingTime;
 @property BOOL m_isExclusive;
+@property BERStoreDataModel *m_modelStore;
 
 - (id) init;
 - (void) setWithDictionary: (NSDictionary *) dict;

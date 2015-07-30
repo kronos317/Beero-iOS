@@ -30,6 +30,7 @@
         self.m_nDrivingDistance = 0;
         self.m_nDrivingTime = 0;
         self.m_isExclusive = NO;
+        self.m_modelStore = [[BERStoreDataModel alloc] init];
     }
     return self;
 }
@@ -58,6 +59,8 @@
     else {
         self.m_enumContainerType = BERENUM_SEARCH_CONTAINERTYPE_ANY;
     }
+    
+    [self.m_modelStore setWithDictionary:[dict objectForKey:@"store_details"]];
 }
 
 - (NSString *) getBeautifiedVolumeSpecification{

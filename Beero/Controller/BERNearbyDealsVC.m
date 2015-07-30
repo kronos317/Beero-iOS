@@ -13,6 +13,8 @@
 #import <GMSMarker.h>
 #import <GMSCoordinateBounds.h>
 #import <GMSCameraUpdate.h>
+#import "BERSearchManager.h"
+#import "BERSearchDealDataModel.h"
 
 @interface BERNearbyDealsVC () <GMSMapViewDelegate, UIGestureRecognizerDelegate>
 
@@ -52,6 +54,7 @@
         grMapZoom.delegate = self;
         [self.m_mapview addGestureRecognizer:grMapZoom];
         
+        [self addPresetMarker];
     });
 }
 
@@ -69,6 +72,53 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+#pragma mark -Biz Logic
+
+- (void) addPresetMarker{
+    BERSearchManager *managerSearch = [BERSearchManager sharedInstance];
+    BERSearchDealDataModel *deal = [managerSearch.m_arrResult objectAtIndex:managerSearch.m_indexSelectedToViewDetails];
+    
+    NSMutableArray *arrMarkers = [[NSMutableArray alloc] init];
+    
+    UIImage *imgPin = [UIImage imageNamed:@"map-pin-small"];
+    UIImage *imgPinMine = [UIImage imageNamed:@"map-pin-small-orange"];
+    
+    GMSMarker *markerMine = [GMSMarker markerWithPosition:[BERLocationManager sharedInstance].m_location.coordinate];
+    markerMine.map = self.m_mapview;
+    markerMine.appearAnimation = kGMSMarkerAnimationPop;
+    markerMine.icon = imgPinMine;
+    markerMine.groundAnchor = CGPointMake(0.5, 1);
+    
+    [arrMarkers addObject:markerMine];
+    
+    for (int i = 0; i < (int) [deal.m_arrLosingDeal count]; i++){
+        BERSearchLosingDealDataModel *losing = [deal.m_arrLosingDeal objectAtIndex:i];
+        
+        CLLocationCoordinate2D position = CLLocationCoordinate2DMake(losing.m_fLatitude, losing.m_fLongitude);
+        GMSMarker *marker = [GMSMarker markerWithPosition:position];
+        marker.title = losing.m_szStoreName;
+        marker.map = self.m_mapview;
+        marker.appearAnimation = kGMSMarkerAnimationPop;
+        marker.icon = imgPin;
+        marker.groundAnchor = CGPointMake(0.5, 1);
+        
+//        [self.m_mapview setSelectedMarker:marker];
+        [arrMarkers addObject:marker];
+    }
+    
+    CLLocationCoordinate2D firstLocation = ((GMSMarker *)[arrMarkers firstObject]).position;
+    GMSCoordinateBounds *bounds = [[GMSCoordinateBounds alloc] initWithCoordinate:firstLocation coordinate:firstLocation];
+    
+    for (GMSMarker *marker in arrMarkers) {
+        bounds = [bounds includingCoordinate:marker.position];
+    }
+    
+    [self.m_mapview animateWithCameraUpdate:[GMSCameraUpdate fitBounds:bounds withEdgeInsets:UIEdgeInsetsMake(50.0f, 50.0f, 50.0f, 50.0f)]];
+    
+//#warning Check this article to show all markers with mine at center, --- once fit bounds, move camera to my position, check if all are in screen, if not zoom-out until it fits...
+//    http://stackoverflow.com/questions/30065098/google-maps-for-ios-how-can-you-tell-if-a-marker-is-within-the-bounds-of-the-s
+}
 
 #pragma mark - UIGesture Recognizer Event Listener
 

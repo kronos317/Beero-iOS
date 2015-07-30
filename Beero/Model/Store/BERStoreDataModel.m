@@ -33,8 +33,8 @@
     return self;
 }
 
-- (void) setWithDictionary: (NSDictionary *) dict WithId: (int) Id{
-    self.m_index = Id;
+- (void) setWithDictionary: (NSDictionary *) dict{
+    self.m_index = [[dict objectForKey:@"id"] intValue];
     self.m_fLatitude = [[dict objectForKey:@"lat"] floatValue];
     self.m_fLongitude = [[dict objectForKey:@"lng"] floatValue];
     self.m_szName = [BERGenericFunctionManager refineNSString:[dict objectForKey:@"name"]];
@@ -56,6 +56,14 @@
     openHours.m_nCloseMinute = nClose % 100;
     
     return openHours;
+}
+
+- (BERSTRUCT_STORE_OPENHOURS) getOpenHourToday{
+    NSCalendar * gregorian = [[NSCalendar alloc]
+                              initWithCalendarIdentifier:NSGregorianCalendar];
+    NSDateComponents * componentsDate = [gregorian components: (NSYearCalendarUnit|NSMonthCalendarUnit|NSDayCalendarUnit|NSHourCalendarUnit|NSMinuteCalendarUnit|NSSecondCalendarUnit | NSCalendarUnitWeekday) fromDate:[NSDate date]];
+    
+    return [self getOpenHourWithWeekday: (BERENUM_WEEKDAY) (componentsDate.weekday - 1)];
 }
 
 @end
