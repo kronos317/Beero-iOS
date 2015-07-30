@@ -37,11 +37,11 @@
 }
 
 - (IBAction)onBtnStoreDetailsClick:(id)sender {
-    // [self performSegueWithIdentifier:@"SEGUE_FROM_DEAL_DETAILS_TO_STORE_DETAILS" sender:nil];
+     [self performSegueWithIdentifier:@"SEGUE_FROM_DEAL_DETAILS_TO_STORE_DETAILS" sender:nil];
 }
 
 - (IBAction)onBtnNearbyDealsClick:(id)sender {
-    // [self performSegueWithIdentifier:@"SEGUE_FROM_DEAL_DETAILS_TO_NEARBY" sender:nil];
+     [self performSegueWithIdentifier:@"SEGUE_FROM_DEAL_DETAILS_TO_NEARBY" sender:nil];
 }
 
 @end

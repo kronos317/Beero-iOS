@@ -17,6 +17,10 @@
     return [[[UIDevice currentDevice] identifierForVendor] UUIDString];
 }
 
++ (NSString *) getOSVersion{
+    return [[UIDevice currentDevice] systemVersion];
+}
+
 #pragma mark -String Manipulation
 
 + (NSString *) refineNSString: (NSString *)sz{
@@ -143,6 +147,13 @@
         return @"1 month+";
     }
     return @"";
+}
+
++ (NSString *) getTimestampWithDate: (NSDate *) dt{
+    NSCalendar *cal = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
+    NSDateComponents *compsDt = [cal components:NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay | NSCalendarUnitHour | NSCalendarUnitMinute | NSCalendarUnitSecond | NSCalendarUnitWeekday fromDate:dt];
+    NSString *sz = [NSString stringWithFormat:@"%d-%02d-%02d %02d:%02d:%02d", (int) compsDt.year, (int) compsDt.month, (int) compsDt.day, (int) compsDt.hour, (int) compsDt.minute, (int) compsDt.second];
+    return sz;
 }
 
 + (NSString *) getHashFromString: (NSString *) sz{

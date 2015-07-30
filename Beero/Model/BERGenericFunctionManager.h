@@ -15,6 +15,7 @@
 #pragma mark -App
 
 + (NSString *) getUUID;
++ (NSString *) getOSVersion;
 
 #pragma mark -String Manipulation
 
@@ -27,6 +28,7 @@
 + (NSString *) getBeautifiedTime: (NSDate *) dt;
 + (NSString *) getBeautifiedRemainingTime: (NSDate *) dt;
 + (NSString *) getHashFromString: (NSString *) sz;
++ (NSString *) getTimestampWithDate: (NSDate *) dt;
 
 #pragma mark -UI
 

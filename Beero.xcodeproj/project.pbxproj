@@ -13,6 +13,8 @@
 		8309870E1B68F04E00F56230 /* BERSearchManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8309870D1B68F04E00F56230 /* BERSearchManager.m */; };
 		830987111B68F07D00F56230 /* BERSearchWinningDealDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 830987101B68F07D00F56230 /* BERSearchWinningDealDataModel.m */; };
 		830987141B68F09000F56230 /* BERSearchLosingDealDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 830987131B68F09000F56230 /* BERSearchLosingDealDataModel.m */; };
+		830987171B69AA1800F56230 /* BERSearchDealDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 830987161B69AA1800F56230 /* BERSearchDealDataModel.m */; };
+		8309871B1B69AAE800F56230 /* BERStoreDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8309871A1B69AAE800F56230 /* BERStoreDataModel.m */; };
 		83DF7D741B5E3B680060CA01 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 83DF7D731B5E3B680060CA01 /* main.m */; };
 		83DF7D771B5E3B680060CA01 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 83DF7D761B5E3B680060CA01 /* AppDelegate.m */; };
 		83DF7D7D1B5E3B680060CA01 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83DF7D7B1B5E3B680060CA01 /* Main.storyboard */; };
@@ -61,6 +63,10 @@
 		830987101B68F07D00F56230 /* BERSearchWinningDealDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BERSearchWinningDealDataModel.m; path = Model/Search/BERSearchWinningDealDataModel.m; sourceTree = "<group>"; };
 		830987121B68F09000F56230 /* BERSearchLosingDealDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BERSearchLosingDealDataModel.h; path = Model/Search/BERSearchLosingDealDataModel.h; sourceTree = "<group>"; };
 		830987131B68F09000F56230 /* BERSearchLosingDealDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BERSearchLosingDealDataModel.m; path = Model/Search/BERSearchLosingDealDataModel.m; sourceTree = "<group>"; };
+		830987151B69AA1800F56230 /* BERSearchDealDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BERSearchDealDataModel.h; path = Model/Search/BERSearchDealDataModel.h; sourceTree = "<group>"; };
+		830987161B69AA1800F56230 /* BERSearchDealDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BERSearchDealDataModel.m; path = Model/Search/BERSearchDealDataModel.m; sourceTree = "<group>"; };
+		830987191B69AAE800F56230 /* BERStoreDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BERStoreDataModel.h; path = Model/Store/BERStoreDataModel.h; sourceTree = "<group>"; };
+		8309871A1B69AAE800F56230 /* BERStoreDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BERStoreDataModel.m; path = Model/Store/BERStoreDataModel.m; sourceTree = "<group>"; };
 		83DF7D6E1B5E3B680060CA01 /* Beero.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Beero.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		83DF7D721B5E3B680060CA01 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		83DF7D731B5E3B680060CA01 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -160,10 +166,21 @@
 				830987101B68F07D00F56230 /* BERSearchWinningDealDataModel.m */,
 				830987121B68F09000F56230 /* BERSearchLosingDealDataModel.h */,
 				830987131B68F09000F56230 /* BERSearchLosingDealDataModel.m */,
+				830987151B69AA1800F56230 /* BERSearchDealDataModel.h */,
+				830987161B69AA1800F56230 /* BERSearchDealDataModel.m */,
 				8309870C1B68F04E00F56230 /* BERSearchManager.h */,
 				8309870D1B68F04E00F56230 /* BERSearchManager.m */,
 			);
 			name = Search;
+			sourceTree = "<group>";
+		};
+		830987181B69AAD500F56230 /* Store */ = {
+			isa = PBXGroup;
+			children = (
+				830987191B69AAE800F56230 /* BERStoreDataModel.h */,
+				8309871A1B69AAE800F56230 /* BERStoreDataModel.m */,
+			);
+			name = Store;
 			sourceTree = "<group>";
 		};
 		83DF7D651B5E3B680060CA01 = {
@@ -237,6 +254,7 @@
 		83DF7D981B5E48F90060CA01 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				830987181B69AAD500F56230 /* Store */,
 				8309870B1B68D88C00F56230 /* Search */,
 				830987041B68B89400F56230 /* Brand */,
 				83DF7DA91B5E49830060CA01 /* Global.h */,
@@ -489,6 +507,7 @@
 				83DF7DD81B5EAE5D0060CA01 /* BERDealDetailsVC.m in Sources */,
 				83DF7DB91B5E654D0060CA01 /* BERGMPlaceAutoCompleteDataModel.m in Sources */,
 				83DF7DCF1B5E80C60060CA01 /* BERSearchVC.m in Sources */,
+				830987171B69AA1800F56230 /* BERSearchDealDataModel.m in Sources */,
 				83DF7D771B5E3B680060CA01 /* AppDelegate.m in Sources */,
 				83DF7DB61B5E64FB0060CA01 /* BERGenericFunctionManager.m in Sources */,
 				8309870A1B68BDA900F56230 /* BERBrandDataModel.m in Sources */,
@@ -507,6 +526,7 @@
 				83DF7DBF1B5E65BE0060CA01 /* BERLocationManager.m in Sources */,
 				83DF7DD51B5E812F0060CA01 /* BERSearchResultFooterTVC.m in Sources */,
 				830987141B68F09000F56230 /* BERSearchLosingDealDataModel.m in Sources */,
+				8309871B1B69AAE800F56230 /* BERStoreDataModel.m in Sources */,
 				830987111B68F07D00F56230 /* BERSearchWinningDealDataModel.m in Sources */,
 				83DF7D741B5E3B680060CA01 /* main.m in Sources */,
 			);

@@ -7,24 +7,18 @@
 //
 
 #import <Foundation/Foundation.h>
-
-typedef enum _ENUM_SEARCH_PACKAGESIZE{
-    BERENUM_SEARCH_PACKAGESIZE_CASES = 0,
-    BERENUM_SEARCH_PACKAGESIZE_SIXPACK = 1,
-}BERENUM_SEARCH_PACKAGESIZE;
-
-typedef enum _ENUM_SEARCH_CONTAINERTYPE{
-    BERENUM_SEARCH_CONTAINERTYPE_BOTTLE = 0,
-    BERENUM_SEARCH_CONTAINERTYPE_CAN = 1,
-    BERENUM_SEARCH_CONTAINERTYPE_ANY = 2,
-}BERENUM_SEARCH_CONTAINERTYPE;
-
+#import "Global.h"
+#import "BERSearchDealDataModel.h"
 
 @interface BERSearchManager : NSObject
+
+@property int m_indexSelectedToViewDetails;
 
 @property (strong, nonatomic) NSMutableArray *m_arrResult;
 @property BERENUM_SEARCH_PACKAGESIZE m_enumPackageSize;
 @property BERENUM_SEARCH_CONTAINERTYPE m_enumContainerType;
+
+@property (strong, nonatomic) NSString *m_szRequestToken;
 
 - (id) init;
 + (instancetype) sharedInstance;

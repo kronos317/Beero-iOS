@@ -57,6 +57,8 @@
         BERBrandDataModel *brand = [managerBrand.m_arrBrand objectAtIndex:i];
         [self.m_arrSelected addObject:[NSNumber numberWithBool:brand.m_isSelected]];
     }
+    
+    [self.m_tableview reloadData];
 }
 
 - (void) configureCell:(BERBrandTVC *) cell AtIndex:(int) index{

@@ -16,7 +16,12 @@
 + (instancetype) sharedInstance;
 - (void) initializeManager;
 
+#pragma mark -Biz Logic
+
 - (void) sortByPosition;
+- (NSString *) getSelectedIdsWithPipe;
+
+#pragma mark -Requests
 
 - (void) requestBrands;
 

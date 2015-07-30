@@ -16,5 +16,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *m_lblSpec;
 @property (weak, nonatomic) IBOutlet UILabel *m_lblPrice;
 @property (weak, nonatomic) IBOutlet UILabel *m_lblDistance;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *m_constraintBadgeWidth;
 
 @end

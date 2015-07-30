@@ -11,6 +11,8 @@
 #import "BERSearchResultFooterTVC.h"
 #import "Global.h"
 #import "BERSearchManager.h"
+#import "BERBrandManager.h"
+#import "BERBrandDataModel.h"
 
 typedef enum _ENUM_SEARCHOPTION_SHOW{
     BERENUM_SEARCHOPTION_SHOW_NONE,
@@ -36,6 +38,7 @@ typedef enum _ENUM_SEARCHOPTION_SHOW{
 @property (weak, nonatomic) IBOutlet UIImageView *m_imgBottomTypeArrow;
 
 @property (weak, nonatomic) IBOutlet UIImageView *m_imgSearchBeer;
+@property (weak, nonatomic) IBOutlet UILabel *m_lblSearchStatus;
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *m_constraintSizeContainerBottomSpace;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *m_constraintTypeContainerBottomSpace;
@@ -76,11 +79,8 @@ typedef enum _ENUM_SEARCHOPTION_SHOW{
                                    @{@"_TITLE": @"BOTTLES/CANS"},
                                    ];
    
-    self.m_isSearchCompleted = NO;
-    
-    [[BERSearchManager sharedInstance] requestSearchDealWithCallback:^(int status) {
-        NSLog(@"Done");
-    }];
+    self.m_isSearchCompleted = YES;
+    [self doSearch];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -129,7 +129,17 @@ typedef enum _ENUM_SEARCHOPTION_SHOW{
 }
 
 - (void) configureCell: (BERSearchResultBodyTVC *) cell AtIndex: (int) index{
-    
+    BERSearchDealDataModel *deal = [[BERSearchManager sharedInstance].m_arrResult objectAtIndex:index];
+    cell.m_lblTitle.text = deal.m_modelWinningDeal.m_szName;
+    cell.m_lblPrice.text = [NSString stringWithFormat:@"$%.2f", deal.m_modelWinningDeal.m_fPrice];
+    cell.m_lblSpec.text = [deal.m_modelWinningDeal getBeautifiedVolumeSpecification];
+    cell.m_lblDistance.text = [NSString stringWithFormat:@"%@ mins away", [deal.m_modelWinningDeal getBeautifiedDriveDistance]];
+    if (deal.m_modelWinningDeal.m_isExclusive == YES){
+        cell.m_constraintBadgeWidth.constant = 33;
+    }
+    else {
+        cell.m_constraintBadgeWidth.constant = 0;
+    }
 }
 
 - (void) animateSearchOptionToShow: (BERENUM_SEARCHOPTION_SHOW) enumOption{
@@ -264,33 +274,68 @@ typedef enum _ENUM_SEARCHOPTION_SHOW{
 }
 
 - (void) doSearch{
+    self.m_lblSearchStatus.text = @"Finding Beer...";
     self.m_viewMainSearchResult.hidden = YES;
     self.m_viewMainSearch.hidden = NO;
+
+    if (self.m_isSearchCompleted == YES){
+        [self startSpin];
+    }
     self.m_isSearchCompleted = NO;
     
-    [self startSpin];
+    BERSearchManager *managerSearch = [BERSearchManager sharedInstance];
+    managerSearch.m_enumContainerType = self.m_enumBeerType;
+    managerSearch.m_enumPackageSize = self.m_enumBeerSize;
     
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5.0f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        self.m_isSearchCompleted = YES;
-        [self.m_imgSearchBeer.layer removeAllAnimations];
-        self.m_viewMainSearchResult.hidden = NO;
-        self.m_viewMainSearch.hidden = YES;
-        
-        self.m_viewMainSearchResult.alpha = 0;
-        [UIView animateWithDuration:1.0f animations:^{
-            self.m_viewMainSearchResult.alpha = 1;
-        }];
-    });
+    [managerSearch requestSearchDealWithCallback:^(int status) {
+        if (status == ERROR_SEARCH_DEAL_CANCELLED) return;
+        if (status == ERROR_NONE){
+            self.m_isSearchCompleted = YES;
+            [self.m_imgSearchBeer.layer removeAllAnimations];
+            self.m_imgSearchBeer.transform = CGAffineTransformMakeRotation(0);self.m_viewMainSearchResult.hidden = NO;
+            self.m_viewMainSearch.hidden = YES;
+            self.m_lblSearchStatus.text = @"";
+            
+            [self.m_tableview reloadData];
+            
+            self.m_viewMainSearchResult.alpha = 0;
+            [UIView animateWithDuration:1.0f animations:^{
+                self.m_viewMainSearchResult.alpha = 1;
+            }];
+        }
+        else if (status == ERROR_SEARCH_DEAL_FAILED || status == ERROR_SEARCH_DEAL_NOTFOUND){
+            self.m_isSearchCompleted = YES;
+            [self.m_imgSearchBeer.layer removeAllAnimations];
+            self.m_imgSearchBeer.transform = CGAffineTransformMakeRotation(0);
+            self.m_lblSearchStatus.text = @"No deal found!";
+        }
+    }];
 }
 
 - (void) gotoDealDetailsAtIndex: (int) index{
+    [BERSearchManager sharedInstance].m_indexSelectedToViewDetails = index;
     [self performSegueWithIdentifier:@"SEGUE_FROM_SEARCH_TO_DEAL_DETAILS" sender:nil];
+}
+
+- (void) removeBrandAtIndex: (int) index{
+    BERSearchDealDataModel *deal = [[BERSearchManager sharedInstance].m_arrResult objectAtIndex:index];
+    BERBrandManager *managerBrand = [BERBrandManager sharedInstance];
+    
+    for (int i = 0; i < (int) [managerBrand.m_arrBrand count]; i++){
+        BERBrandDataModel *brand = [managerBrand.m_arrBrand objectAtIndex:i];
+        if (brand.m_index == deal.m_index){
+            brand.m_isSelected = NO;
+            break;
+        }
+    }
+    
+    [self doSearch];
 }
 
 #pragma mark -UITableView Event Listeners
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 10;
+    return [[BERSearchManager sharedInstance].m_arrResult count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -322,7 +367,7 @@ typedef enum _ENUM_SEARCHOPTION_SHOW{
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath{
     if (editingStyle == UITableViewCellEditingStyleDelete){
-        NSLog(@"Remove");
+        [self removeBrandAtIndex:(int) indexPath.row];
     }
 }
 
@@ -368,12 +413,12 @@ typedef enum _ENUM_SEARCHOPTION_SHOW{
 - (IBAction)onBtnOptionSizeClick:(id)sender {
     UIButton *button = sender;
     int size = (int) button.tag;
-
-    if (self.m_enumBeerSize != size){
+    BERENUM_SEARCH_PACKAGESIZE oldSize = self.m_enumBeerSize;
+    self.m_enumBeerSize = size;
+    
+    if (oldSize != size){
         [self doSearch];
     }
-
-    self.m_enumBeerSize = size;
 
     NSString *szSize = [[self.m_arrSearchOptionSize objectAtIndex:self.m_enumBeerSize] objectForKey:@"_TITLE"];
     self.m_lblBottomSize.text = szSize;
@@ -384,17 +429,25 @@ typedef enum _ENUM_SEARCHOPTION_SHOW{
 - (IBAction)onBtnOptionTypeClick:(id)sender {
     UIButton *button = sender;
     int type = (int) button.tag;
-    
-    if (self.m_enumBeerType != type){
-        [self doSearch];
-    }
-
+    BERENUM_SEARCH_CONTAINERTYPE oldType = self.m_enumBeerType;
     self.m_enumBeerType = type;
+    
+    if (oldType != type){
+        [self doSearch];
+    }    
     
     NSString *szType = [[self.m_arrSearchOptionType objectAtIndex:self.m_enumBeerType] objectForKey:@"_TITLE"];
     self.m_lblBottomType.text = szType;
 
     [self animateSearchOptionToShow:BERENUM_SEARCHOPTION_SHOW_NONE];
+}
+
+- (IBAction)onBtnRefreshClick:(id)sender {
+    [self doSearch];
+}
+
+- (IBAction)onBtnAddBeerClick:(id)sender {
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 #pragma mark -Gesture Recognizer
