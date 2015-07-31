@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7531" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="BERGMSMarkerStoreInfoView">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0xy-ib-q14" userLabel="View - Info Window">
+                    <rect key="frame" x="200" y="258" width="200" height="85"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DV9-zU-3Y7" userLabel="View - Main Container">
+                            <rect key="frame" x="0.0" y="0.0" width="200" height="74"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Australian Hotel" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="200" translatesAutoresizingMaskIntoConstraints="NO" id="VnA-dm-kPe">
+                                    <rect key="frame" x="10" y="15" width="180" height="17"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" relation="lessThanOrEqual" constant="200" id="Ho8-Ic-aJA"/>
+                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="120" id="Ooa-uG-2mo"/>
+                                        <constraint firstAttribute="width" constant="180" id="gnd-6u-tPF"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="14"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <nil key="highlightedColor"/>
+                                    <variation key="default">
+                                        <mask key="constraints">
+                                            <exclude reference="Ho8-Ic-aJA"/>
+                                            <exclude reference="Ooa-uG-2mo"/>
+                                        </mask>
+                                    </variation>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$9.08 per litre" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="200" translatesAutoresizingMaskIntoConstraints="NO" id="T3D-zV-oYM">
+                                    <rect key="frame" x="10" y="42" width="180" height="17"/>
+                                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="14"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" red="0.01176470588" green="0.2666666667" blue="0.42745098040000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstItem="T3D-zV-oYM" firstAttribute="top" secondItem="VnA-dm-kPe" secondAttribute="bottom" constant="10" id="0or-Fv-fWF"/>
+                                <constraint firstItem="VnA-dm-kPe" firstAttribute="leading" secondItem="DV9-zU-3Y7" secondAttribute="leading" constant="10" id="HBD-PR-fwV"/>
+                                <constraint firstAttribute="bottom" secondItem="T3D-zV-oYM" secondAttribute="bottom" constant="15" id="RGX-dY-LnH"/>
+                                <constraint firstItem="T3D-zV-oYM" firstAttribute="width" secondItem="VnA-dm-kPe" secondAttribute="width" id="j08-03-cPt"/>
+                                <constraint firstItem="T3D-zV-oYM" firstAttribute="centerX" secondItem="VnA-dm-kPe" secondAttribute="centerX" id="r3f-9n-C4S"/>
+                                <constraint firstAttribute="trailing" secondItem="VnA-dm-kPe" secondAttribute="trailing" constant="10" id="ut8-Au-zIx"/>
+                                <constraint firstItem="VnA-dm-kPe" firstAttribute="top" secondItem="DV9-zU-3Y7" secondAttribute="top" constant="15" id="yuH-AJ-Lqg"/>
+                            </constraints>
+                        </view>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="marker-arrow-down" translatesAutoresizingMaskIntoConstraints="NO" id="X9I-kX-8Ud">
+                            <rect key="frame" x="93" y="74" width="15" height="6"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="15" id="UR6-U8-9uy"/>
+                                <constraint firstAttribute="height" constant="6" id="imp-cr-Pnu"/>
+                            </constraints>
+                        </imageView>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="centerX" secondItem="X9I-kX-8Ud" secondAttribute="centerX" id="30s-uj-GxG"/>
+                        <constraint firstAttribute="trailing" secondItem="DV9-zU-3Y7" secondAttribute="trailing" id="BnJ-ca-oBf"/>
+                        <constraint firstAttribute="bottom" secondItem="X9I-kX-8Ud" secondAttribute="bottom" constant="5" id="CYm-8X-8yQ"/>
+                        <constraint firstAttribute="height" constant="80" id="I0T-Ja-4RF"/>
+                        <constraint firstItem="X9I-kX-8Ud" firstAttribute="top" secondItem="DV9-zU-3Y7" secondAttribute="bottom" id="Q9l-a8-1NU"/>
+                        <constraint firstItem="DV9-zU-3Y7" firstAttribute="top" secondItem="0xy-ib-q14" secondAttribute="top" id="YNU-qD-p4p"/>
+                        <constraint firstAttribute="width" constant="200" id="bj2-4V-xHA"/>
+                        <constraint firstItem="DV9-zU-3Y7" firstAttribute="leading" secondItem="0xy-ib-q14" secondAttribute="leading" id="dhB-rn-9Ne"/>
+                    </constraints>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="I0T-Ja-4RF"/>
+                            <exclude reference="bj2-4V-xHA"/>
+                        </mask>
+                    </variation>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="centerY" secondItem="0xy-ib-q14" secondAttribute="centerY" id="AhI-9s-Zf1"/>
+                <constraint firstAttribute="centerX" secondItem="0xy-ib-q14" secondAttribute="centerX" id="wjp-R5-ghq"/>
+            </constraints>
+            <connections>
+                <outlet property="m_lblName" destination="VnA-dm-kPe" id="YRh-Bd-W5Z"/>
+                <outlet property="m_lblPrice" destination="T3D-zV-oYM" id="ERr-nk-ais"/>
+                <outlet property="m_viewMainContainer" destination="DV9-zU-3Y7" id="ALh-eC-R3W"/>
+                <outlet property="m_viewStoreInfoContainer" destination="0xy-ib-q14" id="DS6-Ye-14c"/>
+            </connections>
+            <point key="canvasLocation" x="546" y="313"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="marker-arrow-down" width="15" height="6"/>
+    </resources>
+</document>

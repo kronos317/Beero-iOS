@@ -23,5 +23,8 @@
 - (void) setWithDictionary: (NSDictionary *) dict;
 - (BERSTRUCT_STORE_OPENHOURS) getOpenHourWithWeekday: (BERENUM_WEEKDAY) weekday;
 - (BERSTRUCT_STORE_OPENHOURS) getOpenHourToday;
+- (int) getRemainingMinutesTillClose;
+- (NSString *) getBeautifiedLabelForOpenTimeToday;
+- (NSString *) getBeautifiedLabelForRemainingTimeToday;
 
 @end

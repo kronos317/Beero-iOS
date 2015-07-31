@@ -66,4 +66,63 @@
     return [self getOpenHourWithWeekday: (BERENUM_WEEKDAY) (componentsDate.weekday - 1)];
 }
 
+- (int) getRemainingMinutesTillClose{
+    NSDate *dtNow = [NSDate date];
+    NSDate *dtClose, *dtOpen;
+    BERSTRUCT_STORE_OPENHOURS openHour = [self getOpenHourToday];
+    NSCalendar * gregorian = [[NSCalendar alloc]
+                              initWithCalendarIdentifier:NSGregorianCalendar];
+    NSDateComponents * componentsDate = [gregorian components: (NSYearCalendarUnit|NSMonthCalendarUnit|NSDayCalendarUnit|NSHourCalendarUnit|NSMinuteCalendarUnit|NSSecondCalendarUnit | NSCalendarUnitWeekday) fromDate:dtNow];
+
+    componentsDate.hour = openHour.m_nOpenHour;
+    componentsDate.minute = openHour.m_nOpenMinute;
+    componentsDate.second = 0;
+    dtOpen = [gregorian dateFromComponents:componentsDate];
+    
+    componentsDate.hour = openHour.m_nCloseHour;
+    componentsDate.minute = openHour.m_nCloseMinute;
+    dtClose = [gregorian dateFromComponents:componentsDate];
+    
+    int secondsToClose = [dtClose timeIntervalSinceDate:dtNow];
+    int secondsToOpen = [dtOpen timeIntervalSinceDate:dtNow];
+    
+    if (secondsToOpen > 0) return STORE_OPENHOUR_NOTOPEN;
+    if (secondsToClose < 0) return STORE_OPENHOUR_CLOSED;
+    
+    int minutesToClose = secondsToClose / 60;
+    return minutesToClose;
+}
+
+- (NSString *) getBeautifiedLabelForOpenTimeToday{
+    int nRemaining = [self getRemainingMinutesTillClose];
+    BERSTRUCT_STORE_OPENHOURS openHour = [self getOpenHourToday];
+    NSString *szOpen = [NSString stringWithFormat:@"Open at %@", [self getShortStringForTimeWithHour:openHour.m_nOpenHour AndMinute:openHour.m_nOpenMinute]];
+    NSString *szClose = [NSString stringWithFormat:@"Till %@", [self getShortStringForTimeWithHour:openHour.m_nCloseHour AndMinute:openHour.m_nCloseMinute]];
+    
+    if (nRemaining == STORE_OPENHOUR_NOTOPEN){
+        return szOpen;
+    }
+    if (nRemaining == STORE_OPENHOUR_CLOSED) return @"Closed";
+    return szClose;
+}
+
+- (NSString *) getBeautifiedLabelForRemainingTimeToday{
+    int nRemaining = [self getRemainingMinutesTillClose];
+    if (nRemaining == STORE_OPENHOUR_NOTOPEN || nRemaining == STORE_OPENHOUR_NOTOPEN){
+        return @"";
+    }
+    if (nRemaining >= 60) return @"";
+    return [NSString stringWithFormat:@"Closes in %d minutes!", nRemaining];
+}
+
+- (NSString *) getShortStringForTimeWithHour: (int) hour AndMinute: (int) minute{
+    NSString *ampm = @"am";
+    if (hour >= 12) ampm = @"pm";
+    if (hour > 12) hour = hour - 12;
+    if (minute == 0){
+        return [NSString stringWithFormat:@"%d%@", hour, ampm];
+    }
+    return [NSString stringWithFormat:@"%d:%02d%@", hour, minute, ampm];
+}
+
 @end

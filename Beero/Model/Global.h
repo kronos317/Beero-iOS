@@ -95,4 +95,7 @@ typedef struct _STRUCT_STORE_OPENHOURS{
     int m_nCloseMinute;
 }BERSTRUCT_STORE_OPENHOURS;
 
+#define STORE_OPENHOUR_NOTOPEN                  99999
+#define STORE_OPENHOUR_CLOSED                   -1
+
 #endif

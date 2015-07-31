@@ -172,6 +172,13 @@
     return output;
 }
 
++ (NSString *) getStringForTimeWithHour: (int) hour AndMinute: (int) minute{
+    NSString *ampm = @"am";
+    if (hour >= 12) ampm = @"pm";
+    if (hour > 12) hour = hour - 12;
+    return [NSString stringWithFormat:@"%d:%02d%@", hour, minute, ampm];
+}
+
 #pragma mark -UI
 
 + (void) showAlertWithMessage: (NSString *) szMessage{

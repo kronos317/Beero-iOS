@@ -15,11 +15,13 @@
 #import <GMSCameraUpdate.h>
 #import "BERSearchManager.h"
 #import "BERSearchDealDataModel.h"
+#import "BERGMSMarkerStoreInfoView.h"
 
 @interface BERNearbyDealsVC () <GMSMapViewDelegate, UIGestureRecognizerDelegate>
 
 @property (weak, nonatomic) IBOutlet UIView *m_viewMapView;
 @property (strong, nonatomic) GMSMapView *m_mapview;
+@property (strong, nonatomic) NSMutableArray *m_arrMarkers;
 
 @end
 
@@ -54,7 +56,9 @@
         grMapZoom.delegate = self;
         [self.m_mapview addGestureRecognizer:grMapZoom];
         
-        [self addPresetMarker];
+        self.m_mapview.delegate = self;
+        
+        [self addMarker];
     });
 }
 
@@ -75,11 +79,11 @@
 
 #pragma mark -Biz Logic
 
-- (void) addPresetMarker{
+- (void) addMarker{
     BERSearchManager *managerSearch = [BERSearchManager sharedInstance];
     BERSearchDealDataModel *deal = [managerSearch.m_arrResult objectAtIndex:managerSearch.m_indexSelectedToViewDetails];
     
-    NSMutableArray *arrMarkers = [[NSMutableArray alloc] init];
+    self.m_arrMarkers = [[NSMutableArray alloc] init];
     
     UIImage *imgPin = [UIImage imageNamed:@"map-pin-small"];
     UIImage *imgPinMine = [UIImage imageNamed:@"map-pin-small-orange"];
@@ -90,34 +94,64 @@
     markerMine.icon = imgPinMine;
     markerMine.groundAnchor = CGPointMake(0.5, 1);
     
-    [arrMarkers addObject:markerMine];
+    [self.m_arrMarkers addObject:markerMine];
     
     for (int i = 0; i < (int) [deal.m_arrLosingDeal count]; i++){
         BERSearchLosingDealDataModel *losing = [deal.m_arrLosingDeal objectAtIndex:i];
         
         CLLocationCoordinate2D position = CLLocationCoordinate2DMake(losing.m_fLatitude, losing.m_fLongitude);
         GMSMarker *marker = [GMSMarker markerWithPosition:position];
-        marker.title = losing.m_szStoreName;
+//        marker.title = losing.m_szStoreName;
+        marker.infoWindowAnchor = CGPointMake(0.5, 0);
         marker.map = self.m_mapview;
         marker.appearAnimation = kGMSMarkerAnimationPop;
         marker.icon = imgPin;
         marker.groundAnchor = CGPointMake(0.5, 1);
-        
 //        [self.m_mapview setSelectedMarker:marker];
-        [arrMarkers addObject:marker];
+        [self.m_arrMarkers addObject:marker];
     }
     
-    CLLocationCoordinate2D firstLocation = ((GMSMarker *)[arrMarkers firstObject]).position;
+    CLLocationCoordinate2D firstLocation = ((GMSMarker *)[self.m_arrMarkers firstObject]).position;
     GMSCoordinateBounds *bounds = [[GMSCoordinateBounds alloc] initWithCoordinate:firstLocation coordinate:firstLocation];
     
-    for (GMSMarker *marker in arrMarkers) {
+    for (GMSMarker *marker in self.m_arrMarkers) {
         bounds = [bounds includingCoordinate:marker.position];
     }
     
-    [self.m_mapview animateWithCameraUpdate:[GMSCameraUpdate fitBounds:bounds withEdgeInsets:UIEdgeInsetsMake(50.0f, 50.0f, 50.0f, 50.0f)]];
+    [self.m_mapview moveCamera:[GMSCameraUpdate fitBounds:bounds withEdgeInsets:UIEdgeInsetsMake(50.0f, 50.0f, 50.0f, 50.0f)]];
+
+    /*
+    // Show all markers in one screen with Orange marker at center point
     
-//#warning Check this article to show all markers with mine at center, --- once fit bounds, move camera to my position, check if all are in screen, if not zoom-out until it fits...
-//    http://stackoverflow.com/questions/30065098/google-maps-for-ios-how-can-you-tell-if-a-marker-is-within-the-bounds-of-the-s
+    CLLocationCoordinate2D posCenter = [BERLocationManager sharedInstance].m_location.coordinate;
+    float fZoom = self.m_mapview.camera.zoom;
+    float fZoomOutStep = 0.1f;
+    int countLoop = 0;
+
+    [self.m_mapview moveCamera:[GMSCameraUpdate setTarget:posCenter]];
+    while (true) {
+        GMSVisibleRegion region = [self.m_mapview.projection visibleRegion];
+        GMSCoordinateBounds *boundScreen = [[GMSCoordinateBounds alloc] initWithRegion:region];
+        BOOL bAllMarkersVisible = YES;
+        
+        for (int i = 0; i < (int) [self.m_arrMarkers count]; i++){
+            GMSMarker *marker = [self.m_arrMarkers objectAtIndex:i];
+            if ([boundScreen containsCoordinate:marker.position] == NO){
+                bAllMarkersVisible = NO;
+                break;
+            }
+        }
+        
+        if (bAllMarkersVisible == YES) break;
+        
+        // Zoom map to show all markers in screen
+        fZoom = fZoom - fZoomOutStep;
+        [self.m_mapview moveCamera:[GMSCameraUpdate setTarget:posCenter zoom:fZoom]];
+        
+        countLoop++;
+        if (countLoop > 200) break;
+    }
+     */
 }
 
 #pragma mark - UIGesture Recognizer Event Listener
@@ -141,6 +175,31 @@
     [self.view endEditing:YES];
     if (sender.state == UIGestureRecognizerStateEnded) {
     }
+}
+
+#pragma mark -GMSMapView Delegate
+
+- (UIView *)mapView:(GMSMapView *)mapView markerInfoWindow:(GMSMarker *)marker{
+    BERGMSMarkerStoreInfoView *view =  [[[NSBundle mainBundle] loadNibNamed:@"MarkerInfoView" owner:self options:nil] objectAtIndex:0];
+    view.m_viewMainContainer.backgroundColor = BERUICOLOR_THEMECOLOR_MAIN;
+    BERSearchDealDataModel *deal = [[BERSearchManager sharedInstance].m_arrResult objectAtIndex:[BERSearchManager sharedInstance].m_indexSelectedToViewDetails];
+    
+    for (int i = 0; i < (int) [self.m_arrMarkers count]; i++){
+        GMSMarker *m = [self.m_arrMarkers objectAtIndex:i];
+        if (m == marker){
+            if (i == 0){
+                // Orange icon... no info window needed
+                return nil;
+            }
+            
+            BERSearchLosingDealDataModel *losing = [deal.m_arrLosingDeal objectAtIndex:(i - 1)];
+            view.m_lblName.text = losing.m_szStoreName;
+            view.m_lblPrice.text = [NSString stringWithFormat:@"$%@ per litre", losing.m_szPricePerLitre];
+            break;
+        }
+    }
+    
+    return view.m_viewStoreInfoContainer;
 }
 
 #pragma mark -Button Event Listeners

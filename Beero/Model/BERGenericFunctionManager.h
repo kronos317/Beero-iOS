@@ -29,6 +29,7 @@
 + (NSString *) getBeautifiedRemainingTime: (NSDate *) dt;
 + (NSString *) getHashFromString: (NSString *) sz;
 + (NSString *) getTimestampWithDate: (NSDate *) dt;
++ (NSString *) getStringForTimeWithHour: (int) hour AndMinute: (int) minute;
 
 #pragma mark -UI
 

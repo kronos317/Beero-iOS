@@ -60,12 +60,10 @@
 
 - (void) refreshFields{
     BERSearchDealDataModel *deal = [[BERSearchManager sharedInstance].m_arrResult objectAtIndex:[BERSearchManager sharedInstance].m_indexSelectedToViewDetails];
-    BERSTRUCT_STORE_OPENHOURS openHour = [deal.m_modelWinningDeal.m_modelStore getOpenHourToday];
     
     self.m_lblBrandName.text = deal.m_modelWinningDeal.m_szName;    
     self.m_lblStoreName.text = deal.m_modelWinningDeal.m_modelStore.m_szName;
     self.m_lblStoreAddress.text = deal.m_modelWinningDeal.m_modelStore.m_szAddress;
-    self.m_lblStoreSpec.text = [NSString stringWithFormat:@"%@ mins drive, open till %dpm", [deal.m_modelWinningDeal getBeautifiedDriveDistance], (openHour.m_nCloseHour <= 12) ? openHour.m_nCloseHour : (openHour.m_nCloseHour - 12)];
     
     self.m_lblDealSizeSpec.text = [deal.m_modelWinningDeal getBeautifiedVolumeSpecification];
     self.m_lblPriceBig.text = [NSString stringWithFormat:@"%d", (int) (deal.m_modelWinningDeal.m_fPrice)];
@@ -87,6 +85,19 @@
     }
     
     self.m_lblNearby.text = [NSString stringWithFormat:@"Best of %d nearby deals", (int) [deal.m_arrLosingDeal count]];
+    
+    int nRemainingMinute = [deal.m_modelWinningDeal.m_modelStore getRemainingMinutesTillClose];
+    if (nRemainingMinute == STORE_OPENHOUR_CLOSED){
+        // Closed
+        self.m_lblStoreSpec.text = [NSString stringWithFormat:@"%@ mins drive", [deal.m_modelWinningDeal getBeautifiedDriveDistance]];
+    }
+    else if (nRemainingMinute == STORE_OPENHOUR_NOTOPEN){
+        // NOT OPEN YET
+        self.m_lblStoreSpec.text = [NSString stringWithFormat:@"%@ mins drive, %@", [deal.m_modelWinningDeal getBeautifiedDriveDistance], [[deal.m_modelWinningDeal.m_modelStore getBeautifiedLabelForOpenTimeToday] lowercaseString]];
+    }
+    else {
+        self.m_lblStoreSpec.text = [NSString stringWithFormat:@"%@ mins drive, open %@", [deal.m_modelWinningDeal getBeautifiedDriveDistance], [[deal.m_modelWinningDeal.m_modelStore getBeautifiedLabelForOpenTimeToday] lowercaseString]];
+    }
 }
 
 #pragma mark -Button Event Listeners
