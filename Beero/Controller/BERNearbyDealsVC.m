@@ -60,6 +60,8 @@
         
         [self addMarker];
     });
+    
+    self.view.backgroundColor = BERUICOLOR_THEMECOLOR_MAIN;
 }
 
 - (void)didReceiveMemoryWarning {

@@ -13,10 +13,12 @@
 @interface BERSearchDealDataModel : NSObject
 
 @property int m_index;
+@property (strong, nonatomic) NSString *m_szBrandName;
 @property (strong, nonatomic) BERSearchWinningDealDataModel *m_modelWinningDeal;
 @property (strong, nonatomic) NSMutableArray *m_arrLosingDeal;
 
 - (id) init;
 - (void) setWithDictionary: (NSDictionary *) dict WithId: (int) Id;
+- (BOOL) isDealFound;
 
 @end

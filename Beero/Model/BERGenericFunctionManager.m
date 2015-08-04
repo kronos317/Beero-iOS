@@ -208,4 +208,14 @@
     return szResult;
 }
 
++ (void) drawDropShadowToView: (UIView *) view Size: (float) size{
+    UIBezierPath *shadowPath = [UIBezierPath bezierPathWithRect:view.bounds];
+    view.layer.masksToBounds = NO;
+    view.layer.shadowColor = [UIColor blackColor].CGColor;
+    view.layer.shadowOffset = CGSizeMake(0.0f, 0.0f);
+    view.layer.shadowRadius = size;
+    view.layer.shadowOpacity = 0.5f;
+    view.layer.shadowPath = shadowPath.CGPath;
+}
+
 @end

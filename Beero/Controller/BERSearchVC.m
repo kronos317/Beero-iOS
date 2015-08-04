@@ -13,6 +13,8 @@
 #import "BERSearchManager.h"
 #import "BERBrandManager.h"
 #import "BERBrandDataModel.h"
+#import "BERBrandSelectVC.h"
+#import "BERGenericFunctionManager.h"
 
 typedef enum _ENUM_SEARCHOPTION_SHOW{
     BERENUM_SEARCHOPTION_SHOW_NONE,
@@ -22,6 +24,7 @@ typedef enum _ENUM_SEARCHOPTION_SHOW{
 
 @interface BERSearchVC () <UITableViewDelegate, UITableViewDataSource, UIGestureRecognizerDelegate>
 
+@property (weak, nonatomic) IBOutlet UIView *m_viewHeader;
 @property (weak, nonatomic) IBOutlet UIView *m_viewMainSearch;
 @property (weak, nonatomic) IBOutlet UIView *m_viewMainSearchResult;
 @property (weak, nonatomic) IBOutlet UIView *m_viewSearchOptionWrapper;
@@ -42,7 +45,7 @@ typedef enum _ENUM_SEARCHOPTION_SHOW{
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *m_constraintSizeContainerBottomSpace;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *m_constraintTypeContainerBottomSpace;
-
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *m_constraintSearchResultViewTopSpace;
 
 @property BERENUM_SEARCHOPTION_SHOW m_enumSearchOptionShow;
 @property BERENUM_SEARCH_PACKAGESIZE m_enumBeerSize;
@@ -81,6 +84,9 @@ typedef enum _ENUM_SEARCHOPTION_SHOW{
    
     self.m_isSearchCompleted = YES;
     [self doSearch];
+    
+    self.view.backgroundColor = BERUICOLOR_THEMECOLOR_MAIN;
+    self.m_viewHeader.backgroundColor = BERUICOLOR_THEMECOLOR_MAIN;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -130,14 +136,22 @@ typedef enum _ENUM_SEARCHOPTION_SHOW{
 
 - (void) configureCell: (BERSearchResultBodyTVC *) cell AtIndex: (int) index{
     BERSearchDealDataModel *deal = [[BERSearchManager sharedInstance].m_arrResult objectAtIndex:index];
-    cell.m_lblTitle.text = deal.m_modelWinningDeal.m_szName;
-    cell.m_lblPrice.text = [NSString stringWithFormat:@"$%.2f", deal.m_modelWinningDeal.m_fPrice];
-    cell.m_lblSpec.text = [deal.m_modelWinningDeal getBeautifiedVolumeSpecification];
-    cell.m_lblDistance.text = [NSString stringWithFormat:@"%@ mins away", [deal.m_modelWinningDeal getBeautifiedDriveDistance]];
-    if (deal.m_modelWinningDeal.m_isExclusive == YES){
-        cell.m_constraintBadgeWidth.constant = 33;
+    cell.m_lblTitle.text = deal.m_szBrandName;
+    if ([deal isDealFound] == YES){
+        cell.m_lblPrice.text = [NSString stringWithFormat:@"$%.2f", deal.m_modelWinningDeal.m_fPrice];
+        cell.m_lblSpec.text = [deal.m_modelWinningDeal getBeautifiedVolumeSpecification];
+        cell.m_lblDistance.text = [NSString stringWithFormat:@"%@ mins away", [deal.m_modelWinningDeal getBeautifiedDriveDistance]];
+        if (deal.m_modelWinningDeal.m_isExclusive == YES){
+            cell.m_constraintBadgeWidth.constant = 33;
+        }
+        else {
+            cell.m_constraintBadgeWidth.constant = 0;
+        }
     }
     else {
+        cell.m_lblPrice.text = @"";
+        cell.m_lblSpec.text = @"No Deals Found";
+        cell.m_lblDistance.text = @"";
         cell.m_constraintBadgeWidth.constant = 0;
     }
 }
@@ -183,34 +197,62 @@ typedef enum _ENUM_SEARCHOPTION_SHOW{
             // [Size] to Hide
             self.m_imgBottomSizeArrow.hidden = NO;
             self.m_imgBottomSizeArrow.alpha = 1;
-            self.m_constraintSizeContainerBottomSpace.constant = 0;
+            self.m_constraintSizeContainerBottomSpace.constant = -50;
             [self.m_viewSearchOptionWrapper layoutIfNeeded];
             
-            self.m_constraintSizeContainerBottomSpace.constant = -fSizeContainerHeight;
-            [UIView animateWithDuration:0.25f animations:^{
-                self.m_imgBottomSizeArrow.alpha = 0;
-                [self.m_viewSearchOptionWrapper layoutIfNeeded];
-            } completion:^(BOOL finished) {
-                self.m_enumSearchOptionShow = enumOption;
-                [self refreshFields];
-            }];
+            self.m_constraintSizeContainerBottomSpace.constant = -fSizeContainerHeight - 50;
+            
+            [UIView animateWithDuration:0.5
+                                  delay:0
+                 usingSpringWithDamping:0.6
+                  initialSpringVelocity:0.6
+                                options:0
+                             animations:^{
+                                 self.m_imgBottomSizeArrow.alpha = 0;
+                                 [self.m_viewSearchOptionWrapper layoutIfNeeded];
+                             } completion:^(BOOL finished) {
+                                 self.m_enumSearchOptionShow = enumOption;
+                                 [self refreshFields];
+                             }];
+
+//            [UIView animateWithDuration:0.25f animations:^{
+//                self.m_imgBottomSizeArrow.alpha = 0;
+//                [self.m_viewSearchOptionWrapper layoutIfNeeded];
+//            } completion:^(BOOL finished) {
+//                self.m_enumSearchOptionShow = enumOption;
+//                [self refreshFields];
+//            }];
         }
 
         if (self.m_enumSearchOptionShow == BERENUM_SEARCHOPTION_SHOW_TYPE){
             // [Type] to Hide
             self.m_imgBottomTypeArrow.hidden = NO;
             self.m_imgBottomTypeArrow.alpha = 1;
-            self.m_constraintTypeContainerBottomSpace.constant = 0;
+            self.m_constraintTypeContainerBottomSpace.constant = -50;
             [self.m_viewSearchOptionWrapper layoutIfNeeded];
             
-            self.m_constraintTypeContainerBottomSpace.constant = -fTypeContainerHeight;
-            [UIView animateWithDuration:0.25f animations:^{
-                self.m_imgBottomTypeArrow.alpha = 0;
-                [self.m_viewSearchOptionWrapper layoutIfNeeded];
-            } completion:^(BOOL finished) {
-                self.m_enumSearchOptionShow = enumOption;
-                [self refreshFields];
-            }];
+            self.m_constraintTypeContainerBottomSpace.constant = -fTypeContainerHeight - 50;
+
+            [UIView animateWithDuration:0.5
+                                  delay:0
+                 usingSpringWithDamping:0.6
+                  initialSpringVelocity:0.6
+                                options:0
+                             animations:^{
+                                 self.m_imgBottomTypeArrow.alpha = 0;
+                                 [self.m_viewSearchOptionWrapper layoutIfNeeded];
+                             } completion:^(BOOL finished) {
+                                 self.m_enumSearchOptionShow = enumOption;
+                                 [self refreshFields];
+                             }];
+
+//            [UIView animateWithDuration:0.25f animations:^{
+//                self.m_imgBottomTypeArrow.alpha = 0;
+//                [self.m_viewSearchOptionWrapper layoutIfNeeded];
+//            } completion:^(BOOL finished) {
+//                self.m_enumSearchOptionShow = enumOption;
+//                [self refreshFields];
+//            }];
         }
     }
     else if (enumOption == BERENUM_SEARCHOPTION_SHOW_SIZE){
@@ -221,14 +263,28 @@ typedef enum _ENUM_SEARCHOPTION_SHOW{
         self.m_constraintSizeContainerBottomSpace.constant = -fSizeContainerHeight;
         [self.m_viewSearchOptionWrapper layoutIfNeeded];
         
-        self.m_constraintSizeContainerBottomSpace.constant = 0;
-        [UIView animateWithDuration:0.25f animations:^{
-            self.m_imgBottomSizeArrow.alpha = 1;
-            [self.m_viewSearchOptionWrapper layoutIfNeeded];
-        } completion:^(BOOL finished) {
-            self.m_enumSearchOptionShow = enumOption;
-            [self refreshFields];
-        }];
+        self.m_constraintSizeContainerBottomSpace.constant = -50;
+        
+        [UIView animateWithDuration:0.5
+                              delay:0
+             usingSpringWithDamping:0.6
+              initialSpringVelocity:0.6
+                            options:0
+                         animations:^{
+                             self.m_imgBottomSizeArrow.alpha = 1;
+                             [self.m_viewSearchOptionWrapper layoutIfNeeded];
+                         } completion:^(BOOL finished) {
+                             self.m_enumSearchOptionShow = enumOption;
+                             [self refreshFields];
+                         }];
+
+//        [UIView animateWithDuration:0.25f animations:^{
+//            self.m_imgBottomSizeArrow.alpha = 1;
+//            [self.m_viewSearchOptionWrapper layoutIfNeeded];
+//        } completion:^(BOOL finished) {
+//            self.m_enumSearchOptionShow = enumOption;
+//            [self refreshFields];
+//        }];
     }
     else if (enumOption == BERENUM_SEARCHOPTION_SHOW_TYPE){
         // [Type] to show
@@ -238,14 +294,28 @@ typedef enum _ENUM_SEARCHOPTION_SHOW{
         self.m_constraintTypeContainerBottomSpace.constant = -fTypeContainerHeight;
         [self.m_viewSearchOptionWrapper layoutIfNeeded];
         
-        self.m_constraintTypeContainerBottomSpace.constant = 0;
-        [UIView animateWithDuration:0.25f animations:^{
-            self.m_imgBottomTypeArrow.alpha = 1;
-            [self.m_viewSearchOptionWrapper layoutIfNeeded];
-        } completion:^(BOOL finished) {
-            self.m_enumSearchOptionShow = enumOption;
-            [self refreshFields];
-        }];
+        self.m_constraintTypeContainerBottomSpace.constant = -50;
+        
+        [UIView animateWithDuration:0.5
+                              delay:0
+             usingSpringWithDamping:0.6
+              initialSpringVelocity:0.6
+                            options:0
+                         animations:^{
+                             self.m_imgBottomTypeArrow.alpha = 1;
+                             [self.m_viewSearchOptionWrapper layoutIfNeeded];
+                         } completion:^(BOOL finished) {
+                             self.m_enumSearchOptionShow = enumOption;
+                             [self refreshFields];
+                         }];
+
+//        [UIView animateWithDuration:0.25f animations:^{
+//            self.m_imgBottomTypeArrow.alpha = 1;
+//            [self.m_viewSearchOptionWrapper layoutIfNeeded];
+//        } completion:^(BOOL finished) {
+//            self.m_enumSearchOptionShow = enumOption;
+//            [self refreshFields];
+//        }];
     }
 }
 
@@ -275,41 +345,104 @@ typedef enum _ENUM_SEARCHOPTION_SHOW{
 
 - (void) doSearch{
     self.m_lblSearchStatus.text = @"Finding Beer...";
-    self.m_viewMainSearchResult.hidden = YES;
     self.m_viewMainSearch.hidden = NO;
 
     if (self.m_isSearchCompleted == YES){
         [self startSpin];
     }
+    if (self.m_viewMainSearchResult.hidden == NO){
+        [self animateSearchResultViewToHide];
+    }
+
     self.m_isSearchCompleted = NO;
     
     BERSearchManager *managerSearch = [BERSearchManager sharedInstance];
     managerSearch.m_enumContainerType = self.m_enumBeerType;
     managerSearch.m_enumPackageSize = self.m_enumBeerSize;
     
+    NSDate *dtStart = [NSDate date];
     [managerSearch requestSearchDealWithCallback:^(int status) {
-        if (status == ERROR_SEARCH_DEAL_CANCELLED) return;
-        if (status == ERROR_NONE){
-            self.m_isSearchCompleted = YES;
-            [self.m_imgSearchBeer.layer removeAllAnimations];
-            self.m_imgSearchBeer.transform = CGAffineTransformMakeRotation(0);self.m_viewMainSearchResult.hidden = NO;
-            self.m_viewMainSearch.hidden = YES;
-            self.m_lblSearchStatus.text = @"";
+        // Should wait at least 2 second...
+        
+        NSString *szToken = managerSearch.m_szRequestToken;
+        NSDate *dtEnd = [NSDate date];
+        NSTimeInterval elapsed = [dtEnd timeIntervalSinceDate:dtStart];
+        NSTimeInterval waiting = (elapsed > 2) ? 0 : (2 - elapsed);
+        
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(waiting * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            if ([szToken isEqualToString:managerSearch.m_szRequestToken] == NO){
+                // If another search request has made before 2 second waiting is finished...
+                return;
+            }
             
-            [self.m_tableview reloadData];
-            
-            self.m_viewMainSearchResult.alpha = 0;
-            [UIView animateWithDuration:1.0f animations:^{
-                self.m_viewMainSearchResult.alpha = 1;
-            }];
-        }
-        else if (status == ERROR_SEARCH_DEAL_FAILED || status == ERROR_SEARCH_DEAL_NOTFOUND){
-            self.m_isSearchCompleted = YES;
-            [self.m_imgSearchBeer.layer removeAllAnimations];
-            self.m_imgSearchBeer.transform = CGAffineTransformMakeRotation(0);
-            self.m_lblSearchStatus.text = @"No deal found!";
-        }
+            if (status == ERROR_SEARCH_DEAL_CANCELLED) return;
+            if (status == ERROR_NONE){
+                self.m_isSearchCompleted = YES;
+                [self.m_imgSearchBeer.layer removeAllAnimations];
+                self.m_imgSearchBeer.transform = CGAffineTransformMakeRotation(0);
+                
+//                self.m_viewMainSearchResult.hidden = NO;
+//                self.m_viewMainSearch.hidden = YES;
+                self.m_lblSearchStatus.text = @"";
+                
+                [self.m_tableview reloadData];
+                
+                [self animateSearchResultViewToShow];
+//                self.m_viewMainSearchResult.alpha = 0;
+//                [UIView animateWithDuration:1.0f animations:^{
+//                    self.m_viewMainSearchResult.alpha = 1;
+//                }];
+            }
+            else if (status == ERROR_SEARCH_DEAL_FAILED || status == ERROR_SEARCH_DEAL_NOTFOUND){
+                self.m_isSearchCompleted = YES;
+                [self.m_imgSearchBeer.layer removeAllAnimations];
+                self.m_imgSearchBeer.transform = CGAffineTransformMakeRotation(0);
+                self.m_lblSearchStatus.text = @"No deal found!";
+            }
+        });
     }];
+}
+
+- (void) animateSearchResultViewToShow{
+    self.m_viewMainSearchResult.hidden = NO;
+    [self.m_viewMainSearchResult.layer removeAllAnimations];
+    
+    float height = self.m_viewMainSearchResult.frame.size.height;
+    self.m_constraintSearchResultViewTopSpace.constant = -height;
+    [self.m_viewMainSearchResult layoutIfNeeded];
+    self.m_constraintSearchResultViewTopSpace.constant = 0;
+    
+    [UIView animateWithDuration:1.3
+                          delay:0
+         usingSpringWithDamping:0.6
+          initialSpringVelocity:0.6
+                        options:0
+                     animations:^{
+                         [self.m_viewMainSearchResult layoutIfNeeded];
+                     } completion:^(BOOL finished) {
+                         
+                     }];
+}
+
+- (void) animateSearchResultViewToHide{
+    self.m_viewMainSearchResult.hidden = NO;
+    [self.m_viewMainSearchResult.layer removeAllAnimations];
+    
+    float height = self.m_viewMainSearchResult.frame.size.height;
+    self.m_constraintSearchResultViewTopSpace.constant = 0;
+    [self.m_viewMainSearchResult layoutIfNeeded];
+    self.m_constraintSearchResultViewTopSpace.constant = -height;
+    
+    [UIView animateWithDuration:1.3
+                          delay:0
+         usingSpringWithDamping:0.6
+          initialSpringVelocity:0.6
+                        options:0
+                     animations:^{
+                         [self.m_viewMainSearchResult layoutIfNeeded];
+                     } completion:^(BOOL finished) {
+                         self.m_viewMainSearchResult.hidden = YES;
+                     }];
 }
 
 - (void) gotoDealDetailsAtIndex: (int) index{
@@ -332,6 +465,24 @@ typedef enum _ENUM_SEARCHOPTION_SHOW{
     [self doSearch];
 }
 
+- (void) gotoBrandSelect{
+    NSMutableArray *arrVCs = [[NSMutableArray alloc] initWithArray: self.navigationController.viewControllers];
+    for (int i = 0; i < (int) [arrVCs count]; i++){
+        UIViewController *vc = [arrVCs objectAtIndex:i];
+        if ([vc isKindOfClass:[BERBrandSelectVC class]] == YES){
+            [self.navigationController popViewControllerAnimated:YES];
+            return;
+        }
+    }
+    
+    // No "BrandSelect VC" is detected in navigation stack. This is the case when we come to this search screen directly from Loading splash screen.
+    UIViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"STORYBOARD_BRANDS"];
+    [arrVCs insertObject:vc atIndex:[arrVCs count] - 1];
+    self.navigationController.viewControllers = arrVCs;
+    
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
 #pragma mark -UITableView Event Listeners
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
@@ -350,6 +501,8 @@ typedef enum _ENUM_SEARCHOPTION_SHOW{
     static NSString *szCellIdentifier = @"TVC_SEARCH_RESULT_FOOTER";
     BERSearchResultFooterTVC *cell = [tableView dequeueReusableCellWithIdentifier:szCellIdentifier];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    
+    [BERGenericFunctionManager drawDropShadowToView:cell.m_viewContentView Size:5];
     return cell.contentView;
 }
 
@@ -358,7 +511,7 @@ typedef enum _ENUM_SEARCHOPTION_SHOW{
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
-    return 60.0f;
+    return 65.0f;
 }
 
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -403,11 +556,21 @@ typedef enum _ENUM_SEARCHOPTION_SHOW{
 }
 
 - (IBAction)onBtnBottomSizeClick:(id)sender {
-    [self animateSearchOptionToShow:BERENUM_SEARCHOPTION_SHOW_SIZE];
+    if (self.m_viewSearchOptionWrapper.hidden == YES){
+        [self animateSearchOptionToShow:BERENUM_SEARCHOPTION_SHOW_SIZE];
+    }
+    else {
+        [self animateSearchOptionToShow:BERENUM_SEARCHOPTION_SHOW_NONE];
+    }
 }
 
 - (IBAction)onBtnBottomTypeClick:(id)sender {
-    [self animateSearchOptionToShow:BERENUM_SEARCHOPTION_SHOW_TYPE];
+    if (self.m_viewSearchOptionWrapper.hidden == YES){
+        [self animateSearchOptionToShow:BERENUM_SEARCHOPTION_SHOW_TYPE];
+    }
+    else {
+        [self animateSearchOptionToShow:BERENUM_SEARCHOPTION_SHOW_NONE];
+    }
 }
 
 - (IBAction)onBtnOptionSizeClick:(id)sender {
@@ -447,7 +610,7 @@ typedef enum _ENUM_SEARCHOPTION_SHOW{
 }
 
 - (IBAction)onBtnAddBeerClick:(id)sender {
-    [self.navigationController popViewControllerAnimated:YES];
+    [self gotoBrandSelect];
 }
 
 #pragma mark -Gesture Recognizer

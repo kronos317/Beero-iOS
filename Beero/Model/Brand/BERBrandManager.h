@@ -16,6 +16,9 @@
 + (instancetype) sharedInstance;
 - (void) initializeManager;
 
+- (void) loadFromLocalstorageWithCompareForSelection;
+- (void) saveToLocalstorage;
+
 #pragma mark -Biz Logic
 
 - (void) sortByPosition;

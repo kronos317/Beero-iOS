@@ -44,6 +44,8 @@
 #define BERUICOLOR_TEXTFIELD_BORDER                             [UIColor colorWithRed:(217 / 255.0) green:(223 / 255.0) blue:(223 / 255.0) alpha:1]
 #define BERUICOLOR_TEXTFIELD_BORDER_INVALID                     [UIColor colorWithRed:(195 / 255.0) green:(40 / 255.0) blue:(0 / 255.0) alpha:1]
 #define BERUICOLOR_ORANGE                                       [UIColor colorWithRed:(247 / 255.0) green:(146 / 255.0) blue:(30 / 255.0) alpha:1]
+#define BERUICOLOR_GREEN                                        [UIColor colorWithRed:(64 / 255.0) green:(180 / 255.0) blue:(79 / 255.0) alpha:1]
+#define BERUICOLOR_GREY                                         [UIColor colorWithRed:(104 / 255.0) green:(104 / 255.0) blue:(104 / 255.0) alpha:1]
 
 // Error Code
 
@@ -61,9 +63,7 @@
 // Localstorage Key
 
 #define LOCALSTORAGE_PREFIX                 @"BER_LOCALSTORAGE_"
-#define LOCALSTORAGE_USERLOOKUP             @"USERLOOKUP"
-#define LOCALSTORAGE_USERLASTLOGIN          @"USERLASTLOGIN"
-#define LOCALSTORAGE_USERINFO               @"USERINFO"
+#define LOCALSTORAGE_BRAND                  @"BRAND"
 
 // ENUMs
 

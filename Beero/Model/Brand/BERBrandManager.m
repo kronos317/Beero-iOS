@@ -12,6 +12,7 @@
 #import "BERGenericFunctionManager.h"
 #import "BERUrlManager.h"
 #import <AFNetworking.h>
+#import "BERLocalstorageManager.h"
 
 @implementation BERBrandManager
 
@@ -65,6 +66,44 @@
         sz = [sz substringFromIndex:1];
     }
     return sz;
+}
+
+#pragma mark -Localstorage
+
+- (void) loadFromLocalstorageWithCompareForSelection{
+    id brands = [BERLocalstorageManager loadGlobalObjectWithKey:LOCALSTORAGE_BRAND];
+    if (brands == nil || [brands isKindOfClass:[NSArray class]] == NO) return;
+    if ([self.m_arrBrand count] == 0) return;
+    
+    for (int i = 0; i < (int) [self.m_arrBrand count]; i++){
+        BERBrandDataModel *brand = [self.m_arrBrand objectAtIndex:i];
+        brand.m_isSelected = NO;
+    }
+    
+    NSArray *arr = brands;
+    for (int i = 0; i < (int) [arr count]; i++){
+        NSDictionary *dict = [arr objectAtIndex:i];
+        BERBrandDataModel *brand = [[BERBrandDataModel alloc] init];
+        [brand setWithDictionary:dict WithId:-1];
+        
+        for (int j = 0; j < (int) [self.m_arrBrand count]; j++){
+            BERBrandDataModel *brandToCompare = [self.m_arrBrand objectAtIndex:j];
+            if (brand.m_index == brandToCompare.m_index && [brand.m_szName isEqualToString:brandToCompare.m_szName] == YES){
+                brandToCompare.m_isSelected = brand.m_isSelected;
+                break;
+            }
+        }
+    }
+}
+
+- (void) saveToLocalstorage{
+    NSMutableArray *arr = [[NSMutableArray alloc] init];
+    for (int i = 0; i < (int) [self.m_arrBrand count]; i++){
+        BERBrandDataModel *brand = [self.m_arrBrand objectAtIndex:i];
+        NSDictionary *dict = [brand serializeToDictionary];
+        [arr addObject:dict];
+    }
+    [BERLocalstorageManager saveGlobalObject:arr Key:LOCALSTORAGE_BRAND];
 }
 
 #pragma mark -AFNetworking

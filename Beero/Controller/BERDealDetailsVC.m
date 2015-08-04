@@ -9,6 +9,7 @@
 #import "BERDealDetailsVC.h"
 #import "BERSearchManager.h"
 #import "BERSearchDealDataModel.h"
+#import "BERGenericFunctionManager.h"
 
 @interface BERDealDetailsVC ()
 
@@ -26,10 +27,16 @@
 @property (weak, nonatomic) IBOutlet UIView *m_viewBadgeExclusive;
 @property (weak, nonatomic) IBOutlet UIView *m_viewBadgeExclusiveDesc;
 
+@property (weak, nonatomic) IBOutlet UIView *m_viewActionPanel;
+@property (weak, nonatomic) IBOutlet UIView *m_viewPhotoPanel;
+
 @property (weak, nonatomic) IBOutlet UILabel *m_lblNearby;
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *m_constraintViewVerifiedStockHeight;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *m_constraintViewStoreDetailsBottomSpace;
+
+@property (weak, nonatomic) IBOutlet UILabel *m_lblActionBottomSeparator;
+@property (weak, nonatomic) IBOutlet UILabel *m_lblPhotoBottomSeparator;
 
 @end
 
@@ -40,6 +47,7 @@
     // Do any additional setup after loading the view.
     
     [self setAutomaticallyAdjustsScrollViewInsets:NO];
+    self.view.backgroundColor = BERUICOLOR_THEMECOLOR_MAIN;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -54,6 +62,9 @@
 - (void) viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     [self refreshFields];
+    
+    [BERGenericFunctionManager drawDropShadowToView:self.m_lblActionBottomSeparator Size:2];
+    [BERGenericFunctionManager drawDropShadowToView:self.m_lblPhotoBottomSeparator Size:2];
 }
 
 #pragma mark -Biz Logic
@@ -89,7 +100,7 @@
     int nRemainingMinute = [deal.m_modelWinningDeal.m_modelStore getRemainingMinutesTillClose];
     if (nRemainingMinute == STORE_OPENHOUR_CLOSED){
         // Closed
-        self.m_lblStoreSpec.text = [NSString stringWithFormat:@"%@ mins drive", [deal.m_modelWinningDeal getBeautifiedDriveDistance]];
+        self.m_lblStoreSpec.text = [NSString stringWithFormat:@"%@ mins drive, closed", [deal.m_modelWinningDeal getBeautifiedDriveDistance]];
     }
     else if (nRemainingMinute == STORE_OPENHOUR_NOTOPEN){
         // NOT OPEN YET

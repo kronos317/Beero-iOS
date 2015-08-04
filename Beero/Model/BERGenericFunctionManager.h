@@ -39,5 +39,6 @@
 #pragma mark -Utils
 
 + (NSString *) getJSONStringRepresentation: (id) object;
++ (void) drawDropShadowToView: (UIView *) view Size: (float) size;
 
 @end

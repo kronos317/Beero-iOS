@@ -10,4 +10,6 @@
 
 @interface BERSearchResultFooterTVC : UITableViewCell
 
+@property (weak, nonatomic) IBOutlet UIView *m_viewContentView;
+
 @end

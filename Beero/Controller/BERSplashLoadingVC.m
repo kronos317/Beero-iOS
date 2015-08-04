@@ -34,6 +34,8 @@
     self.m_isBrandLoaded = NO;
     
     [self doRequestBrand];
+    
+    self.view.backgroundColor = BERUICOLOR_THEMECOLOR_MAIN;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -70,10 +72,23 @@
     [self performSegueWithIdentifier:@"SEGUE_FROM_SPLASHLOADING_TO_SELECTBRAND" sender:nil];
 }
 
+- (void) gotoSearch{
+    [self performSegueWithIdentifier:@"SEGUE_FROM_SPLASHLOADING_TO_SEARCH" sender:nil];
+}
+
 - (void) checkMandatoryRequests{
     if (self.m_isBrandLoaded == YES && self.m_isLocationConfirmed == YES){
         [[NSNotificationCenter defaultCenter] removeObserver:self];
-        [self gotoBrands];
+
+        // Check if "selected" brands were saved in localstorage...
+        [[BERBrandManager sharedInstance] loadFromLocalstorageWithCompareForSelection];
+        NSString *szSelected = [[BERBrandManager sharedInstance] getSelectedIdsWithPipe];
+        if (szSelected.length == 0){
+            [self gotoBrands];
+        }
+        else {
+            [self gotoSearch];
+        }
     }
 }
 

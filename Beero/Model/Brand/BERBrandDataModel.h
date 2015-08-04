@@ -17,6 +17,7 @@
 
 - (id) init;
 - (void) setWithDictionary: (NSDictionary *) dict WithId: (int) Id;
+- (NSDictionary *) serializeToDictionary;
 - (BOOL) isFeatured;
 
 @end

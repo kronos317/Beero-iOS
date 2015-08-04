@@ -16,8 +16,9 @@
 #import "BERSearchManager.h"
 #import "BERSearchDealDataModel.h"
 #import "BERGenericFunctionManager.h"
+#import <MapKit/MapKit.h>
 
-@interface BERStoreDetailsVC () <GMSMapViewDelegate, UIGestureRecognizerDelegate>
+@interface BERStoreDetailsVC () <GMSMapViewDelegate, UIGestureRecognizerDelegate, UIActionSheetDelegate>
 
 @property (weak, nonatomic) IBOutlet UILabel *m_lblStoreName;
 @property (weak, nonatomic) IBOutlet UILabel *m_lblMemberSince;
@@ -44,6 +45,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *m_lblOpeningHourFriday;
 @property (weak, nonatomic) IBOutlet UILabel *m_lblOpeningHourSaturday;
 @property (weak, nonatomic) IBOutlet UILabel *m_lblOpeningHourSunday;
+
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *m_constraintOpenMarkWidth;
 
 @property (strong, nonatomic) GMSMapView *m_mapview;
 @property (strong, nonatomic) BERStoreDataModel *m_store;
@@ -87,6 +90,7 @@
         
         [self addMarker];
     });
+    self.view.backgroundColor = BERUICOLOR_THEMECOLOR_MAIN;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -122,11 +126,15 @@
     self.m_lblClosesIn.text = [self.m_store getBeautifiedLabelForRemainingTimeToday];
     self.m_lblOpenTill.text = [self.m_store getBeautifiedLabelForOpenTimeToday];
     int nRemainingMinute = [self.m_store getRemainingMinutesTillClose];
-    if (nRemainingMinute == STORE_OPENHOUR_CLOSED){
-        // Closed
+    if (nRemainingMinute == STORE_OPENHOUR_CLOSED || nRemainingMinute == STORE_OPENHOUR_NOTOPEN){
+        // Closed or Not Open Yet
+        self.m_lblClosesIn.text = @"";
+        self.m_constraintOpenMarkWidth.constant = 0;
+        self.m_lblOpenTill.textColor = BERUICOLOR_GREY;
     }
-    else if (nRemainingMinute == STORE_OPENHOUR_NOTOPEN){
-        // Not Open Yet
+    else {
+        self.m_constraintOpenMarkWidth.constant = 47;
+        self.m_lblOpenTill.textColor = BERUICOLOR_GREEN;
     }
     
     self.m_viewManagerWrapper.layer.cornerRadius = 55;
@@ -191,6 +199,36 @@
 }
 
 - (IBAction)onBtnViewCatalogClick:(id)sender {
+}
+
+- (IBAction)onBtnViewMapClick:(id)sender {
+    UIActionSheet *sheet = [[UIActionSheet alloc] initWithTitle:@"Open in Maps" delegate:self cancelButtonTitle:nil destructiveButtonTitle:nil otherButtonTitles:@"Apple Maps",@"Google Maps", nil];
+    [sheet showInView:self.view];
+}
+
+-(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
+    //coordinates for the place we want to display
+    CLLocationCoordinate2D position = CLLocationCoordinate2DMake(self.m_store.m_fLatitude, self.m_store.m_fLongitude);
+
+    if (buttonIndex==0) {
+        //Apple Maps, using the MKMapItem class
+        MKPlacemark *placemark = [[MKPlacemark alloc] initWithCoordinate:position addressDictionary:nil];
+        MKMapItem *item = [[MKMapItem alloc] initWithPlacemark:placemark];
+        item.name = self.m_store.m_szAddress;
+        [item openInMapsWithLaunchOptions:nil];
+    } else if (buttonIndex==1) {
+        //Google Maps
+        //construct a URL using the comgooglemaps schema
+        NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"comgooglemaps://?center=%f,%f",position.latitude,position.longitude]];
+        if (![[UIApplication sharedApplication] canOpenURL:url]) {
+            NSLog(@"Google Maps app is not installed");
+            //left as an exercise for the reader: open the Google Maps mobile website instead!
+            
+            [BERGenericFunctionManager showAlertWithMessage:@"Google Maps app is not installed."];
+        } else {
+            [[UIApplication sharedApplication] openURL:url];
+        }
+    }
 }
 
 @end

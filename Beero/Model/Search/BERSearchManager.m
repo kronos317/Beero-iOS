@@ -98,7 +98,7 @@
         NSString *szStatus = [BERGenericFunctionManager refineNSString:[dict objectForKey:@"status"]];
         int status = ERROR_NONE;
 
-        NSLog(@"%@", dict);
+//        NSLog(@"%@", dict);
         if ([szToken caseInsensitiveCompare:self.m_szRequestToken] != NSOrderedSame){
             // New request has sent, ignore current request
             status = ERROR_SEARCH_DEAL_CANCELLED;
@@ -110,10 +110,15 @@
             for (NSString *key in [dictResults allKeys]){
                 BERSearchDealDataModel *deal = [[BERSearchDealDataModel alloc] init];
                 id item = [dictResults objectForKey:key];
+                
+                [deal setWithDictionary:item WithId:[key intValue]];
+                [self.m_arrResult addObject:deal];
+                /*
                 if ([item isKindOfClass:[NSDictionary class]] == YES){
                     [deal setWithDictionary:[dictResults objectForKey:key] WithId:[key intValue]];
                     [self.m_arrResult addObject:deal];
                 }
+                 */
             }
             
             if ([self.m_arrResult count] == 0){

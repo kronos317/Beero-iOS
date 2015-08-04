@@ -11,6 +11,7 @@
 #import "BERBrandManager.h"
 #import "BERBrandDataModel.h"
 #import "BERGenericFunctionManager.h"
+#import "Global.h"
 
 @interface BERBrandSelectVC () <UITableViewDataSource, UITableViewDelegate>
 
@@ -26,6 +27,7 @@
     // Do any additional setup after loading the view.
     
     self.m_tableview.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
+    self.view.backgroundColor = BERUICOLOR_THEMECOLOR_MAIN;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -91,6 +93,7 @@
         brand.m_isSelected = [[self.m_arrSelected objectAtIndex:i] boolValue];
     }
     
+    [[BERBrandManager sharedInstance] saveToLocalstorage];
     [self performSegueWithIdentifier:@"SEGUE_FROM_BRAND_TO_SEARCH" sender:nil];
 }
 
