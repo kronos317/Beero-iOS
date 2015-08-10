@@ -87,6 +87,8 @@ typedef enum _ENUM_SEARCHOPTION_SHOW{
     
     self.view.backgroundColor = BERUICOLOR_THEMECOLOR_MAIN;
     self.m_viewHeader.backgroundColor = BERUICOLOR_THEMECOLOR_MAIN;
+    
+    [self setAutomaticallyAdjustsScrollViewInsets:NO];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -143,21 +145,38 @@ typedef enum _ENUM_SEARCHOPTION_SHOW{
         cell.m_lblDistance.text = [NSString stringWithFormat:@"%@ mins away", [deal.m_modelWinningDeal getBeautifiedDriveDistance]];
         if (deal.m_modelWinningDeal.m_isExclusive == YES){
             cell.m_constraintBadgeWidth.constant = 33;
+            cell.m_imgBadgeExclusive.hidden = NO;
         }
         else {
             cell.m_constraintBadgeWidth.constant = 0;
+            cell.m_imgBadgeExclusive.hidden = YES;
         }
+        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+        cell.selectionStyle = UITableViewCellSelectionStyleDefault;
     }
     else {
         cell.m_lblPrice.text = @"";
         cell.m_lblSpec.text = @"No Deals Found";
         cell.m_lblDistance.text = @"";
         cell.m_constraintBadgeWidth.constant = 0;
+        cell.accessoryType = UITableViewCellAccessoryNone;
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
     }
 }
 
 - (void) animateSearchOptionToShow: (BERENUM_SEARCHOPTION_SHOW) enumOption{
     if (self.m_enumSearchOptionShow == enumOption) return;
+    
+    // Check if the layer is in animation...
+    
+    NSArray *arrAnimKeysSize = [self.m_viewSearchOptionSizeContainer.layer animationKeys];
+    NSArray *arrAnimKeysType = [self.m_viewSearchOptionTypeContainer.layer animationKeys];
+    
+    if ([arrAnimKeysType isKindOfClass:[NSArray class]] == YES || [arrAnimKeysSize isKindOfClass:[NSArray class]] == YES){
+        if ([arrAnimKeysSize count] > 0 || [arrAnimKeysType count] > 0) {
+            return;
+        }        
+    }
     
     float fSizeContainerHeight = self.m_viewSearchOptionSizeContainer.frame.size.height;
     float fTypeContainerHeight = self.m_viewSearchOptionTypeContainer.frame.size.height;
@@ -174,14 +193,14 @@ typedef enum _ENUM_SEARCHOPTION_SHOW{
             // [Type] to [Size]
             self.m_imgBottomSizeArrow.hidden = NO;
             self.m_imgBottomTypeArrow.hidden = YES;
-            self.m_constraintSizeContainerBottomSpace.constant = 0;
+            self.m_constraintSizeContainerBottomSpace.constant = -50;
             [self.m_viewSearchOptionWrapper layoutIfNeeded];
         }
         else if (enumOption == BERENUM_SEARCHOPTION_SHOW_TYPE){
             // [Size] to [Type]
             self.m_imgBottomSizeArrow.hidden = YES;
             self.m_imgBottomTypeArrow.hidden = NO;
-            self.m_constraintTypeContainerBottomSpace.constant = 0;
+            self.m_constraintTypeContainerBottomSpace.constant = -50;
             [self.m_viewSearchOptionWrapper layoutIfNeeded];
         }
         self.m_enumSearchOptionShow = enumOption;
@@ -346,7 +365,8 @@ typedef enum _ENUM_SEARCHOPTION_SHOW{
 - (void) doSearch{
     self.m_lblSearchStatus.text = @"Finding Beer...";
     self.m_viewMainSearch.hidden = NO;
-
+    self.m_viewMainSearchResult.hidden = YES;
+    
     if (self.m_isSearchCompleted == YES){
         [self startSpin];
     }
@@ -501,6 +521,7 @@ typedef enum _ENUM_SEARCHOPTION_SHOW{
     static NSString *szCellIdentifier = @"TVC_SEARCH_RESULT_FOOTER";
     BERSearchResultFooterTVC *cell = [tableView dequeueReusableCellWithIdentifier:szCellIdentifier];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    cell.contentView.backgroundColor = BERUICOLOR_THEMECOLOR_MAIN;
     
     [BERGenericFunctionManager drawDropShadowToView:cell.m_viewContentView Size:5];
     return cell.contentView;
@@ -525,8 +546,11 @@ typedef enum _ENUM_SEARCHOPTION_SHOW{
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    [self gotoDealDetailsAtIndex:(int) indexPath.row];
-    [tableView deselectRowAtIndexPath:[tableView indexPathForSelectedRow] animated:YES];
+    BERSearchDealDataModel *deal = [[BERSearchManager sharedInstance].m_arrResult objectAtIndex:indexPath.row];
+    if ([deal isDealFound] == YES){
+        [self gotoDealDetailsAtIndex:(int) indexPath.row];
+        [tableView deselectRowAtIndexPath:[tableView indexPathForSelectedRow] animated:YES];        
+    }
 }
 
 -(void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
@@ -556,7 +580,7 @@ typedef enum _ENUM_SEARCHOPTION_SHOW{
 }
 
 - (IBAction)onBtnBottomSizeClick:(id)sender {
-    if (self.m_viewSearchOptionWrapper.hidden == YES){
+    if (self.m_viewSearchOptionWrapper.hidden == YES || self.m_enumSearchOptionShow != BERENUM_SEARCHOPTION_SHOW_SIZE){
         [self animateSearchOptionToShow:BERENUM_SEARCHOPTION_SHOW_SIZE];
     }
     else {
@@ -565,7 +589,7 @@ typedef enum _ENUM_SEARCHOPTION_SHOW{
 }
 
 - (IBAction)onBtnBottomTypeClick:(id)sender {
-    if (self.m_viewSearchOptionWrapper.hidden == YES){
+    if (self.m_viewSearchOptionWrapper.hidden == YES || self.m_enumSearchOptionShow != BERENUM_SEARCHOPTION_SHOW_TYPE){
         [self animateSearchOptionToShow:BERENUM_SEARCHOPTION_SHOW_TYPE];
     }
     else {
@@ -576,12 +600,13 @@ typedef enum _ENUM_SEARCHOPTION_SHOW{
 - (IBAction)onBtnOptionSizeClick:(id)sender {
     UIButton *button = sender;
     int size = (int) button.tag;
-    BERENUM_SEARCH_PACKAGESIZE oldSize = self.m_enumBeerSize;
+//    BERENUM_SEARCH_PACKAGESIZE oldSize = self.m_enumBeerSize;
     self.m_enumBeerSize = size;
     
-    if (oldSize != size){
+//    if (oldSize != size){
+    // Do search again even if we select the previously selected option
         [self doSearch];
-    }
+//    }
 
     NSString *szSize = [[self.m_arrSearchOptionSize objectAtIndex:self.m_enumBeerSize] objectForKey:@"_TITLE"];
     self.m_lblBottomSize.text = szSize;
@@ -592,12 +617,12 @@ typedef enum _ENUM_SEARCHOPTION_SHOW{
 - (IBAction)onBtnOptionTypeClick:(id)sender {
     UIButton *button = sender;
     int type = (int) button.tag;
-    BERENUM_SEARCH_CONTAINERTYPE oldType = self.m_enumBeerType;
+//    BERENUM_SEARCH_CONTAINERTYPE oldType = self.m_enumBeerType;
     self.m_enumBeerType = type;
     
-    if (oldType != type){
+//    if (oldType != type){
         [self doSearch];
-    }    
+//    }    
     
     NSString *szType = [[self.m_arrSearchOptionType objectAtIndex:self.m_enumBeerType] objectForKey:@"_TITLE"];
     self.m_lblBottomType.text = szType;

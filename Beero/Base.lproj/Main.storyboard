@@ -337,7 +337,7 @@
                                             </mask>
                                         </variation>
                                     </view>
-                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Us-Oe-zpu" userLabel="View - Main - Result">
+                                    <view hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Us-Oe-zpu" userLabel="View - Main - Result">
                                         <rect key="frame" x="0.0" y="64" width="320" height="454"/>
                                         <subviews>
                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="80" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Hdp-Iz-It0">
@@ -619,7 +619,7 @@
                                                             <constraint firstAttribute="height" constant="1" id="gz4-Vh-kp9"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Y8-P9-Egq" userLabel="Button - SIX PACKS">
@@ -687,7 +687,7 @@
                                                             <constraint firstAttribute="height" constant="1" id="19t-gO-Law"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fwa-oZ-Q3J" userLabel="Button - Cans">
@@ -712,7 +712,7 @@
                                                             <constraint firstAttribute="height" constant="1" id="9bA-HW-iWa"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RdU-Vl-QbC" userLabel="Button - Cans And Bottles">
@@ -1069,6 +1069,8 @@
                                                                 </state>
                                                                 <connections>
                                                                     <action selector="onBtnStoreDetailsClick:" destination="IXI-YU-5U9" eventType="touchUpInside" id="ZrR-YA-9ZW"/>
+                                                                    <action selector="onBtnStoreDetailsDragExit:" destination="IXI-YU-5U9" eventType="touchDragExit" id="ITL-3a-e35"/>
+                                                                    <action selector="onBtnStoreDetailsTouchDown:" destination="IXI-YU-5U9" eventType="touchDown" id="HG8-mJ-qXK"/>
                                                                 </connections>
                                                             </button>
                                                         </subviews>
@@ -1108,49 +1110,52 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vnv-9R-6cF" userLabel="View - Near By">
                                                         <rect key="frame" x="0.0" y="454" width="320" height="50"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Best of 19 nearby deals" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="240" translatesAutoresizingMaskIntoConstraints="NO" id="a14-j2-3Hv">
-                                                                <rect key="frame" x="20" y="0.0" width="240" height="50"/>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XzX-I9-eAu" userLabel="Button - Nearby">
+                                                                <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
                                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
-                                                                <color key="textColor" red="0.01176470588" green="0.2666666667" blue="0.42745098040000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                <nil key="highlightedColor"/>
-                                                            </label>
+                                                                <inset key="contentEdgeInsets" minX="20" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                                <state key="normal" title="Best of 19 nearby deals">
+                                                                    <color key="titleColor" red="0.01176470588" green="0.2666666667" blue="0.42745098040000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="onBtnNearbyDealsClick:" destination="IXI-YU-5U9" eventType="touchUpInside" id="Ucm-xg-c8X"/>
+                                                                    <action selector="onBtnNearbyDragExit:" destination="IXI-YU-5U9" eventType="touchDragExit" id="PGO-o9-3yx"/>
+                                                                    <action selector="onBtnNearbyTouchDown:" destination="IXI-YU-5U9" eventType="touchDown" id="n6J-7s-41X"/>
+                                                                </connections>
+                                                            </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yGx-GM-GR2" userLabel="Button - Show">
                                                                 <rect key="frame" x="260" y="0.0" width="60" height="50"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="60" id="IyD-uT-Mab"/>
                                                                 </constraints>
                                                                 <state key="normal" image="arrow-right-dark">
-                                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                                    <color key="titleColor" red="0.01176470588" green="0.2666666667" blue="0.42745098040000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 </state>
                                                                 <connections>
                                                                     <action selector="onBtnNearbyDealsClick:" destination="IXI-YU-5U9" eventType="touchUpInside" id="D6W-JJ-Qih"/>
                                                                 </connections>
                                                             </button>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="320" translatesAutoresizingMaskIntoConstraints="NO" id="Gji-TT-BAW" userLabel="Label - Separator">
-                                                                <rect key="frame" x="0.0" y="49" width="320" height="1"/>
-                                                                <color key="backgroundColor" red="0.88235294119999996" green="0.88235294119999996" blue="0.88235294119999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                <constraints>
-                                                                    <constraint firstAttribute="height" constant="1" id="2SK-yu-7xu"/>
-                                                                </constraints>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                                <nil key="highlightedColor"/>
-                                                            </label>
                                                         </subviews>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                         <constraints>
+                                                            <constraint firstAttribute="trailing" secondItem="XzX-I9-eAu" secondAttribute="trailing" constant="137" id="CAR-yY-3KS"/>
+                                                            <constraint firstItem="XzX-I9-eAu" firstAttribute="top" secondItem="vnv-9R-6cF" secondAttribute="top" id="EAh-aX-kva"/>
                                                             <constraint firstAttribute="height" constant="50" id="IjG-2e-RAV"/>
                                                             <constraint firstItem="yGx-GM-GR2" firstAttribute="height" secondItem="vnv-9R-6cF" secondAttribute="height" id="Oqf-rK-7cU"/>
-                                                            <constraint firstItem="yGx-GM-GR2" firstAttribute="leading" secondItem="a14-j2-3Hv" secondAttribute="trailing" id="QD8-ZK-NUG"/>
-                                                            <constraint firstAttribute="height" secondItem="a14-j2-3Hv" secondAttribute="height" id="QpE-2s-a6e"/>
                                                             <constraint firstAttribute="centerY" secondItem="yGx-GM-GR2" secondAttribute="centerY" id="TP0-vl-oWj"/>
-                                                            <constraint firstAttribute="centerX" secondItem="Gji-TT-BAW" secondAttribute="centerX" id="XXj-Pf-RFf"/>
-                                                            <constraint firstItem="a14-j2-3Hv" firstAttribute="leading" secondItem="vnv-9R-6cF" secondAttribute="leading" constant="20" id="aFz-8b-p5b"/>
-                                                            <constraint firstAttribute="bottom" secondItem="Gji-TT-BAW" secondAttribute="bottom" id="dQb-ms-rb1"/>
-                                                            <constraint firstAttribute="centerY" secondItem="a14-j2-3Hv" secondAttribute="centerY" id="dwE-Gl-wpJ"/>
-                                                            <constraint firstItem="Gji-TT-BAW" firstAttribute="width" secondItem="vnv-9R-6cF" secondAttribute="width" id="mki-5W-Pfq"/>
+                                                            <constraint firstAttribute="bottom" secondItem="XzX-I9-eAu" secondAttribute="bottom" id="kEy-eb-52o"/>
+                                                            <constraint firstItem="yGx-GM-GR2" firstAttribute="leading" secondItem="XzX-I9-eAu" secondAttribute="trailing" id="qii-4D-Lbp"/>
+                                                            <constraint firstItem="XzX-I9-eAu" firstAttribute="leading" secondItem="vnv-9R-6cF" secondAttribute="leading" id="rTb-B7-5TG"/>
+                                                            <constraint firstAttribute="trailing" secondItem="XzX-I9-eAu" secondAttribute="trailing" id="uw0-H7-s2p"/>
                                                             <constraint firstAttribute="trailing" secondItem="yGx-GM-GR2" secondAttribute="trailing" id="zln-Wh-lMi"/>
                                                         </constraints>
+                                                        <variation key="default">
+                                                            <mask key="constraints">
+                                                                <exclude reference="CAR-yY-3KS"/>
+                                                                <exclude reference="qii-4D-Lbp"/>
+                                                            </mask>
+                                                        </variation>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gNE-ws-QYn" userLabel="View - Photo">
                                                         <rect key="frame" x="0.0" y="188" width="320" height="266"/>
@@ -1473,13 +1478,13 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="m_btnNearby" destination="XzX-I9-eAu" id="6fC-4k-ZT6"/>
                         <outlet property="m_constraintViewStoreDetailsBottomSpace" destination="HLd-cl-GHA" id="vSO-Jl-hTN"/>
                         <outlet property="m_constraintViewVerifiedStockHeight" destination="pAr-IG-Pvh" id="S2G-SI-Chg"/>
                         <outlet property="m_imgBrand" destination="J2Y-OO-NJd" id="o6g-BM-dX5"/>
                         <outlet property="m_lblActionBottomSeparator" destination="SAd-l1-XVV" id="cAd-B9-20D"/>
                         <outlet property="m_lblBrandName" destination="blY-JS-2Hp" id="5Dt-iC-LUL"/>
                         <outlet property="m_lblDealSizeSpec" destination="N6e-rk-Czb" id="EvW-Rb-IOK"/>
-                        <outlet property="m_lblNearby" destination="a14-j2-3Hv" id="Uhi-is-q2I"/>
                         <outlet property="m_lblPhotoBottomSeparator" destination="Twr-DR-d5h" id="NVZ-dw-QQe"/>
                         <outlet property="m_lblPriceBig" destination="xcO-0y-FXb" id="eLx-vt-cQz"/>
                         <outlet property="m_lblPriceSmall" destination="28d-bI-6dK" id="gAM-dh-JBA"/>
@@ -1489,7 +1494,9 @@
                         <outlet property="m_viewActionPanel" destination="7GF-5u-BEK" id="Cc4-4y-pD7"/>
                         <outlet property="m_viewBadgeExclusive" destination="lB9-15-Lfa" id="sWM-PR-5Qe"/>
                         <outlet property="m_viewBadgeExclusiveDesc" destination="PFM-rR-IZH" id="kBy-fw-Ih3"/>
+                        <outlet property="m_viewNearbyPanel" destination="vnv-9R-6cF" id="rki-rU-Dz5"/>
                         <outlet property="m_viewPhotoPanel" destination="0B7-cq-jSR" id="Ohn-UK-geI"/>
+                        <outlet property="m_viewStoreDetailsPanel" destination="BWR-mE-Afh" id="cBo-ct-HFK"/>
                         <segue destination="l3V-dr-Ul2" kind="show" identifier="SEGUE_FROM_DEAL_DETAILS_TO_NEARBY" id="KTa-Q3-aJC"/>
                         <segue destination="zab-WK-9dS" kind="show" identifier="SEGUE_FROM_DEAL_DETAILS_TO_STORE_DETAILS" id="DBX-9X-1S1"/>
                     </connections>
@@ -1606,7 +1613,7 @@
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Closes in 22 minutes" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="7" preferredMaxLayoutWidth="132" translatesAutoresizingMaskIntoConstraints="NO" id="7Nl-nH-BJD">
                                                                                 <rect key="frame" x="0.0" y="37" width="132" height="17"/>
                                                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
-                                                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
                                                                         </subviews>
@@ -1735,7 +1742,7 @@
                                                                             <constraint firstAttribute="height" constant="1" id="ABa-7a-FIc"/>
                                                                         </constraints>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                 </subviews>
@@ -1769,7 +1776,7 @@
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="For more great deals, check out our catalog!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="eru-4i-CEB" userLabel="Label - Catalog">
                                                                         <rect key="frame" x="20" y="0.0" width="280" height="34"/>
                                                                         <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="14"/>
-                                                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="catalog-0" translatesAutoresizingMaskIntoConstraints="NO" id="SCQ-ZA-2d8" userLabel="Image - Catalog">
@@ -1799,7 +1806,7 @@
                                                                             <constraint firstAttribute="height" constant="1" id="GqK-1l-rVv"/>
                                                                         </constraints>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                 </subviews>
@@ -1830,7 +1837,7 @@
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Store Opening Hours" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="eN4-oi-CKA">
                                                                         <rect key="frame" x="20" y="0.0" width="280" height="18"/>
                                                                         <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="15"/>
-                                                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P8y-zF-cpl" userLabel="View - Monday">
@@ -1839,13 +1846,13 @@
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Monday" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="145" translatesAutoresizingMaskIntoConstraints="NO" id="Igh-Ao-RAY" userLabel="Label - Weekday">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="145" height="20"/>
                                                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="13"/>
-                                                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="8:00am to 9:00pm" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="165" translatesAutoresizingMaskIntoConstraints="NO" id="WyP-HT-bNb" userLabel="Label - Time">
                                                                                 <rect key="frame" x="155" y="0.0" width="165" height="20"/>
                                                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
-                                                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
                                                                         </subviews>
@@ -1868,13 +1875,13 @@
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tuesday" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="145" translatesAutoresizingMaskIntoConstraints="NO" id="I28-MU-Rdb" userLabel="Label - Weekday">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="145" height="20"/>
                                                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="13"/>
-                                                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="8:00am to 9:00pm" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="165" translatesAutoresizingMaskIntoConstraints="NO" id="Sgj-12-CeR" userLabel="Label - Time">
                                                                                 <rect key="frame" x="155" y="0.0" width="165" height="20"/>
                                                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
-                                                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
                                                                         </subviews>
@@ -1897,13 +1904,13 @@
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wednesday" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="145" translatesAutoresizingMaskIntoConstraints="NO" id="xtT-Ix-4Mo" userLabel="Label - Weekday">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="145" height="20"/>
                                                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="13"/>
-                                                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="8:00am to 9:00pm" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="165" translatesAutoresizingMaskIntoConstraints="NO" id="fOM-WY-0Dj" userLabel="Label - Time">
                                                                                 <rect key="frame" x="155" y="0.0" width="165" height="20"/>
                                                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
-                                                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
                                                                         </subviews>
@@ -1926,13 +1933,13 @@
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thursday" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="145" translatesAutoresizingMaskIntoConstraints="NO" id="u4u-8y-ZDF" userLabel="Label - Weekday">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="145" height="20"/>
                                                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="13"/>
-                                                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="8:00am to 9:00pm" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="165" translatesAutoresizingMaskIntoConstraints="NO" id="0YF-mx-KIz" userLabel="Label - Time">
                                                                                 <rect key="frame" x="155" y="0.0" width="165" height="20"/>
                                                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
-                                                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
                                                                         </subviews>
@@ -1955,13 +1962,13 @@
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Friday" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="145" translatesAutoresizingMaskIntoConstraints="NO" id="J1n-jv-f1e" userLabel="Label - Weekday">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="145" height="20"/>
                                                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="13"/>
-                                                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="8:00am to 9:00pm" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="165" translatesAutoresizingMaskIntoConstraints="NO" id="qy9-8w-Crm" userLabel="Label - Time">
                                                                                 <rect key="frame" x="155" y="0.0" width="165" height="20"/>
                                                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
-                                                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
                                                                         </subviews>
@@ -1984,13 +1991,13 @@
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Saturday" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="145" translatesAutoresizingMaskIntoConstraints="NO" id="EGz-LB-srM" userLabel="Label - Weekday">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="145" height="20"/>
                                                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="13"/>
-                                                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="8:00am to 9:00pm" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="165" translatesAutoresizingMaskIntoConstraints="NO" id="nR6-W4-Smy" userLabel="Label - Time">
                                                                                 <rect key="frame" x="155" y="0.0" width="165" height="20"/>
                                                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
-                                                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
                                                                         </subviews>
@@ -2013,13 +2020,13 @@
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sunday" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="145" translatesAutoresizingMaskIntoConstraints="NO" id="UWd-Sw-3y1" userLabel="Label - Weekday">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="145" height="20"/>
                                                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="13"/>
-                                                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="8:00am to 9:00pm" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="165" translatesAutoresizingMaskIntoConstraints="NO" id="z84-7v-Sux" userLabel="Label - Time">
                                                                                 <rect key="frame" x="155" y="0.0" width="165" height="20"/>
                                                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
-                                                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
                                                                         </subviews>
@@ -2360,6 +2367,6 @@
         <image name="store-0" width="320" height="160"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="uv5-hk-Sc0"/>
+        <segue reference="ltV-GJ-lhi"/>
     </inferredMetricsTieBreakers>
 </document>

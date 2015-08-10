@@ -51,6 +51,8 @@
 @property (strong, nonatomic) GMSMapView *m_mapview;
 @property (strong, nonatomic) BERStoreDataModel *m_store;
 
+@property (strong, nonatomic) UIActionSheet *m_actionSheet;
+
 @end
 
 @implementation BERStoreDetailsVC
@@ -202,7 +204,12 @@
 }
 
 - (IBAction)onBtnViewMapClick:(id)sender {
-    UIActionSheet *sheet = [[UIActionSheet alloc] initWithTitle:@"Open in Maps" delegate:self cancelButtonTitle:nil destructiveButtonTitle:nil otherButtonTitles:@"Apple Maps",@"Google Maps", nil];
+    UIActionSheet *sheet = [[UIActionSheet alloc] initWithTitle:@"Open in Maps" delegate:self cancelButtonTitle:nil destructiveButtonTitle:nil otherButtonTitles:@"Apple Maps",@"Google Maps", @"Cancel", nil];
+    
+//    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapActionSheet:)];
+//    tap.cancelsTouchesInView = NO; // So that legit taps on the table bubble up to the tableview
+//    [self.m_actionSheet.superview addGestureRecognizer:tap];
+    
     [sheet showInView:self.view];
 }
 
@@ -229,6 +236,16 @@
             [[UIApplication sharedApplication] openURL:url];
         }
     }
+    else if (buttonIndex == 2){
+        
+    }
 }
+
+//-(void)tapActionSheet:(UIGestureRecognizer *)gestureRecognizer {
+//    CGPoint p = [gestureRecognizer locationInView:self.m_actionSheet];
+//    if (p.y < 0) { // They tapped outside
+//        [self.m_actionSheet dismissWithClickedButtonIndex:-1 animated:YES];
+//    }
+//}
 
 @end
