@@ -115,8 +115,6 @@ typedef enum _ENUM_SEARCHOPTION_SHOW{
     self.m_imgBottomSizeArrow.hidden = YES;
     self.m_imgBottomTypeArrow.hidden = YES;
     self.m_viewSearchOptionWrapper.hidden = YES;
-//    self.m_viewSearchOptionSizeContainer.hidden = YES;
-//    self.m_viewSearchOptionTypeContainer.hidden = YES;
     
     self.m_imgBottomSizeArrow.alpha = 1;
     self.m_imgBottomTypeArrow.alpha = 1;
@@ -126,12 +124,10 @@ typedef enum _ENUM_SEARCHOPTION_SHOW{
     }
     else if (self.m_enumSearchOptionShow == BERENUM_SEARCHOPTION_SHOW_SIZE){
         self.m_viewSearchOptionWrapper.hidden = NO;
-//        self.m_viewSearchOptionSizeContainer.hidden = NO;
         self.m_imgBottomSizeArrow.hidden = NO;
     }
     else if (self.m_enumSearchOptionShow == BERENUM_SEARCHOPTION_SHOW_TYPE){
         self.m_viewSearchOptionWrapper.hidden = NO;
-//        self.m_viewSearchOptionTypeContainer.hidden = NO;
         self.m_imgBottomTypeArrow.hidden = NO;
     }
 }
@@ -233,14 +229,6 @@ typedef enum _ENUM_SEARCHOPTION_SHOW{
                                  self.m_enumSearchOptionShow = enumOption;
                                  [self refreshFields];
                              }];
-
-//            [UIView animateWithDuration:0.25f animations:^{
-//                self.m_imgBottomSizeArrow.alpha = 0;
-//                [self.m_viewSearchOptionWrapper layoutIfNeeded];
-//            } completion:^(BOOL finished) {
-//                self.m_enumSearchOptionShow = enumOption;
-//                [self refreshFields];
-//            }];
         }
 
         if (self.m_enumSearchOptionShow == BERENUM_SEARCHOPTION_SHOW_TYPE){
@@ -264,14 +252,6 @@ typedef enum _ENUM_SEARCHOPTION_SHOW{
                                  self.m_enumSearchOptionShow = enumOption;
                                  [self refreshFields];
                              }];
-
-//            [UIView animateWithDuration:0.25f animations:^{
-//                self.m_imgBottomTypeArrow.alpha = 0;
-//                [self.m_viewSearchOptionWrapper layoutIfNeeded];
-//            } completion:^(BOOL finished) {
-//                self.m_enumSearchOptionShow = enumOption;
-//                [self refreshFields];
-//            }];
         }
     }
     else if (enumOption == BERENUM_SEARCHOPTION_SHOW_SIZE){
@@ -296,14 +276,6 @@ typedef enum _ENUM_SEARCHOPTION_SHOW{
                              self.m_enumSearchOptionShow = enumOption;
                              [self refreshFields];
                          }];
-
-//        [UIView animateWithDuration:0.25f animations:^{
-//            self.m_imgBottomSizeArrow.alpha = 1;
-//            [self.m_viewSearchOptionWrapper layoutIfNeeded];
-//        } completion:^(BOOL finished) {
-//            self.m_enumSearchOptionShow = enumOption;
-//            [self refreshFields];
-//        }];
     }
     else if (enumOption == BERENUM_SEARCHOPTION_SHOW_TYPE){
         // [Type] to show
@@ -327,14 +299,6 @@ typedef enum _ENUM_SEARCHOPTION_SHOW{
                              self.m_enumSearchOptionShow = enumOption;
                              [self refreshFields];
                          }];
-
-//        [UIView animateWithDuration:0.25f animations:^{
-//            self.m_imgBottomTypeArrow.alpha = 1;
-//            [self.m_viewSearchOptionWrapper layoutIfNeeded];
-//        } completion:^(BOOL finished) {
-//            self.m_enumSearchOptionShow = enumOption;
-//            [self refreshFields];
-//        }];
     }
 }
 
@@ -400,18 +364,10 @@ typedef enum _ENUM_SEARCHOPTION_SHOW{
                 self.m_isSearchCompleted = YES;
                 [self.m_imgSearchBeer.layer removeAllAnimations];
                 self.m_imgSearchBeer.transform = CGAffineTransformMakeRotation(0);
-                
-//                self.m_viewMainSearchResult.hidden = NO;
-//                self.m_viewMainSearch.hidden = YES;
                 self.m_lblSearchStatus.text = @"";
-                
                 [self.m_tableview reloadData];
                 
                 [self animateSearchResultViewToShow];
-//                self.m_viewMainSearchResult.alpha = 0;
-//                [UIView animateWithDuration:1.0f animations:^{
-//                    self.m_viewMainSearchResult.alpha = 1;
-//                }];
             }
             else if (status == ERROR_SEARCH_DEAL_FAILED || status == ERROR_SEARCH_DEAL_NOTFOUND){
                 self.m_isSearchCompleted = YES;
@@ -432,7 +388,7 @@ typedef enum _ENUM_SEARCHOPTION_SHOW{
     [self.m_viewMainSearchResult layoutIfNeeded];
     self.m_constraintSearchResultViewTopSpace.constant = 0;
     
-    [UIView animateWithDuration:1.3
+    [UIView animateWithDuration:0.8
                           delay:0
          usingSpringWithDamping:0.6
           initialSpringVelocity:0.6
@@ -453,7 +409,7 @@ typedef enum _ENUM_SEARCHOPTION_SHOW{
     [self.m_viewMainSearchResult layoutIfNeeded];
     self.m_constraintSearchResultViewTopSpace.constant = -height;
     
-    [UIView animateWithDuration:1.3
+    [UIView animateWithDuration:0.8
                           delay:0
          usingSpringWithDamping:0.6
           initialSpringVelocity:0.6
@@ -513,7 +469,6 @@ typedef enum _ENUM_SEARCHOPTION_SHOW{
     static NSString *szCellIdentifier = @"TVC_SEARCH_RESULT_BODY";
     BERSearchResultBodyTVC *cell = [tableView dequeueReusableCellWithIdentifier:szCellIdentifier];
     [self configureCell:cell AtIndex:(int) indexPath.row];
-//    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;
 }
 

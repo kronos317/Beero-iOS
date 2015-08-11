@@ -108,7 +108,7 @@
     
     self.m_location = newLocation;
     
-    // This is just for the Test
+    // Just for Test
     self.m_location = [[CLLocation alloc] initWithLatitude:LOCATIONMANAGER_DEFAULT_LOCATION_LATITUDE longitude:LOCATIONMANAGER_DEFAULT_LOCATION_LONGITUDE];
     
     [[NSNotificationCenter defaultCenter] postNotificationName:BERLOCALNOTIFICATION_LOCATION_UPDATED object:nil];
