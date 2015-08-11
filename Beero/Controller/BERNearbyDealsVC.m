@@ -121,39 +121,6 @@
     }
     
     [self.m_mapview moveCamera:[GMSCameraUpdate fitBounds:bounds withEdgeInsets:UIEdgeInsetsMake(50.0f, 50.0f, 50.0f, 50.0f)]];
-
-    /*
-    // Show all markers in one screen with Orange marker at center point
-    
-    CLLocationCoordinate2D posCenter = [BERLocationManager sharedInstance].m_location.coordinate;
-    float fZoom = self.m_mapview.camera.zoom;
-    float fZoomOutStep = 0.1f;
-    int countLoop = 0;
-
-    [self.m_mapview moveCamera:[GMSCameraUpdate setTarget:posCenter]];
-    while (true) {
-        GMSVisibleRegion region = [self.m_mapview.projection visibleRegion];
-        GMSCoordinateBounds *boundScreen = [[GMSCoordinateBounds alloc] initWithRegion:region];
-        BOOL bAllMarkersVisible = YES;
-        
-        for (int i = 0; i < (int) [self.m_arrMarkers count]; i++){
-            GMSMarker *marker = [self.m_arrMarkers objectAtIndex:i];
-            if ([boundScreen containsCoordinate:marker.position] == NO){
-                bAllMarkersVisible = NO;
-                break;
-            }
-        }
-        
-        if (bAllMarkersVisible == YES) break;
-        
-        // Zoom map to show all markers in screen
-        fZoom = fZoom - fZoomOutStep;
-        [self.m_mapview moveCamera:[GMSCameraUpdate setTarget:posCenter zoom:fZoom]];
-        
-        countLoop++;
-        if (countLoop > 200) break;
-    }
-     */
 }
 
 #pragma mark - UIGesture Recognizer Event Listener

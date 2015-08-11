@@ -105,11 +105,10 @@
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations{
     if ([locations count] == 0) return;
     CLLocation *newLocation = [locations lastObject];
-    // NSTimeInterval locationAge = -[newLocation.timestamp timeIntervalSinceNow];
-    // if (locationAge < 0.01) return;
     
     self.m_location = newLocation;
-#warning Just For Test
+    
+    // This is just for the Test
     self.m_location = [[CLLocation alloc] initWithLatitude:LOCATIONMANAGER_DEFAULT_LOCATION_LATITUDE longitude:LOCATIONMANAGER_DEFAULT_LOCATION_LONGITUDE];
     
     [[NSNotificationCenter defaultCenter] postNotificationName:BERLOCALNOTIFICATION_LOCATION_UPDATED object:nil];
