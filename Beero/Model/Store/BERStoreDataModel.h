@@ -18,6 +18,10 @@
 @property BOOL m_isBeeroMember;
 @property (strong, nonatomic) NSString *m_szAddress;
 @property (strong, nonatomic) NSMutableDictionary *m_dictOpenHours;
+@property (strong, nonatomic) NSString *m_szPhoneNumber;
+@property BOOL m_hasCatalog;
+@property BOOL m_hasCoverImage;
+@property BOOL m_hasManagerImage;
 
 - (id) init;
 - (void) setWithDictionary: (NSDictionary *) dict;
@@ -26,5 +30,10 @@
 - (int) getRemainingMinutesTillClose;
 - (NSString *) getBeautifiedLabelForOpenTimeToday;
 - (NSString *) getBeautifiedLabelForRemainingTimeToday;
+
+- (NSString *) getCatalogPdfPath;
+- (NSString *) getCatalogCoverImagePath;
+- (NSString *) getStoreCoverImagePath;
+- (NSString *) getManagerImagePath;
 
 @end

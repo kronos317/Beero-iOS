@@ -29,6 +29,11 @@
         self.m_szAddress = @"";
         self.m_szName = @"";
         self.m_dictOpenHours = nil;
+        
+        self.m_hasCatalog = NO;
+        self.m_hasCoverImage = NO;
+        self.m_hasManagerImage = NO;
+        self.m_szPhoneNumber = @"";
     }
     return self;
 }
@@ -41,6 +46,16 @@
     self.m_isBeeroMember = [[dict objectForKey:@"is_member"] boolValue];
     self.m_szAddress = [BERGenericFunctionManager refineNSString:[dict objectForKey:@"address"]];
     self.m_dictOpenHours = [[NSMutableDictionary alloc] initWithDictionary:[dict objectForKey:@"open_hours"] copyItems:YES];
+    self.m_hasCatalog = [[dict objectForKey:@"has_catalog"] boolValue];
+    self.m_hasCoverImage = [[dict objectForKey:@"has_cover_image"] boolValue];
+    self.m_hasManagerImage = [[dict objectForKey:@"has_manager_image"] boolValue];
+    self.m_szPhoneNumber = [BERGenericFunctionManager refineNSString:[dict objectForKey:@"phone"]];
+    
+#warning Just for Test
+    self.m_index = 1;
+    self.m_hasCatalog = YES;
+    self.m_hasCoverImage = YES;
+    self.m_hasManagerImage = YES;
 }
 
 - (BERSTRUCT_STORE_OPENHOURS) getOpenHourWithWeekday: (BERENUM_WEEKDAY) weekday{
@@ -123,6 +138,26 @@
         return [NSString stringWithFormat:@"%d%@", hour, ampm];
     }
     return [NSString stringWithFormat:@"%d:%02d%@", hour, minute, ampm];
+}
+
+- (NSString *) getCatalogPdfPath{
+    if (self.m_hasCatalog == NO) return @"";
+    return [NSString stringWithFormat:@"http://beero.com.au/stores/%d/files/catalog.pdf", self.m_index];
+}
+
+- (NSString *) getCatalogCoverImagePath{
+    if (self.m_hasCatalog == NO) return @"";
+    return [NSString stringWithFormat:@"http://beero.com.au/stores/%d/files/catalog.png", self.m_index];
+}
+
+- (NSString *) getStoreCoverImagePath{
+    if (self.m_hasCoverImage == NO) return @"";
+    return [NSString stringWithFormat:@"http://beero.com.au/stores/%d/files/cover.jpg", self.m_index];
+}
+
+- (NSString *) getManagerImagePath{
+    if (self.m_hasManagerImage == NO) return @"";
+    return [NSString stringWithFormat:@"http://beero.com.au/stores/%d/files/manager.jpg", self.m_index];
 }
 
 @end

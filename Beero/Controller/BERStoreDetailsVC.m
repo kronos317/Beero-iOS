@@ -17,8 +17,16 @@
 #import "BERSearchDealDataModel.h"
 #import "BERGenericFunctionManager.h"
 #import <MapKit/MapKit.h>
+#import <AFNetworking.h>
+#import "BERPdfVC.h"
+#import "TransitionDelegate.h"
 
 @interface BERStoreDetailsVC () <GMSMapViewDelegate, UIGestureRecognizerDelegate, UIActionSheetDelegate>
+
+@property (strong, nonatomic) TransitionDelegate *m_transController;
+
+@property (weak, nonatomic) IBOutlet UIView *m_viewStoreCoverContainer;
+@property (weak, nonatomic) IBOutlet UIView *m_viewCatalogContainer;
 
 @property (weak, nonatomic) IBOutlet UILabel *m_lblStoreName;
 @property (weak, nonatomic) IBOutlet UILabel *m_lblMemberSince;
@@ -35,6 +43,7 @@
 @property (weak, nonatomic) IBOutlet UIView *m_viewManagerWrapper;
 @property (weak, nonatomic) IBOutlet UIImageView *m_imgManager;
 @property (weak, nonatomic) IBOutlet UILabel *m_lblManagerMessage;
+@property (weak, nonatomic) IBOutlet UILabel *m_lblStoreCoverSeparator;
 
 @property (weak, nonatomic) IBOutlet UIImageView *m_imgCatalog;
 
@@ -53,6 +62,14 @@
 
 @property (strong, nonatomic) UIActionSheet *m_actionSheet;
 
+// Constraints
+
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *m_constraintStoreCoverSeparatorBottom;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *m_constraintCatalogSeparatorBottom;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *m_constraintStoreCoverHeight;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *m_constraintManagerWrapperWidth;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *m_constraintCatalogHeight;
+
 @end
 
 @implementation BERStoreDetailsVC
@@ -62,6 +79,7 @@
     // Do any additional setup after loading the view.
     
     self.m_mapview = nil;
+    self.m_transController = [[TransitionDelegate alloc] init];
     
     BERSearchManager *managerSearch = [BERSearchManager sharedInstance];
     BERSearchDealDataModel *deal = [managerSearch.m_arrResult objectAtIndex:managerSearch.m_indexSelectedToViewDetails];
@@ -114,6 +132,7 @@
         self.m_lblMemberSince.text = @"";
     }
     self.m_lblAddress.text = self.m_store.m_szAddress;
+    self.m_lblPhoneNumber.text = self.m_store.m_szPhoneNumber;
     
     NSArray *arrLabelWeekday = @[self.m_lblOpeningHourSunday, self.m_lblOpeningHourMonday, self.m_lblOpeningHourTuesday, self.m_lblOpeningHourWednesday, self.m_lblOpeningHourThursday, self.m_lblOpeningHourFriday, self.m_lblOpeningHourSaturday];
     
@@ -146,6 +165,69 @@
     self.m_imgManager.layer.cornerRadius = 50;
     self.m_imgManager.clipsToBounds = YES;
     self.m_imgManager.layer.masksToBounds = YES;
+    
+    //
+    
+    if (self.m_store.m_hasCoverImage == NO){
+        self.m_constraintStoreCoverSeparatorBottom.constant = -281;
+        self.m_viewStoreCoverContainer.hidden = YES;
+    }
+    else {
+        NSString *sz = [self.m_store getStoreCoverImagePath];
+        NSLog(@"Store Cover Image = %@", sz);
+        
+        NSURLRequest *urlRequest = [NSURLRequest requestWithURL:[NSURL URLWithString:sz]];
+        AFHTTPRequestOperation *reqOperation = [[AFHTTPRequestOperation alloc] initWithRequest:urlRequest];
+        reqOperation.responseSerializer = [AFImageResponseSerializer serializer];
+        [reqOperation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject){
+            UIImage *img = [BERGenericFunctionManager scaleImage:responseObject scaledToWidth:self.m_imgStore.frame.size.width];
+            self.m_imgStore.image = img;
+            self.m_constraintStoreCoverHeight.constant = img.size.height;
+        } failure:^(AFHTTPRequestOperation *operation, NSError *error){
+            NSLog(@"%@", error);
+        }];
+        [reqOperation start];
+    }
+    
+    if (self.m_store.m_hasManagerImage == NO){
+        self.m_viewManagerWrapper.hidden = YES;
+    }
+    else {
+        NSString *sz = [self.m_store getManagerImagePath];
+        NSLog(@"Manager Image = %@", sz);
+        
+        NSURLRequest *urlRequest = [NSURLRequest requestWithURL:[NSURL URLWithString:sz]];
+        AFHTTPRequestOperation *reqOperation = [[AFHTTPRequestOperation alloc] initWithRequest:urlRequest];
+        reqOperation.responseSerializer = [AFImageResponseSerializer serializer];
+        [reqOperation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject){
+            UIImage *img = [BERGenericFunctionManager scaleImage:responseObject scaledToWidth:self.m_imgManager.frame.size.width];
+            self.m_imgManager.image = img;
+        } failure:^(AFHTTPRequestOperation *operation, NSError *error){
+            NSLog(@"%@", error);
+        }];
+        [reqOperation start];
+    }
+    
+    if (self.m_store.m_hasCatalog == NO){
+        self.m_viewCatalogContainer.hidden = YES;
+        self.m_constraintCatalogSeparatorBottom.constant = -465;
+    }
+    else {
+        NSString *sz = [self.m_store getCatalogCoverImagePath];
+        NSLog(@"Catalog Cover Image = %@", sz);
+        
+        NSURLRequest *urlRequest = [NSURLRequest requestWithURL:[NSURL URLWithString:sz]];
+        AFHTTPRequestOperation *reqOperation = [[AFHTTPRequestOperation alloc] initWithRequest:urlRequest];
+        reqOperation.responseSerializer = [AFImageResponseSerializer serializer];
+        [reqOperation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject){
+            UIImage *img = [BERGenericFunctionManager scaleImage:responseObject scaledToWidth:self.m_imgCatalog.frame.size.width];
+            self.m_imgCatalog.image = img;
+            self.m_constraintCatalogHeight.constant = img.size.height;
+        } failure:^(AFHTTPRequestOperation *operation, NSError *error){
+            NSLog(@"%@", error);
+        }];
+        [reqOperation start];
+    }
 }
 
 /*
@@ -169,6 +251,17 @@
     marker.appearAnimation = kGMSMarkerAnimationPop;
     marker.icon = imgPin;
     marker.groundAnchor = CGPointMake(0.5, 1);
+}
+
+- (void) showDlgPdfViewer{
+    UIStoryboard *storyboard = self.storyboard;
+    BERPdfVC *vc = [storyboard instantiateViewControllerWithIdentifier:@"STORYBOARD_PDFVIEWER"];
+    vc.view.backgroundColor = [UIColor clearColor];
+    vc.m_szUrl = [self.m_store getCatalogPdfPath];
+    [vc setTransitioningDelegate:self.m_transController];
+    vc.modalPresentationStyle = UIModalPresentationCustom;
+    
+    [self presentViewController:vc animated:YES completion:nil];
 }
 
 #pragma mark - UIGesture Recognizer Event Listener
@@ -201,6 +294,7 @@
 }
 
 - (IBAction)onBtnViewCatalogClick:(id)sender {
+    [self showDlgPdfViewer];
 }
 
 - (IBAction)onBtnViewMapClick:(id)sender {

@@ -10,8 +10,12 @@
 #import "BERSearchManager.h"
 #import "BERSearchDealDataModel.h"
 #import "BERGenericFunctionManager.h"
+#import "TransitionDelegate.h"
+#import "BERPdfVC.h"
 
 @interface BERDealDetailsVC ()
+
+@property (strong, nonatomic) TransitionDelegate *m_transController;
 
 @property (weak, nonatomic) IBOutlet UILabel *m_lblBrandName;
 
@@ -41,6 +45,8 @@
 @property (weak, nonatomic) IBOutlet UIView *m_viewStoreDetailsPanel;
 @property (weak, nonatomic) IBOutlet UIView *m_viewNearbyPanel;
 
+@property (strong, nonatomic) NSString *m_szCatalogPdfUrl;
+@property (strong, nonatomic) NSString *m_szPhoneNumber;
 @end
 
 @implementation BERDealDetailsVC
@@ -49,6 +55,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    self.m_transController = [[TransitionDelegate alloc] init];
     [self setAutomaticallyAdjustsScrollViewInsets:NO];
     self.view.backgroundColor = BERUICOLOR_THEMECOLOR_MAIN;
 }
@@ -115,6 +122,40 @@
     else {
         self.m_lblStoreSpec.text = [NSString stringWithFormat:@"%@ mins drive, open %@", [deal.m_modelWinningDeal getBeautifiedDriveDistance], [[deal.m_modelWinningDeal.m_modelStore getBeautifiedLabelForOpenTimeToday] lowercaseString]];
     }
+    
+    self.m_szCatalogPdfUrl = [deal.m_modelWinningDeal.m_modelStore getCatalogPdfPath];
+    self.m_szPhoneNumber = deal.m_modelWinningDeal.m_modelStore.m_szPhoneNumber;
+}
+
+- (void) showDlgPdfViewer{
+    if (self.m_szCatalogPdfUrl.length > 0){
+        UIStoryboard *storyboard = self.storyboard;
+        BERPdfVC *vc = [storyboard instantiateViewControllerWithIdentifier:@"STORYBOARD_PDFVIEWER"];
+        vc.view.backgroundColor = [UIColor clearColor];
+        vc.m_szUrl = self.m_szCatalogPdfUrl;
+        [vc setTransitioningDelegate:self.m_transController];
+        vc.modalPresentationStyle = UIModalPresentationCustom;
+        
+        [self presentViewController:vc animated:YES completion:nil];
+    }
+    else {
+        [BERGenericFunctionManager showAlertWithMessage:@"No catalog available!"];
+    }
+}
+
+- (void) callStore{
+    if (self.m_szPhoneNumber.length > 0){
+        if ([BERGenericFunctionManager canMakePhoneCall] == YES){
+            NSString *phoneNumber = [NSString stringWithFormat:@"tel://%@", self.m_szPhoneNumber];
+            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:phoneNumber]];
+        }
+        else {
+            [BERGenericFunctionManager showAlertWithMessage:[NSString stringWithFormat:@"Cannot make phone call on your device.\n\nPh: %@", self.m_szPhoneNumber]];
+        }
+    }
+    else {
+        [BERGenericFunctionManager showAlertWithMessage:@"No phone number available!"];
+    }
 }
 
 #pragma mark -Button Event Listeners
@@ -148,9 +189,11 @@
 }
 
 - (IBAction)onBtnCallStoreClick:(id)sender {
+    [self callStore];
 }
 
 - (IBAction)onBtnViewCatalogClick:(id)sender {
+    [self showDlgPdfViewer];
 }
 
 @end

@@ -40,5 +40,7 @@
 
 + (NSString *) getJSONStringRepresentation: (id) object;
 + (void) drawDropShadowToView: (UIView *) view Size: (float) size;
++ (UIImage*) scaleImage: (UIImage*) sourceImage scaledToWidth: (float) i_width;
++ (BOOL) canMakePhoneCall;
 
 @end

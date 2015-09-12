@@ -100,4 +100,7 @@ typedef struct _STRUCT_STORE_OPENHOURS{
 #define STORE_OPENHOUR_NOTOPEN                  99999
 #define STORE_OPENHOUR_CLOSED                   -1
 
+// Transition
+#define TRANSITION_FADEOUT_DURATION         0.25f
+
 #endif

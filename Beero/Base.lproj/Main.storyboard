@@ -1577,8 +1577,8 @@
                                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vc1-Id-vCL">
                                                 <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
                                                 <subviews>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lhq-Kh-qFE" userLabel="View - Content View">
-                                                        <rect key="frame" x="0.0" y="0.0" width="320" height="1315"/>
+                                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lhq-Kh-qFE" userLabel="View - Content View">
+                                                        <rect key="frame" x="0.0" y="-700" width="320" height="1315"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ViK-pM-VqM" userLabel="View - Store Details">
                                                                 <rect key="frame" x="0.0" y="0.0" width="320" height="109"/>
@@ -1743,7 +1743,13 @@
                                                                             <constraint firstAttribute="centerY" secondItem="fqr-Oy-hJu" secondAttribute="centerY" id="aBe-Fz-lC0"/>
                                                                             <constraint firstAttribute="width" constant="110" id="aNe-6g-y6O"/>
                                                                             <constraint firstAttribute="height" constant="110" id="fPZ-R7-Sng"/>
+                                                                            <constraint firstAttribute="width" secondItem="sdo-q2-LOn" secondAttribute="height" multiplier="1:1" id="hpj-4U-GA9"/>
                                                                         </constraints>
+                                                                        <variation key="default">
+                                                                            <mask key="constraints">
+                                                                                <exclude reference="fPZ-R7-Sng"/>
+                                                                            </mask>
+                                                                        </variation>
                                                                     </view>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hi, I'm Colin, manager of the Lachlan Hotel bottle shop. If you need any advise on wines, I'm here to help!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="HP9-ry-rAe" userLabel="Label - Manager Message">
                                                                         <rect key="frame" x="20" y="220" width="280" height="50"/>
@@ -1765,7 +1771,6 @@
                                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" secondItem="pjY-eB-dKv" secondAttribute="width" id="4GF-1V-t4k"/>
-                                                                    <constraint firstAttribute="height" constant="500" id="BQr-Jf-Mya"/>
                                                                     <constraint firstAttribute="centerX" secondItem="zrY-6D-aBq" secondAttribute="centerX" id="Bgy-IV-F6Q"/>
                                                                     <constraint firstAttribute="bottom" secondItem="zrY-6D-aBq" secondAttribute="bottom" constant="10" id="E0o-zt-dlA"/>
                                                                     <constraint firstItem="HP9-ry-rAe" firstAttribute="leading" secondItem="EBB-E7-O1Y" secondAttribute="leading" constant="20" id="FeG-eZ-Vti"/>
@@ -1774,17 +1779,10 @@
                                                                     <constraint firstAttribute="centerX" secondItem="sdo-q2-LOn" secondAttribute="centerX" id="XVb-kN-2xz"/>
                                                                     <constraint firstItem="pjY-eB-dKv" firstAttribute="bottom" secondItem="sdo-q2-LOn" secondAttribute="top" constant="55" id="czM-rd-jjY"/>
                                                                     <constraint firstItem="zrY-6D-aBq" firstAttribute="top" secondItem="HP9-ry-rAe" secondAttribute="bottom" constant="10" id="iYQ-Bk-je1"/>
-                                                                    <constraint firstAttribute="centerX" secondItem="HP9-ry-rAe" secondAttribute="centerX" id="pJL-zY-aBZ"/>
                                                                     <constraint firstAttribute="trailing" secondItem="HP9-ry-rAe" secondAttribute="trailing" constant="20" id="pcm-GS-ssh"/>
                                                                     <constraint firstItem="HP9-ry-rAe" firstAttribute="top" secondItem="sdo-q2-LOn" secondAttribute="bottom" constant="5" id="up9-dZ-KPr"/>
                                                                     <constraint firstAttribute="centerX" secondItem="pjY-eB-dKv" secondAttribute="centerX" id="vg3-qZ-hoL"/>
                                                                 </constraints>
-                                                                <variation key="default">
-                                                                    <mask key="constraints">
-                                                                        <exclude reference="BQr-Jf-Mya"/>
-                                                                        <exclude reference="pJL-zY-aBZ"/>
-                                                                    </mask>
-                                                                </variation>
                                                             </view>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z6f-Tj-KTa" userLabel="View - Catalog">
                                                                 <rect key="frame" x="0.0" y="642" width="320" height="475"/>
@@ -1801,6 +1799,11 @@
                                                                             <constraint firstAttribute="width" constant="280" id="5KA-eg-wKn"/>
                                                                             <constraint firstAttribute="height" constant="400" id="tHi-ee-dD0"/>
                                                                         </constraints>
+                                                                        <variation key="default">
+                                                                            <mask key="constraints">
+                                                                                <exclude reference="5KA-eg-wKn"/>
+                                                                            </mask>
+                                                                        </variation>
                                                                     </imageView>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5iT-tl-Hn7" userLabel="Button - Catalog Zoom">
                                                                         <rect key="frame" x="137" y="223" width="58" height="58"/>
@@ -1832,6 +1835,7 @@
                                                                     <constraint firstAttribute="trailing" secondItem="eru-4i-CEB" secondAttribute="trailing" constant="20" id="Gvp-hw-Gs6"/>
                                                                     <constraint firstItem="5iT-tl-Hn7" firstAttribute="centerY" secondItem="SCQ-ZA-2d8" secondAttribute="centerY" constant="8" id="HEy-XV-PLZ"/>
                                                                     <constraint firstAttribute="centerX" secondItem="SCQ-ZA-2d8" secondAttribute="centerX" id="RyJ-sw-DgN"/>
+                                                                    <constraint firstItem="SCQ-ZA-2d8" firstAttribute="leading" secondItem="Z6f-Tj-KTa" secondAttribute="leading" constant="20" id="SXX-cC-DgT"/>
                                                                     <constraint firstItem="eru-4i-CEB" firstAttribute="leading" secondItem="Z6f-Tj-KTa" secondAttribute="leading" constant="20" id="Vjo-tm-Z5Q"/>
                                                                     <constraint firstAttribute="centerX" secondItem="zfn-3q-Lyg" secondAttribute="centerX" id="Vnh-uD-t7N"/>
                                                                     <constraint firstAttribute="width" secondItem="zfn-3q-Lyg" secondAttribute="width" multiplier="2.5" id="aJ0-A8-0r1"/>
@@ -2164,7 +2168,12 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="m_constraintCatalogHeight" destination="tHi-ee-dD0" id="gxX-na-PNi"/>
+                        <outlet property="m_constraintCatalogSeparatorBottom" destination="AKw-Pl-9lF" id="qw9-hg-wQO"/>
+                        <outlet property="m_constraintManagerWrapperWidth" destination="aNe-6g-y6O" id="J3i-rv-7Rj"/>
                         <outlet property="m_constraintOpenMarkWidth" destination="YLU-kz-wtc" id="Pk7-sJ-lYf"/>
+                        <outlet property="m_constraintStoreCoverHeight" destination="xkQ-6f-dPC" id="q92-fZ-e6I"/>
+                        <outlet property="m_constraintStoreCoverSeparatorBottom" destination="E0o-zt-dlA" id="Dzi-8z-wyv"/>
                         <outlet property="m_imgCatalog" destination="SCQ-ZA-2d8" id="8iO-Bf-bvH"/>
                         <outlet property="m_imgManager" destination="fqr-Oy-hJu" id="pN6-vT-Jct"/>
                         <outlet property="m_imgOpen" destination="Rny-5I-mhc" id="tSp-7I-xsb"/>
@@ -2182,14 +2191,87 @@
                         <outlet property="m_lblOpeningHourTuesday" destination="Sgj-12-CeR" id="x85-XY-tqD"/>
                         <outlet property="m_lblOpeningHourWednesday" destination="fOM-WY-0Dj" id="l1V-RZ-v3q"/>
                         <outlet property="m_lblPhoneNumber" destination="zHd-Lc-eCc" id="0lB-uY-Sjf"/>
+                        <outlet property="m_lblStoreCoverSeparator" destination="zrY-6D-aBq" id="PVi-Xy-ANK"/>
                         <outlet property="m_lblStoreName" destination="fUM-yM-hwH" id="yaK-Wt-S7T"/>
+                        <outlet property="m_viewCatalogContainer" destination="Z6f-Tj-KTa" id="KZ7-my-voT"/>
                         <outlet property="m_viewManagerWrapper" destination="sdo-q2-LOn" id="AyP-Uy-qiM"/>
                         <outlet property="m_viewMapView" destination="3bT-xN-2dC" id="Ffg-wE-dRW"/>
+                        <outlet property="m_viewStoreCoverContainer" destination="EBB-E7-O1Y" id="K8G-eK-9af"/>
+                        <segue destination="M8Y-QN-DjN" kind="show" identifier="SEGUE_FROM_STOREDETAILS_TO_PDFVIEWER" id="ehL-xU-COW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Afg-bn-ciz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1362" y="1911"/>
+        </scene>
+        <!--PdfVC-->
+        <scene sceneID="sJw-nh-Nr0">
+            <objects>
+                <viewController storyboardIdentifier="STORYBOARD_PDFVIEWER" useStoryboardIdentifierAsRestorationIdentifier="YES" id="M8Y-QN-DjN" customClass="BERPdfVC" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="sQI-xC-acC"/>
+                        <viewControllerLayoutGuide type="bottom" id="k89-hO-xgT"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="zdu-3c-r8L">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view alpha="0.29999999999999999" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F1k-r2-xjk" userLabel="View - Mask Layer">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AtR-YT-Vj0" userLabel="View - Container">
+                                <rect key="frame" x="20" y="40" width="280" height="488"/>
+                                <subviews>
+                                    <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sPg-WI-f7Q">
+                                        <rect key="frame" x="0.0" y="0.0" width="280" height="488"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </webView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="sPg-WI-f7Q" firstAttribute="top" secondItem="AtR-YT-Vj0" secondAttribute="top" id="0Vm-GV-z5P"/>
+                                    <constraint firstItem="sPg-WI-f7Q" firstAttribute="leading" secondItem="AtR-YT-Vj0" secondAttribute="leading" id="X4B-fE-iMS"/>
+                                    <constraint firstAttribute="bottom" secondItem="sPg-WI-f7Q" secondAttribute="bottom" id="qd0-nh-9NO"/>
+                                    <constraint firstAttribute="trailing" secondItem="sPg-WI-f7Q" secondAttribute="trailing" id="xQN-vN-xxX"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I4E-ip-r3V" userLabel="Button - Close">
+                                <rect key="frame" x="277" y="33" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="30" id="Thd-PG-efH"/>
+                                    <constraint firstAttribute="height" constant="30" id="isI-sj-KCE"/>
+                                </constraints>
+                                <state key="normal" image="pdf-close">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="onBtnCloseClick:" destination="M8Y-QN-DjN" eventType="touchUpInside" id="jqO-qk-mHg"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="F1k-r2-xjk" secondAttribute="centerX" id="2Xx-Wg-3Ty"/>
+                            <constraint firstItem="I4E-ip-r3V" firstAttribute="trailing" secondItem="AtR-YT-Vj0" secondAttribute="trailing" constant="7" id="6ex-X4-4Hd"/>
+                            <constraint firstItem="AtR-YT-Vj0" firstAttribute="leading" secondItem="zdu-3c-r8L" secondAttribute="leading" constant="20" id="JuK-Um-hg3"/>
+                            <constraint firstAttribute="width" secondItem="F1k-r2-xjk" secondAttribute="width" id="KHY-z0-CCc"/>
+                            <constraint firstItem="k89-hO-xgT" firstAttribute="top" secondItem="AtR-YT-Vj0" secondAttribute="bottom" constant="40" id="LSG-Px-kya"/>
+                            <constraint firstAttribute="centerY" secondItem="F1k-r2-xjk" secondAttribute="centerY" id="OrL-RL-McK"/>
+                            <constraint firstItem="I4E-ip-r3V" firstAttribute="top" secondItem="AtR-YT-Vj0" secondAttribute="top" constant="-7" id="SYw-aB-8dq"/>
+                            <constraint firstAttribute="trailing" secondItem="AtR-YT-Vj0" secondAttribute="trailing" constant="20" id="kNl-o3-J17"/>
+                            <constraint firstItem="AtR-YT-Vj0" firstAttribute="top" secondItem="zdu-3c-r8L" secondAttribute="top" constant="40" id="lry-al-x92"/>
+                            <constraint firstAttribute="height" secondItem="F1k-r2-xjk" secondAttribute="height" id="y2D-cw-TWZ"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="m_viewContainer" destination="AtR-YT-Vj0" id="JyU-N2-qhN"/>
+                        <outlet property="m_webview" destination="sPg-WI-f7Q" id="gc1-W4-a1X"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RQJ-8i-seC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1791" y="1911"/>
         </scene>
         <!--Nearby DealsVC-->
         <scene sceneID="9gQ-l4-FFc">
@@ -2274,10 +2356,10 @@
             </objects>
             <point key="canvasLocation" x="1791" y="1213"/>
         </scene>
-        <!--View Controller-->
+        <!--No Service-->
         <scene sceneID="kQs-jJ-yzl">
             <objects>
-                <viewController storyboardIdentifier="STORYBOARD_NOTSUPPORTED" useStoryboardIdentifierAsRestorationIdentifier="YES" id="mCm-D8-zOc" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="STORYBOARD_NOTSUPPORTED" useStoryboardIdentifierAsRestorationIdentifier="YES" id="mCm-D8-zOc" userLabel="No Service" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="BDm-9l-eD5"/>
                         <viewControllerLayoutGuide type="bottom" id="tvf-5E-GL4"/>
@@ -2381,6 +2463,7 @@
         <image name="logo-search-beer" width="19" height="27"/>
         <image name="manager-0" width="100" height="100"/>
         <image name="mark-open-small" width="42" height="23"/>
+        <image name="pdf-close" width="50" height="50"/>
         <image name="store-0" width="320" height="160"/>
     </resources>
     <inferredMetricsTieBreakers>

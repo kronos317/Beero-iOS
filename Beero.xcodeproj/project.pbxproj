@@ -17,6 +17,9 @@
 		8309871B1B69AAE800F56230 /* BERStoreDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8309871A1B69AAE800F56230 /* BERStoreDataModel.m */; };
 		830987241B6AE86D00F56230 /* MarkerInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 830987231B6AE86D00F56230 /* MarkerInfoView.xib */; };
 		830987271B6AE8CC00F56230 /* BERGMSMarkerStoreInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 830987261B6AE8CC00F56230 /* BERGMSMarkerStoreInfoView.m */; };
+		83D6EB4B1BA45260003692FA /* BERPdfVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 83D6EB4A1BA45260003692FA /* BERPdfVC.m */; };
+		83D6EB521BA45576003692FA /* AnimatedTransitioning.m in Sources */ = {isa = PBXBuildFile; fileRef = 83D6EB4F1BA45576003692FA /* AnimatedTransitioning.m */; };
+		83D6EB531BA45576003692FA /* TransitionDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 83D6EB511BA45576003692FA /* TransitionDelegate.m */; };
 		83DF7D741B5E3B680060CA01 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 83DF7D731B5E3B680060CA01 /* main.m */; };
 		83DF7D771B5E3B680060CA01 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 83DF7D761B5E3B680060CA01 /* AppDelegate.m */; };
 		83DF7D7D1B5E3B680060CA01 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83DF7D7B1B5E3B680060CA01 /* Main.storyboard */; };
@@ -72,6 +75,12 @@
 		830987231B6AE86D00F56230 /* MarkerInfoView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MarkerInfoView.xib; path = View/MarkerInfoView.xib; sourceTree = "<group>"; };
 		830987251B6AE8CC00F56230 /* BERGMSMarkerStoreInfoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BERGMSMarkerStoreInfoView.h; path = Controller/CustomView/BERGMSMarkerStoreInfoView.h; sourceTree = "<group>"; };
 		830987261B6AE8CC00F56230 /* BERGMSMarkerStoreInfoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BERGMSMarkerStoreInfoView.m; path = Controller/CustomView/BERGMSMarkerStoreInfoView.m; sourceTree = "<group>"; };
+		83D6EB491BA45260003692FA /* BERPdfVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BERPdfVC.h; path = Controller/BERPdfVC.h; sourceTree = "<group>"; };
+		83D6EB4A1BA45260003692FA /* BERPdfVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BERPdfVC.m; path = Controller/BERPdfVC.m; sourceTree = "<group>"; };
+		83D6EB4E1BA45576003692FA /* AnimatedTransitioning.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AnimatedTransitioning.h; path = "Library/Transition Delegate/AnimatedTransitioning.h"; sourceTree = "<group>"; };
+		83D6EB4F1BA45576003692FA /* AnimatedTransitioning.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AnimatedTransitioning.m; path = "Library/Transition Delegate/AnimatedTransitioning.m"; sourceTree = "<group>"; };
+		83D6EB501BA45576003692FA /* TransitionDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TransitionDelegate.h; path = "Library/Transition Delegate/TransitionDelegate.h"; sourceTree = "<group>"; };
+		83D6EB511BA45576003692FA /* TransitionDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TransitionDelegate.m; path = "Library/Transition Delegate/TransitionDelegate.m"; sourceTree = "<group>"; };
 		83DF7D6E1B5E3B680060CA01 /* Beero.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Beero.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		83DF7D721B5E3B680060CA01 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		83DF7D731B5E3B680060CA01 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -197,6 +206,25 @@
 			name = CustomView;
 			sourceTree = "<group>";
 		};
+		83D6EB4C1BA45553003692FA /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				83D6EB4D1BA4555C003692FA /* Transition Delegate */,
+			);
+			name = Library;
+			sourceTree = "<group>";
+		};
+		83D6EB4D1BA4555C003692FA /* Transition Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				83D6EB4E1BA45576003692FA /* AnimatedTransitioning.h */,
+				83D6EB4F1BA45576003692FA /* AnimatedTransitioning.m */,
+				83D6EB501BA45576003692FA /* TransitionDelegate.h */,
+				83D6EB511BA45576003692FA /* TransitionDelegate.m */,
+			);
+			name = "Transition Delegate";
+			sourceTree = "<group>";
+		};
 		83DF7D651B5E3B680060CA01 = {
 			isa = PBXGroup;
 			children = (
@@ -226,6 +254,7 @@
 				83DF7D9A1B5E49030060CA01 /* Controller */,
 				83FBCAC91B60730400A3A311 /* Data */,
 				83DF7D711B5E3B680060CA01 /* Supporting Files */,
+				83D6EB4C1BA45553003692FA /* Library */,
 			);
 			path = Beero;
 			sourceTree = "<group>";
@@ -317,6 +346,8 @@
 				83FBCAC41B6054D000A3A311 /* BERNearbyDealsVC.m */,
 				83FBCAC61B6054E700A3A311 /* BERStoreDetailsVC.h */,
 				83FBCAC71B6054E700A3A311 /* BERStoreDetailsVC.m */,
+				83D6EB491BA45260003692FA /* BERPdfVC.h */,
+				83D6EB4A1BA45260003692FA /* BERPdfVC.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -530,6 +561,8 @@
 				8309870A1B68BDA900F56230 /* BERBrandDataModel.m in Sources */,
 				83FBCAC81B6054E700A3A311 /* BERStoreDetailsVC.m in Sources */,
 				8309870E1B68F04E00F56230 /* BERSearchManager.m in Sources */,
+				83D6EB4B1BA45260003692FA /* BERPdfVC.m in Sources */,
+				83D6EB521BA45576003692FA /* AnimatedTransitioning.m in Sources */,
 				83DF7DC51B5E67180060CA01 /* BERSplashLoadingVC.m in Sources */,
 				83DF7DB31B5E64D70060CA01 /* BERErrorManager.m in Sources */,
 				83DF7DC21B5E664F0060CA01 /* BERUrlManager.m in Sources */,
@@ -547,6 +580,7 @@
 				8309871B1B69AAE800F56230 /* BERStoreDataModel.m in Sources */,
 				830987111B68F07D00F56230 /* BERSearchWinningDealDataModel.m in Sources */,
 				83DF7D741B5E3B680060CA01 /* main.m in Sources */,
+				83D6EB531BA45576003692FA /* TransitionDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

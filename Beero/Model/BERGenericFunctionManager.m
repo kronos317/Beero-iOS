@@ -8,6 +8,11 @@
 
 #import "BERGenericFunctionManager.h"
 #import <CommonCrypto/CommonDigest.h>
+#import <CoreTelephony/CTCallCenter.h>
+#import <CoreTelephony/CTCall.h>
+#import <CoreTelephony/CTTelephonyNetworkInfo.h>
+#import <CoreTelephony/CTCarrier.h>
+
 
 @implementation BERGenericFunctionManager
 
@@ -216,6 +221,36 @@
     view.layer.shadowRadius = size;
     view.layer.shadowOpacity = 0.5f;
     view.layer.shadowPath = shadowPath.CGPath;
+}
+
++ (UIImage*) scaleImage: (UIImage*) sourceImage scaledToWidth: (float) i_width{
+    float oldWidth = sourceImage.size.width;
+    float scaleFactor = i_width / oldWidth;
+    
+    float newHeight = sourceImage.size.height * scaleFactor;
+    float newWidth = oldWidth * scaleFactor;
+    
+    UIGraphicsBeginImageContext(CGSizeMake(newWidth, newHeight));
+    [sourceImage drawInRect:CGRectMake(0, 0, newWidth, newHeight)];
+    UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return newImage;
+}
+
++ (BOOL) canMakePhoneCall{
+    if ([[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:@"tel://"]]){
+        CTTelephonyNetworkInfo *netInfo = [[CTTelephonyNetworkInfo alloc] init];
+        CTCarrier *carrier = [netInfo subscriberCellularProvider];
+        NSString *mnc = [carrier mobileNetworkCode];
+        
+        if ([mnc length] == 0){
+            return NO;
+        }
+        else{
+            return YES;
+        }
+    }
+    return NO;
 }
 
 @end
