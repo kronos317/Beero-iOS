@@ -14,6 +14,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *m_imgBadgeExclusive;
 @property (weak, nonatomic) IBOutlet UILabel *m_lblTitle;
 @property (weak, nonatomic) IBOutlet UILabel *m_lblSpec;
+@property (weak, nonatomic) IBOutlet UILabel *m_lblStore;
 @property (weak, nonatomic) IBOutlet UILabel *m_lblPrice;
 @property (weak, nonatomic) IBOutlet UILabel *m_lblDistance;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *m_constraintBadgeWidth;

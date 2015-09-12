@@ -19,6 +19,7 @@
 @property BERENUM_SEARCH_CONTAINERTYPE m_enumContainerType;
 
 @property (strong, nonatomic) NSString *m_szRequestToken;
+@property BOOL m_isAllBeers;
 
 - (id) init;
 + (instancetype) sharedInstance;

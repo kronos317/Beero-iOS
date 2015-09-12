@@ -83,6 +83,7 @@ typedef enum _ENUM_SEARCHOPTION_SHOW{
                                    ];
    
     self.m_isSearchCompleted = YES;
+    [BERSearchManager sharedInstance].m_isAllBeers = NO;
     [self doSearch];
     
     self.view.backgroundColor = BERUICOLOR_THEMECOLOR_MAIN;
@@ -138,6 +139,7 @@ typedef enum _ENUM_SEARCHOPTION_SHOW{
     if ([deal isDealFound] == YES){
         cell.m_lblPrice.text = [NSString stringWithFormat:@"$%.2f", deal.m_modelWinningDeal.m_fPrice];
         cell.m_lblSpec.text = [deal.m_modelWinningDeal getBeautifiedVolumeSpecification];
+        cell.m_lblStore.text = deal.m_modelWinningDeal.m_modelStore.m_szName;
         cell.m_lblDistance.text = [NSString stringWithFormat:@"%@ mins away", [deal.m_modelWinningDeal getBeautifiedDriveDistance]];
         if (deal.m_modelWinningDeal.m_isExclusive == YES){
             cell.m_constraintBadgeWidth.constant = 33;
@@ -147,14 +149,27 @@ typedef enum _ENUM_SEARCHOPTION_SHOW{
             cell.m_constraintBadgeWidth.constant = 0;
             cell.m_imgBadgeExclusive.hidden = YES;
         }
+        [cell.m_imgBrand setImage:[UIImage imageNamed:[NSString stringWithFormat:@"brand-small-%d", deal.m_modelWinningDeal.m_indexImage]]];
+        
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
         cell.selectionStyle = UITableViewCellSelectionStyleDefault;
     }
     else {
         cell.m_lblPrice.text = @"";
         cell.m_lblSpec.text = @"No Deals Found";
+        cell.m_lblStore.text = @"";
         cell.m_lblDistance.text = @"";
         cell.m_constraintBadgeWidth.constant = 0;
+        if (self.m_enumBeerType == BERENUM_SEARCH_CONTAINERTYPE_CAN){
+            [cell.m_imgBrand setImage:[UIImage imageNamed:@"brand-can-notfound"]];
+        }
+        else if (self.m_enumBeerType == BERENUM_SEARCH_CONTAINERTYPE_BOTTLE){
+            [cell.m_imgBrand setImage:[UIImage imageNamed:@"brand-bottle-notfound"]];
+        }
+        else if (self.m_enumBeerType == BERENUM_SEARCH_CONTAINERTYPE_ANY){
+            [cell.m_imgBrand setImage:[UIImage imageNamed:@"brand-bottlecan-notfound"]];
+        }
+        
         cell.accessoryType = UITableViewCellAccessoryNone;
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
     }
@@ -483,7 +498,7 @@ typedef enum _ENUM_SEARCHOPTION_SHOW{
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 80.0f;
+    return 100.0f;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
@@ -491,7 +506,7 @@ typedef enum _ENUM_SEARCHOPTION_SHOW{
 }
 
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath{
-    return YES;
+    return ![BERSearchManager sharedInstance].m_isAllBeers;
 }
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -529,9 +544,19 @@ typedef enum _ENUM_SEARCHOPTION_SHOW{
 #pragma mark -Button Event Listeners
 
 - (IBAction)onBtnHeaderMyBeersClick:(id)sender {
+    [BERSearchManager sharedInstance].m_isAllBeers = NO;
+    [self doSearch];
+    
+    [self.m_btnHeaderMyBeers setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [self.m_btnHeaderAllBeers setTitleColor:BERUICOLOR_SEARCHBUTTON_NOTSELECTED forState:UIControlStateNormal];
 }
 
 - (IBAction)onBtnHeaderAllBeersClick:(id)sender {
+    [BERSearchManager sharedInstance].m_isAllBeers = YES;
+    [self doSearch];
+
+    [self.m_btnHeaderAllBeers setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [self.m_btnHeaderMyBeers setTitleColor:BERUICOLOR_SEARCHBUTTON_NOTSELECTED forState:UIControlStateNormal];
 }
 
 - (IBAction)onBtnBottomSizeClick:(id)sender {

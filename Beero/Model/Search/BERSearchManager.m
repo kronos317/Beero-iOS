@@ -39,6 +39,7 @@
     self.m_enumPackageSize = BERENUM_SEARCH_PACKAGESIZE_CASES;
     
     self.m_indexSelectedToViewDetails = 0;
+    self.m_isAllBeers = NO;
 }
 
 #pragma mark -Biz Logic
@@ -72,6 +73,10 @@
         szContainer = @"cans";
     }
     
+    if (self.m_isAllBeers == YES){
+        szBrands = [[BERBrandManager sharedInstance] getAllIdsWithPipe];
+    }
+    
     szSignature = [BERGenericFunctionManager getHashFromString:szSignature];
     
     NSDictionary *params = @{@"os": szOS,
@@ -92,6 +97,8 @@
     NSString *szUrl = [BERUrlManager getEndpointForSearchDeal];
     AFHTTPRequestOperationManager *requestManager = [AFHTTPRequestOperationManager manager];
     requestManager.responseSerializer = [AFJSONResponseSerializer serializer];
+    
+    NSLog(@"%@", [BERGenericFunctionManager getJSONStringRepresentation:params]);
     
     [requestManager GET:szUrl parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSDictionary *dict = responseObject;

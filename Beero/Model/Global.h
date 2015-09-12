@@ -47,6 +47,7 @@
 #define BERUICOLOR_GREEN                                        [UIColor colorWithRed:(64 / 255.0) green:(180 / 255.0) blue:(79 / 255.0) alpha:1]
 #define BERUICOLOR_GREY                                         [UIColor colorWithRed:(104 / 255.0) green:(104 / 255.0) blue:(104 / 255.0) alpha:1]
 #define BERUICOLOR_BACKGROUND_SELECTED                          [UIColor colorWithRed:(225 / 255.0) green:(225 / 255.0) blue:(225 / 255.0) alpha:1]
+#define BERUICOLOR_SEARCHBUTTON_NOTSELECTED                     [UIColor colorWithRed:(155 / 255.0) green:(180 / 255.0) blue:(196 / 255.0) alpha:1]
 
 // Error Code
 

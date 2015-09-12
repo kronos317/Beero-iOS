@@ -14,6 +14,7 @@
 
 @property (strong, nonatomic) NSString *m_szName;
 @property int m_nQty;
+@property int m_indexImage;
 @property BERENUM_SEARCH_CONTAINERTYPE m_enumContainerType;
 @property int m_nContainerSize;
 @property float m_fPrice;

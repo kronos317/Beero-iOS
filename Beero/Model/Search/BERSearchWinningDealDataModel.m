@@ -24,6 +24,7 @@
     if (self = [super init]){
         self.m_szName = @"";
         self.m_nQty = 0;
+        self.m_indexImage = 1;
         self.m_enumContainerType = BERENUM_SEARCH_CONTAINERTYPE_ANY;
         self.m_nContainerSize = 0;
         self.m_fPrice = 0;
@@ -38,6 +39,7 @@
 - (void) setWithDictionary: (NSDictionary *) dict{
     self.m_szName = [BERGenericFunctionManager refineNSString:[dict objectForKey: @"brand_name"]];
     self.m_nQty = [[dict objectForKey:@"qty"] intValue];
+    self.m_indexImage = [[dict objectForKey:@"image_id"] intValue];
     self.m_nContainerSize = [[dict objectForKey:@"container_size"] intValue];
     self.m_fPrice = [[dict objectForKey:@"price"] floatValue];
     self.m_nDrivingDistance = [[dict objectForKey:@"driving_distance"] intValue];

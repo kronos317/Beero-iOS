@@ -23,6 +23,7 @@
 
 - (void) sortByPosition;
 - (NSString *) getSelectedIdsWithPipe;
+- (NSString *) getAllIdsWithPipe;
 
 #pragma mark -Requests
 

@@ -68,6 +68,20 @@
     return sz;
 }
 
+- (NSString *) getAllIdsWithPipe{
+    // 1|2|4
+    
+    NSString *sz = @"";
+    for (int i = 0; i < (int) [self.m_arrBrand count]; i++){
+        BERBrandDataModel *brand = [self.m_arrBrand objectAtIndex:i];
+        sz = [NSString stringWithFormat:@"%@|%d", sz, brand.m_index];
+    }
+    if (sz.length > 1){
+        sz = [sz substringFromIndex:1];
+    }
+    return sz;
+}
+
 #pragma mark -Localstorage
 
 - (void) loadFromLocalstorageWithCompareForSelection{

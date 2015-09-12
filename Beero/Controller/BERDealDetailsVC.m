@@ -81,6 +81,7 @@
     self.m_lblBrandName.text = deal.m_modelWinningDeal.m_szName;    
     self.m_lblStoreName.text = deal.m_modelWinningDeal.m_modelStore.m_szName;
     self.m_lblStoreAddress.text = deal.m_modelWinningDeal.m_modelStore.m_szAddress;
+    [self.m_imgBrand setImage:[UIImage imageNamed:[NSString stringWithFormat:@"brand-big-%d", deal.m_modelWinningDeal.m_indexImage]]];
     
     self.m_lblDealSizeSpec.text = [deal.m_modelWinningDeal getBeautifiedVolumeSpecification];
     self.m_lblPriceBig.text = [NSString stringWithFormat:@"%d", (int) (deal.m_modelWinningDeal.m_fPrice)];

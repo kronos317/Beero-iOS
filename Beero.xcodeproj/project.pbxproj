@@ -405,7 +405,7 @@
 				TargetAttributes = {
 					83DF7D6D1B5E3B680060CA01 = {
 						CreatedOnToolsVersion = 6.3;
-						DevelopmentTeam = JFH2EVWP3B;
+						DevelopmentTeam = DWD7WLHYZ3;
 					};
 					83DF7D861B5E3B690060CA01 = {
 						CreatedOnToolsVersion = 6.3;
@@ -597,8 +597,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: AoGe He (JFH2EVWP3B)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: AoGe He (JFH2EVWP3B)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Chris Lin (8QR4GSXQW6)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Chris Lin (8QR4GSXQW6)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -620,7 +620,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "550a6976-2ce5-46fa-b844-951064322af9";
+				PROVISIONING_PROFILE = "cc70c843-6985-4e2f-a7a9-b32896971d82";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -642,8 +642,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: AoGe He (JFH2EVWP3B)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: AoGe He (JFH2EVWP3B)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Chris Lin (8QR4GSXQW6)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Chris Lin (8QR4GSXQW6)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -658,7 +658,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PROVISIONING_PROFILE = "550a6976-2ce5-46fa-b844-951064322af9";
+				PROVISIONING_PROFILE = "cc70c843-6985-4e2f-a7a9-b32896971d82";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -670,13 +670,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: AoGe He (JFH2EVWP3B)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: AoGe He (JFH2EVWP3B)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Chris Lin (8QR4GSXQW6)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Chris Lin (8QR4GSXQW6)";
 				INFOPLIST_FILE = Beero/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "550a6976-2ce5-46fa-b844-951064322af9";
+				PROVISIONING_PROFILE = "cc70c843-6985-4e2f-a7a9-b32896971d82";
 			};
 			name = Debug;
 		};
@@ -686,13 +686,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: AoGe He (JFH2EVWP3B)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: AoGe He (JFH2EVWP3B)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Chris Lin (8QR4GSXQW6)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Chris Lin (8QR4GSXQW6)";
 				INFOPLIST_FILE = Beero/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "550a6976-2ce5-46fa-b844-951064322af9";
+				PROVISIONING_PROFILE = "cc70c843-6985-4e2f-a7a9-b32896971d82";
 			};
 			name = Release;
 		};
