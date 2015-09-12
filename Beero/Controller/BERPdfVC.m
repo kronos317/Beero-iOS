@@ -10,10 +10,11 @@
 #import "Global.h"
 #import "BERGenericFunctionManager.h"
 
-@interface BERPdfVC ()
+@interface BERPdfVC () <UIWebViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UIWebView *m_webview;
 @property (weak, nonatomic) IBOutlet UIView *m_viewContainer;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *m_activityIndicator;
 
 @end
 
@@ -22,6 +23,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+
+    self.m_webview.delegate = self;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -34,11 +37,15 @@
     self.m_viewContainer.layer.borderWidth = 1;
     self.m_viewContainer.layer.borderColor = [UIColor blackColor].CGColor;
     self.m_viewContainer.clipsToBounds = YES;
+
+    self.m_activityIndicator.hidden = NO;
+    [self.m_activityIndicator startAnimating];
     
+    NSLog(@"Url: %@", self.m_szUrl);
     NSURL *targetURL = [NSURL URLWithString:self.m_szUrl];
     NSURLRequest *request = [NSURLRequest requestWithURL:targetURL];
+
     [self.m_webview loadRequest:request];
-    
     [BERGenericFunctionManager drawDropShadowToView:self.m_viewContainer Size:5];
 }
 
@@ -63,6 +70,19 @@
 
 - (IBAction)onBtnCloseClick:(id)sender {
     [self closeDialog];
+}
+
+- (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error
+{
+    [self.m_activityIndicator stopAnimating];
+    self.m_activityIndicator.hidden = YES;
+
+    [BERGenericFunctionManager showAlertWithMessage:error.localizedDescription];
+}
+
+- (void)webViewDidFinishLoad:(UIWebView *)webView{
+    [self.m_activityIndicator stopAnimating];
+    self.m_activityIndicator.hidden = YES;
 }
 
 @end

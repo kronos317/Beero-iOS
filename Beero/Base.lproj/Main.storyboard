@@ -2227,12 +2227,21 @@
                                         <rect key="frame" x="0.0" y="0.0" width="280" height="488"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </webView>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="u8v-Oh-fwD">
+                                        <rect key="frame" x="130" y="234" width="20" height="20"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="20" id="CQl-J3-f7h"/>
+                                            <constraint firstAttribute="height" constant="20" id="Lgk-uY-5GN"/>
+                                        </constraints>
+                                    </activityIndicatorView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="sPg-WI-f7Q" firstAttribute="top" secondItem="AtR-YT-Vj0" secondAttribute="top" id="0Vm-GV-z5P"/>
                                     <constraint firstItem="sPg-WI-f7Q" firstAttribute="leading" secondItem="AtR-YT-Vj0" secondAttribute="leading" id="X4B-fE-iMS"/>
+                                    <constraint firstAttribute="centerY" secondItem="u8v-Oh-fwD" secondAttribute="centerY" id="drb-e6-qVN"/>
                                     <constraint firstAttribute="bottom" secondItem="sPg-WI-f7Q" secondAttribute="bottom" id="qd0-nh-9NO"/>
+                                    <constraint firstAttribute="centerX" secondItem="u8v-Oh-fwD" secondAttribute="centerX" id="vlx-ui-Qhn"/>
                                     <constraint firstAttribute="trailing" secondItem="sPg-WI-f7Q" secondAttribute="trailing" id="xQN-vN-xxX"/>
                                 </constraints>
                             </view>
@@ -2265,6 +2274,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="m_activityIndicator" destination="u8v-Oh-fwD" id="8g2-Bb-29o"/>
                         <outlet property="m_viewContainer" destination="AtR-YT-Vj0" id="JyU-N2-qhN"/>
                         <outlet property="m_webview" destination="sPg-WI-f7Q" id="gc1-W4-a1X"/>
                     </connections>
