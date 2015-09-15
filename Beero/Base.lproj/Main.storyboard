@@ -1577,8 +1577,8 @@
                                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vc1-Id-vCL">
                                                 <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
                                                 <subviews>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lhq-Kh-qFE" userLabel="View - Content View">
-                                                        <rect key="frame" x="0.0" y="0.0" width="320" height="1315"/>
+                                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lhq-Kh-qFE" userLabel="View - Content View">
+                                                        <rect key="frame" x="0.0" y="-300" width="320" height="1315"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ViK-pM-VqM" userLabel="View - Store Details">
                                                                 <rect key="frame" x="0.0" y="0.0" width="320" height="109"/>
@@ -1723,7 +1723,7 @@
                                                                 </variation>
                                                             </view>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EBB-E7-O1Y" userLabel="View - Manager">
-                                                                <rect key="frame" x="0.0" y="351" width="320" height="291"/>
+                                                                <rect key="frame" x="0.0" y="351" width="320" height="241"/>
                                                                 <subviews>
                                                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="store-placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="pjY-eB-dKv" userLabel="Image - Store">
                                                                         <rect key="frame" x="0.0" y="0.0" width="320" height="160"/>
@@ -1731,37 +1731,14 @@
                                                                             <constraint firstAttribute="height" constant="160" id="xkQ-6f-dPC"/>
                                                                         </constraints>
                                                                     </imageView>
-                                                                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sdo-q2-LOn" userLabel="View - Manager Wrapper">
-                                                                        <rect key="frame" x="105" y="105" width="110" height="110"/>
-                                                                        <subviews>
-                                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="manager-placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="fqr-Oy-hJu" userLabel="Image - Manager">
-                                                                                <rect key="frame" x="5" y="5" width="100" height="100"/>
-                                                                            </imageView>
-                                                                        </subviews>
-                                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                                        <constraints>
-                                                                            <constraint firstItem="fqr-Oy-hJu" firstAttribute="width" secondItem="sdo-q2-LOn" secondAttribute="width" constant="-10" id="3bk-X6-MbL"/>
-                                                                            <constraint firstAttribute="centerX" secondItem="fqr-Oy-hJu" secondAttribute="centerX" id="E1Z-W9-a4y"/>
-                                                                            <constraint firstItem="fqr-Oy-hJu" firstAttribute="height" secondItem="sdo-q2-LOn" secondAttribute="height" constant="-10" id="R9l-42-i7C"/>
-                                                                            <constraint firstAttribute="centerY" secondItem="fqr-Oy-hJu" secondAttribute="centerY" id="aBe-Fz-lC0"/>
-                                                                            <constraint firstAttribute="width" constant="110" id="aNe-6g-y6O"/>
-                                                                            <constraint firstAttribute="height" constant="110" id="fPZ-R7-Sng"/>
-                                                                            <constraint firstAttribute="width" secondItem="sdo-q2-LOn" secondAttribute="height" multiplier="1:1" id="hpj-4U-GA9"/>
-                                                                        </constraints>
-                                                                        <variation key="default">
-                                                                            <mask key="constraints">
-                                                                                <exclude reference="fPZ-R7-Sng"/>
-                                                                            </mask>
-                                                                        </variation>
-                                                                    </view>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hi, I'm Colin, manager of the Lachlan Hotel bottle shop. If you need any advise on wines, I'm here to help!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="HP9-ry-rAe" userLabel="Label - Manager Message">
-                                                                        <rect key="frame" x="20" y="220" width="280" height="50"/>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hi, I'm Colin, manager of the Lachlan Hotel bottle shop. If you need any advise on wines, I'm here to help!" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="HP9-ry-rAe" userLabel="Label - Manager Message">
+                                                                        <rect key="frame" x="20" y="170" width="280" height="50"/>
                                                                         <fontDescription key="fontDescription" name="HelveticaNeue-Italic" family="Helvetica Neue" pointSize="14"/>
                                                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="128" translatesAutoresizingMaskIntoConstraints="NO" id="zrY-6D-aBq" userLabel="Label - Separator">
-                                                                        <rect key="frame" x="96" y="280" width="128" height="1"/>
+                                                                        <rect key="frame" x="96" y="230" width="128" height="1"/>
                                                                         <color key="backgroundColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="1" id="ABa-7a-FIc"/>
@@ -1779,16 +1756,14 @@
                                                                     <constraint firstItem="HP9-ry-rAe" firstAttribute="leading" secondItem="EBB-E7-O1Y" secondAttribute="leading" constant="20" id="FeG-eZ-Vti"/>
                                                                     <constraint firstAttribute="width" secondItem="zrY-6D-aBq" secondAttribute="width" multiplier="2.5" id="GIS-1D-0ZP"/>
                                                                     <constraint firstItem="pjY-eB-dKv" firstAttribute="top" secondItem="EBB-E7-O1Y" secondAttribute="top" id="NBe-9m-BB7"/>
-                                                                    <constraint firstAttribute="centerX" secondItem="sdo-q2-LOn" secondAttribute="centerX" id="XVb-kN-2xz"/>
-                                                                    <constraint firstItem="pjY-eB-dKv" firstAttribute="bottom" secondItem="sdo-q2-LOn" secondAttribute="top" constant="55" id="czM-rd-jjY"/>
+                                                                    <constraint firstItem="HP9-ry-rAe" firstAttribute="top" secondItem="pjY-eB-dKv" secondAttribute="bottom" constant="10" id="b3A-OZ-EHY"/>
                                                                     <constraint firstItem="zrY-6D-aBq" firstAttribute="top" secondItem="HP9-ry-rAe" secondAttribute="bottom" constant="10" id="iYQ-Bk-je1"/>
                                                                     <constraint firstAttribute="trailing" secondItem="HP9-ry-rAe" secondAttribute="trailing" constant="20" id="pcm-GS-ssh"/>
-                                                                    <constraint firstItem="HP9-ry-rAe" firstAttribute="top" secondItem="sdo-q2-LOn" secondAttribute="bottom" constant="5" id="up9-dZ-KPr"/>
                                                                     <constraint firstAttribute="centerX" secondItem="pjY-eB-dKv" secondAttribute="centerX" id="vg3-qZ-hoL"/>
                                                                 </constraints>
                                                             </view>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z6f-Tj-KTa" userLabel="View - Catalog">
-                                                                <rect key="frame" x="0.0" y="642" width="320" height="475"/>
+                                                                <rect key="frame" x="0.0" y="592" width="320" height="475"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="For more great deals, check out our catalog!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="eru-4i-CEB" userLabel="Label - Catalog">
                                                                         <rect key="frame" x="20" y="0.0" width="280" height="34"/>
@@ -1855,7 +1830,7 @@
                                                                 </variation>
                                                             </view>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x6j-34-oRX" userLabel="View - Store Opening">
-                                                                <rect key="frame" x="0.0" y="1127" width="320" height="168"/>
+                                                                <rect key="frame" x="0.0" y="1077" width="320" height="168"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Store Opening Hours" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="eN4-oi-CKA">
                                                                         <rect key="frame" x="20" y="0.0" width="280" height="18"/>
@@ -2174,12 +2149,10 @@
                         <outlet property="m_btnPhoneNumber" destination="TGf-qk-hV5" id="oBj-PO-D1J"/>
                         <outlet property="m_constraintCatalogHeight" destination="tHi-ee-dD0" id="gxX-na-PNi"/>
                         <outlet property="m_constraintCatalogSeparatorBottom" destination="AKw-Pl-9lF" id="qw9-hg-wQO"/>
-                        <outlet property="m_constraintManagerWrapperWidth" destination="aNe-6g-y6O" id="J3i-rv-7Rj"/>
                         <outlet property="m_constraintOpenMarkWidth" destination="YLU-kz-wtc" id="Pk7-sJ-lYf"/>
                         <outlet property="m_constraintStoreCoverHeight" destination="xkQ-6f-dPC" id="q92-fZ-e6I"/>
                         <outlet property="m_constraintStoreCoverSeparatorBottom" destination="E0o-zt-dlA" id="Dzi-8z-wyv"/>
                         <outlet property="m_imgCatalog" destination="SCQ-ZA-2d8" id="8iO-Bf-bvH"/>
-                        <outlet property="m_imgManager" destination="fqr-Oy-hJu" id="pN6-vT-Jct"/>
                         <outlet property="m_imgOpen" destination="Rny-5I-mhc" id="tSp-7I-xsb"/>
                         <outlet property="m_imgStore" destination="pjY-eB-dKv" id="p3P-6K-Uyf"/>
                         <outlet property="m_lblAddress" destination="A0c-Jj-z4J" id="CyB-Dd-oRI"/>
@@ -2197,7 +2170,6 @@
                         <outlet property="m_lblStoreCoverSeparator" destination="zrY-6D-aBq" id="PVi-Xy-ANK"/>
                         <outlet property="m_lblStoreName" destination="fUM-yM-hwH" id="yaK-Wt-S7T"/>
                         <outlet property="m_viewCatalogContainer" destination="Z6f-Tj-KTa" id="KZ7-my-voT"/>
-                        <outlet property="m_viewManagerWrapper" destination="sdo-q2-LOn" id="AyP-Uy-qiM"/>
                         <outlet property="m_viewMapView" destination="3bT-xN-2dC" id="Ffg-wE-dRW"/>
                         <outlet property="m_viewStoreCoverContainer" destination="EBB-E7-O1Y" id="K8G-eK-9af"/>
                         <segue destination="M8Y-QN-DjN" kind="show" identifier="SEGUE_FROM_STOREDETAILS_TO_PDFVIEWER" id="ehL-xU-COW"/>
@@ -2474,7 +2446,6 @@
         <image name="logo-notsupported" width="84" height="108"/>
         <image name="logo-search-background" width="60" height="81"/>
         <image name="logo-search-beer" width="19" height="27"/>
-        <image name="manager-placeholder" width="100" height="100"/>
         <image name="mark-open-small" width="42" height="23"/>
         <image name="pdf-close" width="50" height="50"/>
         <image name="store-placeholder" width="320" height="160"/>

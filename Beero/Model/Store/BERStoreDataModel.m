@@ -32,8 +32,8 @@
         
         self.m_hasCatalog = NO;
         self.m_hasCoverImage = NO;
-        self.m_hasManagerImage = NO;
         self.m_szPhoneNumber = @"";
+        self.m_szManagerMessage = @"";
     }
     return self;
 }
@@ -48,14 +48,14 @@
     self.m_dictOpenHours = [[NSMutableDictionary alloc] initWithDictionary:[dict objectForKey:@"open_hours"] copyItems:YES];
     self.m_hasCatalog = [[dict objectForKey:@"has_catalog"] boolValue];
     self.m_hasCoverImage = [[dict objectForKey:@"has_cover_image"] boolValue];
-    self.m_hasManagerImage = [[dict objectForKey:@"has_manager_image"] boolValue];
     self.m_szPhoneNumber = [BERGenericFunctionManager refineNSString:[dict objectForKey:@"phone"]];
+    self.m_szManagerMessage = [BERGenericFunctionManager refineNSString:[dict objectForKey:@"message"]];
     
 #warning Just for Test
     self.m_index = 1;
     self.m_hasCatalog = YES;
     self.m_hasCoverImage = YES;
-    self.m_hasManagerImage = YES;
+    self.m_szManagerMessage = @"Hi, I'm Colin, manager of the Lachlan Hotel bottle shop. If you need any advise on wines, I'm here to help!";
 }
 
 - (BERSTRUCT_STORE_OPENHOURS) getOpenHourWithWeekday: (BERENUM_WEEKDAY) weekday{
@@ -153,11 +153,6 @@
 - (NSString *) getStoreCoverImagePath{
     if (self.m_hasCoverImage == NO) return @"";
     return [NSString stringWithFormat:@"http://beero.com.au/stores/%d/files/cover.jpg", self.m_index];
-}
-
-- (NSString *) getManagerImagePath{
-    if (self.m_hasManagerImage == NO) return @"";
-    return [NSString stringWithFormat:@"http://beero.com.au/stores/%d/files/manager.jpg", self.m_index];
 }
 
 @end

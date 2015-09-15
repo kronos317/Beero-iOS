@@ -40,8 +40,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *m_lblAddress;
 
 @property (weak, nonatomic) IBOutlet UIImageView *m_imgStore;
-@property (weak, nonatomic) IBOutlet UIView *m_viewManagerWrapper;
-@property (weak, nonatomic) IBOutlet UIImageView *m_imgManager;
 @property (weak, nonatomic) IBOutlet UILabel *m_lblManagerMessage;
 @property (weak, nonatomic) IBOutlet UILabel *m_lblStoreCoverSeparator;
 
@@ -67,7 +65,6 @@
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *m_constraintStoreCoverSeparatorBottom;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *m_constraintCatalogSeparatorBottom;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *m_constraintStoreCoverHeight;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *m_constraintManagerWrapperWidth;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *m_constraintCatalogHeight;
 
 @end
@@ -158,6 +155,7 @@
         self.m_lblOpenTill.textColor = BERUICOLOR_GREEN;
     }
     
+    /*
     self.m_viewManagerWrapper.layer.cornerRadius = 55;
     self.m_viewManagerWrapper.clipsToBounds = YES;
     self.m_viewManagerWrapper.layer.masksToBounds = YES;
@@ -165,48 +163,68 @@
     self.m_imgManager.layer.cornerRadius = 50;
     self.m_imgManager.clipsToBounds = YES;
     self.m_imgManager.layer.masksToBounds = YES;
+    */
     
     //
     
-    if (self.m_store.m_hasCoverImage == NO){
-        self.m_constraintStoreCoverSeparatorBottom.constant = -281;
+    if (self.m_store.m_hasCoverImage == NO && self.m_store.m_szManagerMessage.length == 0){
+        self.m_constraintStoreCoverSeparatorBottom.constant = -231;
         self.m_viewStoreCoverContainer.hidden = YES;
     }
-    else {
-        NSString *sz = [self.m_store getStoreCoverImagePath];
-        NSLog(@"Store Cover Image = %@", sz);
+    else{
+        if (self.m_store.m_hasCoverImage == NO){
+            self.m_constraintStoreCoverHeight.constant = 0;
+            self.m_imgStore.hidden = YES;
+        }
+        else {
+            NSString *sz = [self.m_store getStoreCoverImagePath];
+            NSLog(@"Store Cover Image = %@", sz);
+            
+            NSURLRequest *urlRequest = [NSURLRequest requestWithURL:[NSURL URLWithString:sz]];
+            AFHTTPRequestOperation *reqOperation = [[AFHTTPRequestOperation alloc] initWithRequest:urlRequest];
+            reqOperation.responseSerializer = [AFImageResponseSerializer serializer];
+            [reqOperation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject){
+                UIImage *img = [BERGenericFunctionManager scaleImage:responseObject scaledToWidth:self.m_imgStore.frame.size.width];
+                self.m_imgStore.image = img;
+                self.m_constraintStoreCoverHeight.constant = img.size.height;
+            } failure:^(AFHTTPRequestOperation *operation, NSError *error){
+                NSLog(@"%@", error);
+            }];
+            [reqOperation start];
+        }
         
-        NSURLRequest *urlRequest = [NSURLRequest requestWithURL:[NSURL URLWithString:sz]];
-        AFHTTPRequestOperation *reqOperation = [[AFHTTPRequestOperation alloc] initWithRequest:urlRequest];
-        reqOperation.responseSerializer = [AFImageResponseSerializer serializer];
-        [reqOperation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject){
-            UIImage *img = [BERGenericFunctionManager scaleImage:responseObject scaledToWidth:self.m_imgStore.frame.size.width];
-            self.m_imgStore.image = img;
-            self.m_constraintStoreCoverHeight.constant = img.size.height;
-        } failure:^(AFHTTPRequestOperation *operation, NSError *error){
-            NSLog(@"%@", error);
-        }];
-        [reqOperation start];
+        self.m_lblManagerMessage.text = self.m_store.m_szManagerMessage;
+        [self.m_viewStoreCoverContainer layoutIfNeeded];
+        
+        if (self.m_store.m_szManagerMessage.length == 0){
+            
+        }
+        else {
+            
+        }
+        
+        /*
+        if (self.m_store.m_hasManagerImage == NO){
+            self.m_viewManagerWrapper.hidden = YES;
+        }
+        else {
+            NSString *sz = [self.m_store getManagerImagePath];
+            NSLog(@"Manager Image = %@", sz);
+            
+            NSURLRequest *urlRequest = [NSURLRequest requestWithURL:[NSURL URLWithString:sz]];
+            AFHTTPRequestOperation *reqOperation = [[AFHTTPRequestOperation alloc] initWithRequest:urlRequest];
+            reqOperation.responseSerializer = [AFImageResponseSerializer serializer];
+            [reqOperation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject){
+                UIImage *img = [BERGenericFunctionManager scaleImage:responseObject scaledToWidth:self.m_imgManager.frame.size.width];
+                self.m_imgManager.image = img;
+            } failure:^(AFHTTPRequestOperation *operation, NSError *error){
+                NSLog(@"%@", error);
+            }];
+            [reqOperation start];
+        }
+         */
     }
     
-    if (self.m_store.m_hasManagerImage == NO){
-        self.m_viewManagerWrapper.hidden = YES;
-    }
-    else {
-        NSString *sz = [self.m_store getManagerImagePath];
-        NSLog(@"Manager Image = %@", sz);
-        
-        NSURLRequest *urlRequest = [NSURLRequest requestWithURL:[NSURL URLWithString:sz]];
-        AFHTTPRequestOperation *reqOperation = [[AFHTTPRequestOperation alloc] initWithRequest:urlRequest];
-        reqOperation.responseSerializer = [AFImageResponseSerializer serializer];
-        [reqOperation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject){
-            UIImage *img = [BERGenericFunctionManager scaleImage:responseObject scaledToWidth:self.m_imgManager.frame.size.width];
-            self.m_imgManager.image = img;
-        } failure:^(AFHTTPRequestOperation *operation, NSError *error){
-            NSLog(@"%@", error);
-        }];
-        [reqOperation start];
-    }
     
     if (self.m_store.m_hasCatalog == NO){
         self.m_viewCatalogContainer.hidden = YES;
