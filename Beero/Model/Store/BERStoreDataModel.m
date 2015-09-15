@@ -51,11 +51,11 @@
     self.m_hasManagerImage = [[dict objectForKey:@"has_manager_image"] boolValue];
     self.m_szPhoneNumber = [BERGenericFunctionManager refineNSString:[dict objectForKey:@"phone"]];
     
-//#warning Just for Test
-//    self.m_index = 1;
-//    self.m_hasCatalog = YES;
-//    self.m_hasCoverImage = YES;
-//    self.m_hasManagerImage = YES;
+#warning Just for Test
+    self.m_index = 1;
+    self.m_hasCatalog = YES;
+    self.m_hasCoverImage = YES;
+    self.m_hasManagerImage = YES;
 }
 
 - (BERSTRUCT_STORE_OPENHOURS) getOpenHourWithWeekday: (BERENUM_WEEKDAY) weekday{

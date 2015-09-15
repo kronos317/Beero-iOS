@@ -146,7 +146,7 @@
 - (void) callStore{
     if (self.m_szPhoneNumber.length > 0){
         if ([BERGenericFunctionManager canMakePhoneCall] == YES){
-            NSString *phoneNumber = [NSString stringWithFormat:@"tel://%@", self.m_szPhoneNumber];
+            NSString *phoneNumber = [NSString stringWithFormat:@"telprompt://%@", self.m_szPhoneNumber];
             [[UIApplication sharedApplication] openURL:[NSURL URLWithString:phoneNumber]];
         }
         else {

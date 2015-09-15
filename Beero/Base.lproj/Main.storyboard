@@ -1577,8 +1577,8 @@
                                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vc1-Id-vCL">
                                                 <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
                                                 <subviews>
-                                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lhq-Kh-qFE" userLabel="View - Content View">
-                                                        <rect key="frame" x="0.0" y="-700" width="320" height="1315"/>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lhq-Kh-qFE" userLabel="View - Content View">
+                                                        <rect key="frame" x="0.0" y="0.0" width="320" height="1315"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ViK-pM-VqM" userLabel="View - Store Details">
                                                                 <rect key="frame" x="0.0" y="0.0" width="320" height="109"/>
@@ -1595,15 +1595,20 @@
                                                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(02) 9618 9837" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="7" preferredMaxLayoutWidth="128" translatesAutoresizingMaskIntoConstraints="NO" id="zHd-Lc-eCc" userLabel="Label - Phone Number">
+                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TGf-qk-hV5" userLabel="Button - Phone Number">
                                                                         <rect key="frame" x="20" y="85" width="128" height="22"/>
                                                                         <constraints>
-                                                                            <constraint firstAttribute="height" constant="22" id="NzR-mr-OQL"/>
+                                                                            <constraint firstAttribute="height" constant="22" id="l3e-wa-bd6"/>
                                                                         </constraints>
                                                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
-                                                                        <color key="textColor" red="0.01176470588" green="0.2666666667" blue="0.42745098040000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                        <nil key="highlightedColor"/>
-                                                                    </label>
+                                                                        <state key="normal" title="(02) 9999 9999">
+                                                                            <color key="titleColor" red="0.01176470588" green="0.2666666667" blue="0.42745098040000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                                        </state>
+                                                                        <connections>
+                                                                            <action selector="onBtnPhoneNumberClick:" destination="zab-WK-9dS" eventType="touchUpInside" id="nbW-wR-bGG"/>
+                                                                        </connections>
+                                                                    </button>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="24L-Ii-IRx">
                                                                         <rect key="frame" x="168" y="52" width="132" height="57"/>
                                                                         <subviews>
@@ -1654,21 +1659,19 @@
                                                                     <constraint firstItem="24L-Ii-IRx" firstAttribute="trailing" secondItem="fUM-yM-hwH" secondAttribute="trailing" id="5Oh-s3-zCb"/>
                                                                     <constraint firstItem="fUM-yM-hwH" firstAttribute="leading" secondItem="ViK-pM-VqM" secondAttribute="leading" constant="20" id="6dQ-Qy-26K"/>
                                                                     <constraint firstItem="24L-Ii-IRx" firstAttribute="leading" secondItem="iNz-L4-6gd" secondAttribute="trailing" constant="20" id="CtD-YW-ALG"/>
-                                                                    <constraint firstItem="24L-Ii-IRx" firstAttribute="bottom" secondItem="zHd-Lc-eCc" secondAttribute="bottom" id="Gfe-Ls-dR6"/>
                                                                     <constraint firstAttribute="trailing" secondItem="fUM-yM-hwH" secondAttribute="trailing" constant="20" id="GlZ-2w-pIj"/>
-                                                                    <constraint firstItem="zHd-Lc-eCc" firstAttribute="top" secondItem="iNz-L4-6gd" secondAttribute="bottom" id="JUT-5H-iUT"/>
+                                                                    <constraint firstItem="iNz-L4-6gd" firstAttribute="centerX" secondItem="TGf-qk-hV5" secondAttribute="centerX" id="HcZ-Pq-gSO"/>
+                                                                    <constraint firstItem="TGf-qk-hV5" firstAttribute="top" secondItem="iNz-L4-6gd" secondAttribute="bottom" id="IkY-Ae-mxd"/>
                                                                     <constraint firstItem="iNz-L4-6gd" firstAttribute="width" secondItem="ViK-pM-VqM" secondAttribute="width" multiplier="0.4" id="OlD-bu-436"/>
                                                                     <constraint firstItem="iNz-L4-6gd" firstAttribute="top" secondItem="fUM-yM-hwH" secondAttribute="bottom" constant="10" id="Tr2-tJ-2Po"/>
                                                                     <constraint firstItem="iNz-L4-6gd" firstAttribute="leading" secondItem="fUM-yM-hwH" secondAttribute="leading" id="bQJ-MU-8gu"/>
+                                                                    <constraint firstItem="iNz-L4-6gd" firstAttribute="width" secondItem="TGf-qk-hV5" secondAttribute="width" id="cc6-LU-bZm"/>
                                                                     <constraint firstAttribute="height" constant="300" id="ibb-Xi-JIS"/>
-                                                                    <constraint firstItem="iNz-L4-6gd" firstAttribute="width" secondItem="zHd-Lc-eCc" secondAttribute="width" id="lLk-Kh-h5P"/>
                                                                     <constraint firstAttribute="bottom" secondItem="24L-Ii-IRx" secondAttribute="bottom" id="rSo-PW-Gug"/>
-                                                                    <constraint firstItem="iNz-L4-6gd" firstAttribute="centerX" secondItem="zHd-Lc-eCc" secondAttribute="centerX" id="yX5-Kl-2eO"/>
                                                                 </constraints>
                                                                 <variation key="default">
                                                                     <mask key="constraints">
                                                                         <exclude reference="ibb-Xi-JIS"/>
-                                                                        <exclude reference="Gfe-Ls-dR6"/>
                                                                     </mask>
                                                                 </variation>
                                                             </view>
@@ -1722,7 +1725,7 @@
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EBB-E7-O1Y" userLabel="View - Manager">
                                                                 <rect key="frame" x="0.0" y="351" width="320" height="291"/>
                                                                 <subviews>
-                                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="store-0" translatesAutoresizingMaskIntoConstraints="NO" id="pjY-eB-dKv" userLabel="Image - Store">
+                                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="store-placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="pjY-eB-dKv" userLabel="Image - Store">
                                                                         <rect key="frame" x="0.0" y="0.0" width="320" height="160"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="160" id="xkQ-6f-dPC"/>
@@ -1731,7 +1734,7 @@
                                                                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sdo-q2-LOn" userLabel="View - Manager Wrapper">
                                                                         <rect key="frame" x="105" y="105" width="110" height="110"/>
                                                                         <subviews>
-                                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="manager-0" translatesAutoresizingMaskIntoConstraints="NO" id="fqr-Oy-hJu" userLabel="Image - Manager">
+                                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="manager-placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="fqr-Oy-hJu" userLabel="Image - Manager">
                                                                                 <rect key="frame" x="5" y="5" width="100" height="100"/>
                                                                             </imageView>
                                                                         </subviews>
@@ -1793,7 +1796,7 @@
                                                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
-                                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="catalog-0" translatesAutoresizingMaskIntoConstraints="NO" id="SCQ-ZA-2d8" userLabel="Image - Catalog">
+                                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="catalog-placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="SCQ-ZA-2d8" userLabel="Image - Catalog">
                                                                         <rect key="frame" x="20" y="44" width="280" height="400"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="width" constant="280" id="5KA-eg-wKn"/>
@@ -2168,6 +2171,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="m_btnPhoneNumber" destination="TGf-qk-hV5" id="oBj-PO-D1J"/>
                         <outlet property="m_constraintCatalogHeight" destination="tHi-ee-dD0" id="gxX-na-PNi"/>
                         <outlet property="m_constraintCatalogSeparatorBottom" destination="AKw-Pl-9lF" id="qw9-hg-wQO"/>
                         <outlet property="m_constraintManagerWrapperWidth" destination="aNe-6g-y6O" id="J3i-rv-7Rj"/>
@@ -2190,7 +2194,6 @@
                         <outlet property="m_lblOpeningHourThursday" destination="0YF-mx-KIz" id="mpM-qh-eJw"/>
                         <outlet property="m_lblOpeningHourTuesday" destination="Sgj-12-CeR" id="x85-XY-tqD"/>
                         <outlet property="m_lblOpeningHourWednesday" destination="fOM-WY-0Dj" id="l1V-RZ-v3q"/>
-                        <outlet property="m_lblPhoneNumber" destination="zHd-Lc-eCc" id="0lB-uY-Sjf"/>
                         <outlet property="m_lblStoreCoverSeparator" destination="zrY-6D-aBq" id="PVi-Xy-ANK"/>
                         <outlet property="m_lblStoreName" destination="fUM-yM-hwH" id="yaK-Wt-S7T"/>
                         <outlet property="m_viewCatalogContainer" destination="Z6f-Tj-KTa" id="KZ7-my-voT"/>
@@ -2460,7 +2463,7 @@
         <image name="badge-exclusive-small" width="32" height="26"/>
         <image name="brand-big-53" width="600" height="600"/>
         <image name="brand-small-53" width="150" height="150"/>
-        <image name="catalog-0" width="280" height="400"/>
+        <image name="catalog-placeholder" width="280" height="400"/>
         <image name="catalog-zoom" width="58" height="58"/>
         <image name="checkbox-selected" width="24" height="25"/>
         <image name="icon-add" width="20" height="20"/>
@@ -2471,12 +2474,12 @@
         <image name="logo-notsupported" width="84" height="108"/>
         <image name="logo-search-background" width="60" height="81"/>
         <image name="logo-search-beer" width="19" height="27"/>
-        <image name="manager-0" width="100" height="100"/>
+        <image name="manager-placeholder" width="100" height="100"/>
         <image name="mark-open-small" width="42" height="23"/>
         <image name="pdf-close" width="50" height="50"/>
-        <image name="store-0" width="320" height="160"/>
+        <image name="store-placeholder" width="320" height="160"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="ltV-GJ-lhi"/>
+        <segue reference="uv5-hk-Sc0"/>
     </inferredMetricsTieBreakers>
 </document>

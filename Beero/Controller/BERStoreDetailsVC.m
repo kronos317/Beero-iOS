@@ -30,7 +30,7 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *m_lblStoreName;
 @property (weak, nonatomic) IBOutlet UILabel *m_lblMemberSince;
-@property (weak, nonatomic) IBOutlet UILabel *m_lblPhoneNumber;
+@property (weak, nonatomic) IBOutlet UIButton *m_btnPhoneNumber;
 
 @property (weak, nonatomic) IBOutlet UIImageView *m_imgOpen;
 @property (weak, nonatomic) IBOutlet UILabel *m_lblOpenTill;
@@ -132,7 +132,7 @@
         self.m_lblMemberSince.text = @"";
     }
     self.m_lblAddress.text = self.m_store.m_szAddress;
-    self.m_lblPhoneNumber.text = self.m_store.m_szPhoneNumber;
+    [self.m_btnPhoneNumber setTitle:self.m_store.m_szPhoneNumber forState:UIControlStateNormal];
     
     NSArray *arrLabelWeekday = @[self.m_lblOpeningHourSunday, self.m_lblOpeningHourMonday, self.m_lblOpeningHourTuesday, self.m_lblOpeningHourWednesday, self.m_lblOpeningHourThursday, self.m_lblOpeningHourFriday, self.m_lblOpeningHourSaturday];
     
@@ -288,6 +288,18 @@
 }
 
 #pragma mark -Button Event Listeners
+
+- (IBAction)onBtnPhoneNumberClick:(id)sender {
+    if (self.m_store.m_szPhoneNumber.length > 0){
+        if ([BERGenericFunctionManager canMakePhoneCall] == YES){
+            NSString *phoneNumber = [NSString stringWithFormat:@"telprompt://%@", self.m_store.m_szPhoneNumber];
+            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:phoneNumber]];
+        }
+        else {
+            [BERGenericFunctionManager showAlertWithMessage:[NSString stringWithFormat:@"Cannot make phone call on your device.\n\nPh: %@", self.m_store.m_szPhoneNumber]];
+        }
+    }
+}
 
 - (IBAction)onBtnBackClick:(id)sender {
     [self.navigationController popViewControllerAnimated:YES];
