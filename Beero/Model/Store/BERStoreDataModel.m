@@ -51,11 +51,13 @@
     self.m_szPhoneNumber = [BERGenericFunctionManager refineNSString:[dict objectForKey:@"phone"]];
     self.m_szManagerMessage = [BERGenericFunctionManager refineNSString:[dict objectForKey:@"message"]];
     
+    /*
 #warning Just for Test
     self.m_index = 1;
     self.m_hasCatalog = YES;
     self.m_hasCoverImage = YES;
     self.m_szManagerMessage = @"Hi, I'm Colin, manager of the Lachlan Hotel bottle shop. If you need any advise on wines, I'm here to help!";
+     */
 }
 
 - (BERSTRUCT_STORE_OPENHOURS) getOpenHourWithWeekday: (BERENUM_WEEKDAY) weekday{
