@@ -4,22 +4,17 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>Pods-Beero-AFNetworking.xcscheme</key>
+		<key>AFNetworking.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods-Beero-IQKeyboardManager.xcscheme</key>
+		<key>IQKeyboardManager.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods-Beero-MBProgressHUD.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>Pods-Beero-UIView+Shake.xcscheme</key>
+		<key>MBProgressHUD.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -29,27 +24,12 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods-BeeroTests-AFNetworking.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>Pods-BeeroTests-IQKeyboardManager.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>Pods-BeeroTests-MBProgressHUD.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>Pods-BeeroTests-UIView+Shake.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>Pods-BeeroTests.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>UIView+Shake.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -57,52 +37,32 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>04692BF7F8AAD0A1D8A434EF</key>
+		<key>070A17FD4E5CF9CF4AB6061B06F92919</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>0ED127C2DCC3BD35B54CAA73</key>
+		<key>32F5A3F78AB3818F65A581C29320CE56</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>140B72D6B7A5D7E696E2513F</key>
+		<key>7F4B9CD88E53AA6166C442ADC057101E</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>26152BE564528D42DD86AF5C</key>
+		<key>F01E5789272306B87C45631D588E2F51</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>70BA0361903F266765451436</key>
+		<key>F77B755786EC60E6A73E68DD27A93DF7</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>784FB43DF59105A748A95B8A</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>9CDC63DA8F70650FE87EB967</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>BAA0B4CB9AA23C6AD71E0AEE</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>C9AB7319F3377F41EDBB5D5F</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>FFA1D68CA66B729AA4D63CFA</key>
+		<key>FD60B7EDC4B6974310E40D94A3DF93A4</key>
 		<dict>
 			<key>primary</key>
 			<true/>

@@ -1,6 +1,0 @@
-#include "Pods-Beero-UIView+Shake.xcconfig"
-GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
-HEADER_SEARCH_PATHS = "${PODS_ROOT}/Headers/Private" "${PODS_ROOT}/Headers/Private/UIView+Shake" "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/AFNetworking" "${PODS_ROOT}/Headers/Public/Google-Maps-iOS-SDK" "${PODS_ROOT}/Headers/Public/IQKeyboardManager" "${PODS_ROOT}/Headers/Public/MBProgressHUD" "${PODS_ROOT}/Headers/Public/UIView+Shake"
-OTHER_LDFLAGS = -ObjC
-PODS_ROOT = ${SRCROOT}
-SKIP_INSTALL = YES
