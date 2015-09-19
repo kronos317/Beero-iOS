@@ -239,6 +239,8 @@
 
 + (BOOL) canMakePhoneCall{
     if ([[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:@"tel://"]]){
+        return YES;
+        /*
         CTTelephonyNetworkInfo *netInfo = [[CTTelephonyNetworkInfo alloc] init];
         CTCarrier *carrier = [netInfo subscriberCellularProvider];
         NSString *mnc = [carrier mobileNetworkCode];
@@ -249,6 +251,7 @@
         else{
             return YES;
         }
+         */
     }
     return NO;
 }
